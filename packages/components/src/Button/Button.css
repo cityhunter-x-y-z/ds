@@ -1,0 +1,160 @@
+/* ==========================================================================
+   Gazebo Design System - Simple Button Component
+   Matching your Figma design tokens - Single style, two sizes
+   ========================================================================== */
+
+/* Button Base Styles - Exact Figma specifications */
+.button {
+  /* Reset */
+  margin: 0;
+  border: none;
+  background: none;
+  padding: 0;
+
+  /* Layout from your Figma */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  
+  /* Typography from your Figma - Button Label */
+  font-family: var(--ButtonLabel-FontFamily, "Red Hat Display");
+  font-size: var(--ButtonLabel-Size, 14px);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: var(--ButtonLabel-Letterspacing, -0.15px);
+  
+  /* Default appearance - Primary style from your Figma */
+  background: var(--button-Primary-Default-Surface, #FC4949);
+  color: var(--button-Primary-Default-text, #F5F5F5);
+  
+  /* Interaction */
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  white-space: nowrap;
+  
+  /* Accessibility */
+  outline: none;
+  position: relative;
+  
+  /* Transitions */
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus styles */
+.button:focus-visible {
+  outline: 2px solid var(--button-Primary-Default-border, #FC4949);
+  outline-offset: 2px;
+}
+
+/* Hover state */
+.button:hover:not(:disabled) {
+  background: var(--button-Primary-Hover-Surface, #E04343);
+  color: var(--button-Primary-Hover-text, #F5F5F5);
+}
+
+/* Active/Pressed state */
+.button:active:not(:disabled) {
+  background: var(--button-Primary-Action-Surface, #C73636);
+  color: var(--button-Primary-Action-text, #F5F5F5);
+}
+
+/* Disabled state */
+.button:disabled {
+  background: var(--button-Primary-Disable-Surface, #CCCCCC);
+  color: var(--button-Primary-Disable-text, #999999);
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Size Variants - MD and LG from your Figma
+   ========================================================================== */
+
+/* Medium Size (Default) - Your Figma MD specifications */
+.button--md {
+  height: var(--button-default-md-height, 32px);
+  min-width: var(--button-default-md-width, 80px);
+  padding: var(--button-default-md-verticle-padding, 4px) var(--button-default-md-horizontal-padding, 12px);
+  gap: var(--button-default-md-gap, 4px);
+  border-radius: var(--button-default-md-corner-radius, 4px);
+  border: var(--button-default-md-stroke-thickness, 1.5px) solid var(--button-Primary-Default-border, #FC4949);
+}
+
+/* Large Size - Your Figma LG specifications */
+.button--lg {
+  height: var(--button-default-lg-height, 40px);
+  min-width: var(--button-default-lg-width, 96px);
+  padding: var(--button-default-lg-verticle-padding, 8px) var(--button-default-lg-horizontal-padding, 16px);
+  gap: var(--button-default-lg-gap, 6px);
+  border-radius: var(--button-default-lg-corner-radius, 6px);
+  border: var(--button-default-lg-stroke-thickness, 1.5px) solid var(--button-Primary-Default-border, #FC4949);
+}
+
+/* ==========================================================================
+   Loading State
+   ========================================================================== */
+
+.button--loading {
+  pointer-events: none;
+  position: relative;
+  background: var(--button-Primary-Loading-Surface, #FC4949);
+  color: var(--button-Primary-Loading-text, #F5F5F5);
+}
+
+.button--loading .button-text {
+  opacity: 0.7;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   Icon Positioning
+   ========================================================================== */
+
+.button-icon-left {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.button-icon-right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Text Content
+   ========================================================================== */
+
+.button-text {
+  display: flex;
+  align-items: center;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .button--lg {
+    height: var(--button-default-md-height, 32px);
+    padding: var(--button-default-md-verticle-padding, 4px) var(--button-default-md-horizontal-padding, 12px);
+  }
+}
