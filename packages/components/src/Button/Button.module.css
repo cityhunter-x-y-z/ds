@@ -1,0 +1,519 @@
+/* ===================================
+   BUTTON STYLES - CSS Module
+   File: packages/components/src/Button/Button.module.css
+   ================================== */
+
+/* ===== BASE BUTTON STYLES ===== */
+.button {
+  /* Reset default button styles */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  
+  /* Prevent text selection */
+  user-select: none;
+  -webkit-user-select: none;
+  
+  /* Ensure button doesn't shrink */
+  flex-shrink: 0;
+  
+  /* Base typography */
+  font-family: var(--ButtonLabel-FontFamily);
+  font-size: var(--ButtonLabel-Size);
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: var(--ButtonLabel-Letterspacing);
+  font-style: normal;
+}
+
+.button:focus-visible {
+  box-shadow: var(--button-focus-shadow);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+}
+
+/* ===== TEXT BUTTON LAYOUTS ===== */
+.textButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textButtonLg {
+  height: var(--button-default-lg-height);
+  min-width: var(--button-default-lg-width);
+  padding: var(--button-default-lg-verticle-padding) var(--button-default-lg-horizontal-padding);
+  gap: var(--button-default-lg-gap);
+}
+
+.textButtonMd {
+  height: var(--button-default-md-height);
+  min-width: var(--button-default-md-width);
+  padding: var(--button-default-md-verticle-padding) var(--button-default-md-horizontal-padding);
+  gap: var(--button-default-md-gap);
+}
+
+/* ===== ICON BUTTON LAYOUTS ===== */
+.iconButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconButtonLg {
+  width: var(--button-iconCTA-lg-side);
+  height: var(--button-iconCTA-lg-side);
+  padding: var(--button-iconCTA-lg-verticle-padding) var(--button-iconCTA-lg-horizontal-padding);
+  gap: var(--button-iconCTA-lg-gap);
+}
+
+.iconButtonMd {
+  width: var(--button-iconCTA-md-side);
+  height: var(--button-iconCTA-md-side);
+  padding: var(--button-iconCTA-md-verticle-padding) var(--button-iconCTA-md-horizontal-padding);
+  gap: var(--button-iconCTA-md-gap);
+}
+
+/* Special case for Icon Button Outline which uses different tokens */
+.iconButtonOutlineLg {
+  width: var(--button-default-lg-height);
+  height: var(--button-default-lg-height);
+  padding: var(--button-iconCTA-lg-verticle-padding) var(--button-iconCTA-lg-horizontal-padding);
+  gap: var(--button-iconCTA-lg-gap);
+}
+
+.iconButtonOutlineMd {
+  width: var(--button-default-md-height);
+  height: var(--button-default-md-height);
+  padding: var(--button-iconCTA-md-verticle-padding) var(--button-iconCTA-md-horizontal-padding);
+  gap: var(--button-iconCTA-md-gap);
+}
+
+/* ===== ICON CONTAINERS ===== */
+.iconContainer16 {
+  display: flex;
+  width: var(--container-sides-side16);
+  height: var(--container-sides-side16);
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: var(--container-corner-radius-0);
+}
+
+.iconContainer24 {
+  display: flex;
+  width: var(--container-sides-side24);
+  height: var(--container-sides-side24);
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: var(--container-corner-radius-0);
+}
+
+.icon {
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+
+.icon16 {
+  width: 16px;
+  height: 16px;
+}
+
+.icon24 {
+  width: 24px;
+  height: 24px;
+}
+
+/* ===== BUTTON VARIANTS ===== */
+
+/* PRIMARY BUTTON */
+.primary {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-Primary-Default-Surface);
+  color: var(--button-Primary-Default-text);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-Primary-Default-Surface);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--button-Primary-Hover-Surface);
+  color: var(--button-Primary-Hover-text);
+  border-color: var(--button-Primary-Hover-Surface);
+}
+
+.primary:active:not(:disabled) {
+  background: var(--button-Primary-Action-Surface);
+  color: var(--button-Primary-Action-text);
+  border-color: var(--button-Primary-Action-Surface);
+}
+
+.primary:disabled {
+  background: var(--button-Primary-Disabled-Surface);
+  color: var(--button-Primary-Disabled-text);
+  border-color: var(--button-Primary-Disabled-Surface);
+}
+
+.primaryMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* SECONDARY BUTTON */
+.secondary {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-Secondary-Default-Surface);
+  color: var(--button-Secondary-Default-text);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-Secondary-Default-Surface);
+}
+
+.secondary:hover:not(:disabled) {
+  background: var(--button-Secondary-Hover-Surface);
+  color: var(--button-Secondary-Hover-text);
+  border-color: var(--button-Secondary-Hover-Surface);
+}
+
+.secondary:active:not(:disabled) {
+  background: var(--button-Secondary-Action-Surface);
+  color: var(--button-Secondary-Action-text);
+  border-color: var(--button-Secondary-Action-Surface);
+}
+
+.secondary:disabled {
+  background: var(--button-Secondary-Disabled-Surface);
+  color: var(--button-Secondary-Disabled-text);
+  border-color: var(--button-Secondary-Disabled-Surface);
+}
+
+.secondaryMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* NEUTRAL BUTTON */
+.neutral {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-Neutral-Default-Surface);
+  color: var(--button-Neutral-Default-text);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-Neutral-Default-Surface);
+}
+
+.neutral:hover:not(:disabled) {
+  background: var(--button-Neutral-Hover-Surface);
+  color: var(--button-Neutral-Hover-text);
+  border-color: var(--button-Neutral-Hover-Surface);
+}
+
+.neutral:active:not(:disabled) {
+  background: var(--button-Neutral-Action-Surface);
+  color: var(--button-Neutral-Action-text);
+  border-color: var(--button-Neutral-Action-Surface);
+}
+
+.neutral:disabled {
+  background: var(--button-Neutral-Disabled-Surface);
+  color: var(--button-Neutral-Disabled-text);
+  border-color: var(--button-Neutral-Disabled-Surface);
+}
+
+.neutralMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* OUTLINE BUTTON */
+.outline {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-Outlined-Default-Surface);
+  color: var(--button-Outlined-Default-text);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-Outlined-Default-border);
+}
+
+.outline:hover:not(:disabled) {
+  background: var(--button-Outlined-Hover-Surface);
+  color: var(--button-Outlined-Hover-text);
+  border-color: var(--button-Outlined-Hover-border);
+}
+
+.outline:active:not(:disabled) {
+  background: var(--button-Outlined-Action-Surface);
+  color: var(--button-Outlined-Action-text);
+  border-color: var(--button-Outlined-Action-border);
+}
+
+.outline:disabled {
+  background: var(--button-Outlined-Disabled-Surface);
+  color: var(--button-Outlined-Disabled-text);
+  border-color: var(--button-Outlined-Disabled-border);
+}
+
+.outlineMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* TRANSPARENT BUTTON */
+.transparent {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-Transperant-Default-Surface);
+  color: var(--button-Transperant-Default-text);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-Transperant-Default-border);
+}
+
+.transparent:hover:not(:disabled) {
+  background: var(--button-Transperant-Hover-Surface);
+  color: var(--button-Transperant-Hover-text);
+}
+
+.transparent:active:not(:disabled) {
+  background: var(--button-Transperant-Action-Surface);
+  color: var(--button-Transperant-Action-text);
+}
+
+.transparent:disabled {
+  background: var(--button-Transperant-Disabled-Surface);
+  color: var(--button-Transperant-Disabled-text);
+  border-color: var(--button-Transperant-Disabled-border);
+}
+
+.transparentMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* DANGER TRANSPARENT BUTTON */
+.dangerTransparent {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-Transperant-Default-Surface);
+  color: var(--button-Danger-Default-text);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-Transperant-Default-border);
+  
+  /* Special typography for danger transparent */
+  font-family: var(--LabelUnderline-FontFamily);
+  font-size: var(--LabelUnderline-Size);
+  font-weight: 400;
+  letter-spacing: var(--LabelUnderline-Letterspacing);
+  text-decoration: underline;
+  text-decoration-color: var(--button-Danger-Default-text);
+  text-underline-offset: 2px;
+}
+
+.dangerTransparent:hover:not(:disabled) {
+  background: var(--button-Transperant-Hover-Surface);
+  color: var(--button-Danger-Hover-text);
+  text-decoration-color: var(--button-Danger-Hover-text);
+}
+
+.dangerTransparent:active:not(:disabled) {
+  background: var(--button-Transperant-Action-Surface);
+  color: var(--button-Danger-Action-text);
+  text-decoration-color: var(--button-Danger-Action-text);
+}
+
+.dangerTransparent:disabled {
+  background: var(--button-Transperant-Disabled-Surface);
+  color: var(--button-Danger-Disabled-text);
+  border-color: var(--button-Transperant-Disabled-border);
+  text-decoration-color: var(--button-Danger-Disabled-text);
+}
+
+.dangerTransparentMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* SEMANTIC BUTTON */
+.semantic {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-Semantic-Default-Surface);
+  color: var(--button-Semantic-Default-text);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-Semantic-Default-Surface);
+}
+
+.semantic:hover:not(:disabled) {
+  background: var(--button-Semantic-Hover-Surface);
+  color: var(--button-Semantic-Hover-text);
+  border-color: var(--button-Semantic-Hover-Surface);
+}
+
+.semantic:active:not(:disabled) {
+  background: var(--button-Semantic-Action-Surface);
+  color: var(--button-Semantic-Action-text);
+  border-color: var(--button-Semantic-Action-Surface);
+}
+
+.semantic:disabled {
+  background: var(--button-Semantic-Disabled-Surface);
+  color: var(--button-Semantic-Disabled-text);
+  border-color: var(--button-Semantic-Disabled-Surface);
+}
+
+.semanticMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* ICON BUTTON NEUTRAL */
+.iconNeutral {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-Neutral-Default-Surface);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-Neutral-Default-Surface);
+}
+
+.iconNeutral:hover:not(:disabled) {
+  background: var(--button-Neutral-Hover-Surface);
+  border-color: var(--button-Neutral-Hover-Surface);
+}
+
+.iconNeutral:active:not(:disabled) {
+  background: var(--button-Neutral-Action-Surface);
+  border-color: var(--button-Neutral-Action-Surface);
+}
+
+.iconNeutral:disabled {
+  background: var(--button-Neutral-Disabled-Surface);
+  border-color: var(--button-Neutral-Disabled-Surface);
+}
+
+.iconNeutralMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* ICON BUTTON OUTLINE */
+.iconOutline {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-Outlined-Default-Surface);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-Outlined-Default-border);
+}
+
+.iconOutline:hover:not(:disabled) {
+  background: var(--button-Outlined-Hover-Surface);
+  border-color: var(--button-Outlined-Hover-border);
+}
+
+.iconOutline:active:not(:disabled) {
+  background: var(--button-Outlined-Action-Surface);
+  border-color: var(--button-Outlined-Action-border);
+}
+
+.iconOutline:disabled {
+  background: var(--button-Outlined-Disabled-Surface);
+  border-color: var(--button-Outlined-Disabled-border);
+}
+
+.iconOutlineMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* ICON BUTTON TRANSPARENT */
+.iconTransparent {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-Transperant-Default-Surface);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-Transperant-Default-border);
+}
+
+.iconTransparent:hover:not(:disabled) {
+  background: var(--button-Transperant-Hover-Surface);
+}
+
+.iconTransparent:active:not(:disabled) {
+  background: var(--button-Transperant-Action-Surface);
+  border-color: var(--stroke-neutral-subtle);
+}
+
+.iconTransparent:disabled {
+  background: var(--button-Transperant-Disabled-Surface);
+  border-color: var(--button-Transperant-Disabled-border);
+}
+
+.iconTransparentMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* ELLIPSE TRANSPARENT BUTTON */
+.ellipseTransparent {
+  border-radius: var(--button-default-lg-corner-radius-max);
+  background: var(--button-Transperant-Default-Surface);
+  border: var(--button-default-md-stroke-thickness) solid var(--stroke-neutral-subtle);
+  color: var(--button-Transperant-Default-text);
+  
+  /* Special layout for ellipse - uses mixed tokens */
+  height: var(--button-default-md-height);
+  min-width: var(--button-default-md-width);
+  padding: var(--button-default-lg-verticle-padding) var(--button-default-lg-horizontal-padding);
+  gap: var(--button-default-md-gap);
+}
+
+.ellipseTransparent:hover:not(:disabled) {
+  background: var(--button-Transperant-Hover-Surface);
+  border-color: var(--stroke-neutral-subtle);
+}
+
+.ellipseTransparent:active:not(:disabled) {
+  background: var(--button-Transperant-Action-Surface);
+  border-color: var(--stroke-neutral-subtle);
+}
+
+.ellipseTransparent:disabled {
+  background: var(--button-Transperant-Disabled-Surface);
+  border-color: var(--stroke-semantic-disable);
+  color: var(--button-Transperant-Disabled-text);
+}
+
+/* ===== LOADING STATE ===== */
+.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ===== ICON STROKE COLORS ===== */
+.iconStrokeDefault {
+  stroke: #101828;
+}
+
+.iconStrokeWhite {
+  stroke: #FFF;
+}
+
+.iconStrokeDisabled {
+  stroke: #A4A7AE;
+}
+
+/* ===== RESPONSIVE UTILITIES ===== */
+@media (max-width: 768px) {
+  .textButtonLg {
+    height: var(--button-default-md-height);
+    min-width: var(--button-default-md-width);
+    padding: var(--button-default-md-verticle-padding) var(--button-default-md-horizontal-padding);
+    gap: var(--button-default-md-gap);
+  }
+  
+  .iconButtonLg {
+    width: var(--button-iconCTA-md-side);
+    height: var(--button-iconCTA-md-side);
+    padding: var(--button-iconCTA-md-verticle-padding) var(--button-iconCTA-md-horizontal-padding);
+    gap: var(--button-iconCTA-md-gap);
+  }
+}
