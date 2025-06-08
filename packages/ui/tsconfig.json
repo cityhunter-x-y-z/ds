@@ -35,7 +35,7 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
 
-    "types": ["jest", "@testing-library/jest-dom", "node"],
+    "types": ["jest", "node"],
     "typeRoots": ["node_modules/@types", "src/types"]
   },
 
