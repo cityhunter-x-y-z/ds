@@ -1,7 +1,7 @@
-/* ===================================
+/* ===========================================
    BUTTON COMPONENT - TypeScript Fixed Implementation
    File: packages/ui/src/components/Button/Button.tsx
-   ================================== */
+   =========================================== */
 
 import React, { forwardRef } from 'react';
 import { ButtonProps, TextButtonProps, IconButtonProps, isIconButton } from './Button.types';
@@ -135,6 +135,24 @@ const LoadingSpinner: React.FC<{ size: number; stroke: string }> = ({ size, stro
   />
 );
 
+// Helper function to filter out component-specific props
+const getValidDOMProps = (props: any) => {
+  const {
+    variant,
+    size,
+    loading,
+    icon,
+    iconName,
+    iconSize,
+    iconStroke,
+    iconPosition,
+    children,
+    ...domProps
+  } = props;
+  
+  return domProps;
+};
+
 // Main Button Component
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
@@ -158,6 +176,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       if (disabled || loading) return;
       onClick?.(event);
     };
+
+    // Get valid DOM props (excluding component-specific props)
+    const validDOMProps = getValidDOMProps(restProps);
 
     // Icon Button Rendering
     if (isIconButton(variant)) {
@@ -183,7 +204,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           aria-label={ariaLabel}
           aria-busy={loading}
           data-testid={dataTestId}
-          {...restProps}
+          {...validDOMProps}
         >
           <div className={iconSize === 16 ? styles.iconContainer16 : styles.iconContainer24}>
             {iconElement}
@@ -206,7 +227,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         aria-label={ariaLabel}
         aria-busy={loading}
         data-testid={dataTestId}
-        {...restProps}
+        {...validDOMProps}
       >
         {/* Left Icon */}
         {textProps.icon && textProps.iconPosition === 'left' && !loading && (
