@@ -10,9 +10,6 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { Button } from './Button';
 
-// Mock CSS modules
-(global as any).jest.mock('./Button.module.css', () => ({}));
-
 describe('Button Component', () => {
   it('renders button with text', () => {
     render(<Button variant="primary">Click me</Button>);
@@ -26,7 +23,7 @@ describe('Button Component', () => {
   });
 
   it('handles click events', async () => {
-    const handleClick = (global as any).jest.fn();
+    const handleClick = jest.fn();
     const user = userEvent.setup();
     
     render(<Button variant="primary" onClick={handleClick}>Click me</Button>);
@@ -38,43 +35,45 @@ describe('Button Component', () => {
   it('renders primary variant', () => {
     render(<Button variant="primary">Primary</Button>);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('btn-primary');
+    expect(button).toHaveClass('button');
+    expect(button).toHaveClass('primary');
   });
 
   it('renders secondary variant', () => {
     render(<Button variant="secondary">Secondary</Button>);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('btn-secondary');
+    expect(button).toHaveClass('button');
+    expect(button).toHaveClass('secondary');
   });
 
   it('renders large size', () => {
     render(<Button variant="primary" size="lg">Large</Button>);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('btn-lg');
+    expect(button).toHaveClass('textButtonLg');
   });
 
   it('renders medium size by default', () => {
-    render(<Button variant="primary">Default</Button>);
+    render(<Button variant="primary" size="md">Default</Button>);
     const button = screen.getByRole('button');
-    expect(button).toHaveClass('btn-md');
+    expect(button).toHaveClass('textButtonMd');
   });
 
   it('renders disabled state', () => {
     render(<Button variant="primary" disabled>Disabled</Button>);
     const button = screen.getByRole('button');
     expect(button).toBeDisabled();
-    expect(button).toHaveClass('btn-disabled');
+    expect(button).toHaveClass('disabled');
   });
 
   it('renders loading state', () => {
     render(<Button variant="primary" loading>Loading</Button>);
     const button = screen.getByRole('button');
     expect(button).toBeDisabled();
-    expect(button).toHaveClass('btn-loading');
+    expect(button).toHaveClass('loading');
   });
 
   it('does not call onClick when disabled', async () => {
-    const handleClick = (global as any).jest.fn();
+    const handleClick = jest.fn();
     const user = userEvent.setup();
     
     render(<Button variant="primary" onClick={handleClick} disabled>Disabled</Button>);
@@ -95,7 +94,7 @@ describe('Button Component', () => {
   });
 
   it('handles keyboard events', async () => {
-    const handleClick = (global as any).jest.fn();
+    const handleClick = jest.fn();
     const user = userEvent.setup();
     
     render(<Button variant="primary" onClick={handleClick}>Test</Button>);
@@ -104,5 +103,22 @@ describe('Button Component', () => {
     button.focus();
     await user.keyboard('{Enter}');
     expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  it('renders icon button', () => {
+    render(<Button variant="icon-neutral" aria-label="Icon button" iconName="loading" />);
+    const button = screen.getByRole('button');
+    expect(button).toHaveClass('iconButton');
+  });
+
+  it('renders text button with icon', () => {
+    render(
+      <Button variant="primary" icon="loading" iconPosition="left">
+        With Icon
+      </Button>
+    );
+    const button = screen.getByRole('button');
+    expect(button).toHaveClass('textButton');
+    expect(screen.getByText('With Icon')).toBeInTheDocument();
   });
 });
