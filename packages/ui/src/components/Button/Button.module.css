@@ -1,7 +1,11 @@
-/* ===================================
-   BUTTON STYLES - CSS Module - FIXED FOR FIGMA TOKENS
-   File: packages/components/src/Button/Button.module.css
-   ================================== */
+/* ===========================================
+   BUTTON STYLES - CSS Module - FIGMA MATCHED
+   File: packages/ui/src/components/Button/Button.module.css
+   Based on Figma design tokens and specifications
+   =========================================== */
+
+/* Import design tokens */
+@import '../../tokens.css';
 
 /* ===== BASE BUTTON STYLES ===== */
 .button {
@@ -10,7 +14,7 @@
   outline: none;
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
+  transition: all var(--transition-fast);
   
   /* Prevent text selection */
   user-select: none;
@@ -19,21 +23,32 @@
   /* Ensure button doesn't shrink */
   flex-shrink: 0;
   
-  /* Base typography - FIXED to match Figma tokens */
+  /* Base typography - FIGMA MATCHED */
   font-family: var(--buttonlabel-fontfamily);
   font-size: var(--buttonlabel-size);
   font-weight: var(--buttonlabel-weight-semibold);
   line-height: var(--buttonlabel-lineheight);
   letter-spacing: var(--buttonlabel-letterspacing);
   font-style: normal;
+  
+  /* Base layout */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  
+  /* Accessibility */
+  position: relative;
 }
 
 .button:focus-visible {
   box-shadow: var(--focus-primary);
+  z-index: 1;
 }
 
 .button:disabled {
   cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* ===== TEXT BUTTON LAYOUTS ===== */
@@ -46,14 +61,14 @@
 .textButtonLg {
   height: var(--button-default-lg-height);
   min-width: var(--button-default-lg-width);
-  padding: var(--button-default-lg-verticle-padding) var(--button-default-lg-horizontal-padding);
+  padding: var(--button-default-lg-vertical-padding) var(--button-default-lg-horizontal-padding);
   gap: var(--button-default-lg-gap);
 }
 
 .textButtonMd {
   height: var(--button-default-md-height);
   min-width: var(--button-default-md-width);
-  padding: var(--button-default-md-verticle-padding) var(--button-default-md-horizontal-padding);
+  padding: var(--button-default-md-vertical-padding) var(--button-default-md-horizontal-padding);
   gap: var(--button-default-md-gap);
 }
 
@@ -67,14 +82,14 @@
 .iconButtonLg {
   width: var(--button-iconcta-lg-side);
   height: var(--button-iconcta-lg-side);
-  padding: var(--button-iconcta-lg-verticle-padding) var(--button-iconcta-lg-horizontal-padding);
+  padding: var(--button-iconcta-lg-vertical-padding) var(--button-iconcta-lg-horizontal-padding);
   gap: var(--button-iconcta-lg-gap);
 }
 
 .iconButtonMd {
   width: var(--button-iconcta-md-side);
   height: var(--button-iconcta-md-side);
-  padding: var(--button-iconcta-md-verticle-padding) var(--button-iconcta-md-horizontal-padding);
+  padding: var(--button-iconcta-md-vertical-padding) var(--button-iconcta-md-horizontal-padding);
   gap: var(--button-iconcta-md-gap);
 }
 
@@ -82,14 +97,14 @@
 .iconButtonOutlineLg {
   width: var(--button-default-lg-height);
   height: var(--button-default-lg-height);
-  padding: var(--button-iconcta-lg-verticle-padding) var(--button-iconcta-lg-horizontal-padding);
+  padding: var(--button-iconcta-lg-vertical-padding) var(--button-iconcta-lg-horizontal-padding);
   gap: var(--button-iconcta-lg-gap);
 }
 
 .iconButtonOutlineMd {
   width: var(--button-default-md-height);
   height: var(--button-default-md-height);
-  padding: var(--button-iconcta-md-verticle-padding) var(--button-iconcta-md-horizontal-padding);
+  padding: var(--button-iconcta-md-vertical-padding) var(--button-iconcta-md-horizontal-padding);
   gap: var(--button-iconcta-md-gap);
 }
 
@@ -129,9 +144,9 @@
   height: 24px;
 }
 
-/* ===== BUTTON VARIANTS - FIXED TO MATCH FIGMA TOKENS ===== */
+/* ===== BUTTON VARIANTS - FIGMA MATCHED ===== */
 
-/* PRIMARY BUTTON */
+/* PRIMARY BUTTON - Matches Figma "1.0 Button Primary" */
 .primary {
   border-radius: var(--button-default-lg-corner-radius);
   background: var(--button-primary-default-surface);
@@ -162,7 +177,7 @@
   border-width: var(--button-default-md-stroke-thickness);
 }
 
-/* SECONDARY BUTTON */
+/* SECONDARY BUTTON - Matches Figma "1.5 Button Secondary" */
 .secondary {
   border-radius: var(--button-default-lg-corner-radius);
   background: var(--button-secondary-default-surface);
@@ -193,7 +208,7 @@
   border-width: var(--button-default-md-stroke-thickness);
 }
 
-/* NEUTRAL BUTTON */
+/* NEUTRAL BUTTON - Matches Figma "1.1 Button Neutral CTA" */
 .neutral {
   border-radius: var(--button-default-lg-corner-radius);
   background: var(--button-neutral-default-surface);
@@ -224,7 +239,7 @@
   border-width: var(--button-default-md-stroke-thickness);
 }
 
-/* OUTLINE BUTTON */
+/* OUTLINE BUTTON - Matches Figma "1.2 Button Outline" */
 .outline {
   border-radius: var(--button-default-lg-corner-radius);
   background: var(--button-outlined-default-surface);
@@ -255,30 +270,30 @@
   border-width: var(--button-default-md-stroke-thickness);
 }
 
-/* TRANSPARENT BUTTON */
+/* TRANSPARENT BUTTON - Matches Figma "1.3 Button Transparent" */
 .transparent {
   border-radius: var(--button-default-lg-corner-radius);
-  background: var(--button-transperant-default-surface);
-  color: var(--button-transperant-default-text);
-  border: var(--button-default-lg-stroke-thickness) solid var(--button-transperant-default-border);
+  background: var(--button-transparent-default-surface);
+  color: var(--button-transparent-default-text);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-transparent-default-border);
 }
 
 .transparent:hover:not(:disabled) {
-  background: var(--button-transperant-hover-surface);
-  color: var(--button-transperant-hover-text);
-  border-color: var(--button-transperant-hover-border);
+  background: var(--button-transparent-hover-surface);
+  color: var(--button-transparent-hover-text);
+  border-color: var(--button-transparent-hover-border);
 }
 
 .transparent:active:not(:disabled) {
-  background: var(--button-transperant-action-surface);
-  color: var(--button-transperant-action-text);
-  border-color: var(--button-transperant-action-border);
+  background: var(--button-transparent-action-surface);
+  color: var(--button-transparent-action-text);
+  border-color: var(--button-transparent-action-border);
 }
 
 .transparent:disabled {
-  background: var(--button-transperant-disabled-surface);
-  color: var(--button-transperant-disabled-text);
-  border-color: var(--button-transperant-disabled-border);
+  background: var(--button-transparent-disabled-surface);
+  color: var(--button-transparent-disabled-text);
+  border-color: var(--button-transparent-disabled-border);
 }
 
 .transparentMd {
@@ -286,12 +301,12 @@
   border-width: var(--button-default-md-stroke-thickness);
 }
 
-/* DANGER TRANSPARENT BUTTON - Using Error tokens from your theme */
+/* DANGER TRANSPARENT BUTTON - Using Error tokens */
 .dangerTransparent {
   border-radius: var(--button-default-lg-corner-radius);
-  background: var(--button-transperant-default-surface);
+  background: var(--button-transparent-default-surface);
   color: var(--button-error-default-text);
-  border: var(--button-default-lg-stroke-thickness) solid var(--button-transperant-default-border);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-transparent-default-border);
   
   /* Special typography for danger transparent */
   font-family: var(--labelunderline-fontfamily);
@@ -304,21 +319,21 @@
 }
 
 .dangerTransparent:hover:not(:disabled) {
-  background: var(--button-transperant-hover-surface);
+  background: var(--button-transparent-hover-surface);
   color: var(--button-error-hover-text);
   text-decoration-color: var(--button-error-hover-text);
 }
 
 .dangerTransparent:active:not(:disabled) {
-  background: var(--button-transperant-action-surface);
+  background: var(--button-transparent-action-surface);
   color: var(--button-error-action-text);
   text-decoration-color: var(--button-error-action-text);
 }
 
 .dangerTransparent:disabled {
-  background: var(--button-transperant-disabled-surface);
+  background: var(--button-transparent-disabled-surface);
   color: var(--button-error-disabled-text);
-  border-color: var(--button-transperant-disabled-border);
+  border-color: var(--button-transparent-disabled-border);
   text-decoration-color: var(--button-error-disabled-text);
 }
 
@@ -358,7 +373,7 @@
   border-width: var(--button-default-md-stroke-thickness);
 }
 
-/* ICON BUTTON NEUTRAL */
+/* ICON BUTTON NEUTRAL - Matches Figma "1.1 Icon Button Neutral" */
 .iconNeutral {
   border-radius: var(--button-default-lg-corner-radius);
   background: var(--button-neutral-default-surface);
@@ -385,7 +400,7 @@
   border-width: var(--button-default-md-stroke-thickness);
 }
 
-/* ICON BUTTON OUTLINE */
+/* ICON BUTTON OUTLINE - Matches Figma "1.2 Icon Button" */
 .iconOutline {
   border-radius: var(--button-default-lg-corner-radius);
   background: var(--button-outlined-default-surface);
@@ -412,26 +427,26 @@
   border-width: var(--button-default-md-stroke-thickness);
 }
 
-/* ICON BUTTON TRANSPARENT */
+/* ICON BUTTON TRANSPARENT - Matches Figma "1.3 Icon Button Transparent" */
 .iconTransparent {
   border-radius: var(--button-default-lg-corner-radius);
-  background: var(--button-transperant-default-surface);
-  border: var(--button-default-lg-stroke-thickness) solid var(--button-transperant-default-border);
+  background: var(--button-transparent-default-surface);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-transparent-default-border);
 }
 
 .iconTransparent:hover:not(:disabled) {
-  background: var(--button-transperant-hover-surface);
-  border-color: var(--button-transperant-hover-border);
+  background: var(--button-transparent-hover-surface);
+  border-color: var(--button-transparent-hover-border);
 }
 
 .iconTransparent:active:not(:disabled) {
-  background: var(--button-transperant-action-surface);
+  background: var(--button-transparent-action-surface);
   border-color: var(--stroke-neutral-subtle);
 }
 
 .iconTransparent:disabled {
-  background: var(--button-transperant-disabled-surface);
-  border-color: var(--button-transperant-disabled-border);
+  background: var(--button-transparent-disabled-surface);
+  border-color: var(--button-transparent-disabled-border);
 }
 
 .iconTransparentMd {
@@ -439,34 +454,34 @@
   border-width: var(--button-default-md-stroke-thickness);
 }
 
-/* ELLIPSE TRANSPARENT BUTTON */
+/* ELLIPSE TRANSPARENT BUTTON - Matches Figma "1.4 Transparent Ellipse Button" */
 .ellipseTransparent {
   border-radius: var(--button-default-lg-corner-radius-max);
-  background: var(--button-transperant-default-surface);
+  background: var(--button-transparent-default-surface);
   border: var(--button-default-md-stroke-thickness) solid var(--stroke-neutral-subtle);
-  color: var(--button-transperant-default-text);
+  color: var(--button-transparent-default-text);
   
   /* Special layout for ellipse - uses mixed tokens */
   height: var(--button-default-md-height);
   min-width: var(--button-default-md-width);
-  padding: var(--button-default-lg-verticle-padding) var(--button-default-lg-horizontal-padding);
+  padding: var(--button-default-lg-vertical-padding) var(--button-default-lg-horizontal-padding);
   gap: var(--button-default-md-gap);
 }
 
 .ellipseTransparent:hover:not(:disabled) {
-  background: var(--button-transperant-hover-surface);
+  background: var(--button-transparent-hover-surface);
   border-color: var(--stroke-neutral-subtle);
 }
 
 .ellipseTransparent:active:not(:disabled) {
-  background: var(--button-transperant-action-surface);
+  background: var(--button-transparent-action-surface);
   border-color: var(--stroke-neutral-subtle);
 }
 
 .ellipseTransparent:disabled {
-  background: var(--button-transperant-disabled-surface);
+  background: var(--button-transparent-disabled-surface);
   border-color: var(--stroke-semantic-disable);
-  color: var(--button-transperant-disabled-text);
+  color: var(--button-transparent-disabled-text);
 }
 
 /* ===== LOADING STATE ===== */
@@ -475,14 +490,7 @@
   pointer-events: none;
 }
 
-.loading::after {
-  content: '';
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border: 2px solid transparent;
-  border-top: 2px solid currentColor;
-  border-radius: 50%;
+.loadingSpinner {
   animation: spin 1s linear infinite;
 }
 
@@ -491,7 +499,14 @@
   100% { transform: rotate(360deg); }
 }
 
-/* ===== ICON STROKE COLORS - Based on your theme tokens ===== */
+/* ===== DISABLED STATE ===== */
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ===== ICON STROKE COLORS - Based on design tokens ===== */
 .iconStrokeDefault {
   stroke: var(--icon-neutral-extreme);
 }
@@ -509,14 +524,37 @@
   .textButtonLg {
     height: var(--button-default-md-height);
     min-width: var(--button-default-md-width);
-    padding: var(--button-default-md-verticle-padding) var(--button-default-md-horizontal-padding);
+    padding: var(--button-default-md-vertical-padding) var(--button-default-md-horizontal-padding);
     gap: var(--button-default-md-gap);
   }
   
   .iconButtonLg {
     width: var(--button-iconcta-md-side);
     height: var(--button-iconcta-md-side);
-    padding: var(--button-iconcta-md-verticle-padding) var(--button-iconcta-md-horizontal-padding);
+    padding: var(--button-iconcta-md-vertical-padding) var(--button-iconcta-md-horizontal-padding);
     gap: var(--button-iconcta-md-gap);
+  }
+}
+
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
+  
+  .loadingSpinner {
+    animation: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .button {
+    border-width: 2px;
+  }
+  
+  .button:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
   }
 }
