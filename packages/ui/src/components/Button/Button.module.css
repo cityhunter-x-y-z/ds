@@ -1,0 +1,522 @@
+/* ===================================
+   BUTTON STYLES - CSS Module - FIXED FOR FIGMA TOKENS
+   File: packages/components/src/Button/Button.module.css
+   ================================== */
+
+/* ===== BASE BUTTON STYLES ===== */
+.button {
+  /* Reset default button styles */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  
+  /* Prevent text selection */
+  user-select: none;
+  -webkit-user-select: none;
+  
+  /* Ensure button doesn't shrink */
+  flex-shrink: 0;
+  
+  /* Base typography - FIXED to match Figma tokens */
+  font-family: var(--buttonlabel-fontfamily);
+  font-size: var(--buttonlabel-size);
+  font-weight: var(--buttonlabel-weight-semibold);
+  line-height: var(--buttonlabel-lineheight);
+  letter-spacing: var(--buttonlabel-letterspacing);
+  font-style: normal;
+}
+
+.button:focus-visible {
+  box-shadow: var(--focus-primary);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+}
+
+/* ===== TEXT BUTTON LAYOUTS ===== */
+.textButton {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.textButtonLg {
+  height: var(--button-default-lg-height);
+  min-width: var(--button-default-lg-width);
+  padding: var(--button-default-lg-verticle-padding) var(--button-default-lg-horizontal-padding);
+  gap: var(--button-default-lg-gap);
+}
+
+.textButtonMd {
+  height: var(--button-default-md-height);
+  min-width: var(--button-default-md-width);
+  padding: var(--button-default-md-verticle-padding) var(--button-default-md-horizontal-padding);
+  gap: var(--button-default-md-gap);
+}
+
+/* ===== ICON BUTTON LAYOUTS ===== */
+.iconButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconButtonLg {
+  width: var(--button-iconcta-lg-side);
+  height: var(--button-iconcta-lg-side);
+  padding: var(--button-iconcta-lg-verticle-padding) var(--button-iconcta-lg-horizontal-padding);
+  gap: var(--button-iconcta-lg-gap);
+}
+
+.iconButtonMd {
+  width: var(--button-iconcta-md-side);
+  height: var(--button-iconcta-md-side);
+  padding: var(--button-iconcta-md-verticle-padding) var(--button-iconcta-md-horizontal-padding);
+  gap: var(--button-iconcta-md-gap);
+}
+
+/* Special case for Icon Button Outline which uses different tokens */
+.iconButtonOutlineLg {
+  width: var(--button-default-lg-height);
+  height: var(--button-default-lg-height);
+  padding: var(--button-iconcta-lg-verticle-padding) var(--button-iconcta-lg-horizontal-padding);
+  gap: var(--button-iconcta-lg-gap);
+}
+
+.iconButtonOutlineMd {
+  width: var(--button-default-md-height);
+  height: var(--button-default-md-height);
+  padding: var(--button-iconcta-md-verticle-padding) var(--button-iconcta-md-horizontal-padding);
+  gap: var(--button-iconcta-md-gap);
+}
+
+/* ===== ICON CONTAINERS ===== */
+.iconContainer16 {
+  display: flex;
+  width: var(--container-sides-side16);
+  height: var(--container-sides-side16);
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: var(--container-corner-radius-0);
+}
+
+.iconContainer24 {
+  display: flex;
+  width: var(--container-sides-side24);
+  height: var(--container-sides-side24);
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: var(--container-corner-radius-0);
+}
+
+.icon {
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+
+.icon16 {
+  width: 16px;
+  height: 16px;
+}
+
+.icon24 {
+  width: 24px;
+  height: 24px;
+}
+
+/* ===== BUTTON VARIANTS - FIXED TO MATCH FIGMA TOKENS ===== */
+
+/* PRIMARY BUTTON */
+.primary {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-primary-default-surface);
+  color: var(--button-primary-default-text);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-primary-default-border);
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--button-primary-hover-surface);
+  color: var(--button-primary-hover-text);
+  border-color: var(--button-primary-hover-border);
+}
+
+.primary:active:not(:disabled) {
+  background: var(--button-primary-action-surface);
+  color: var(--button-primary-action-text);
+  border-color: var(--button-primary-action-border);
+}
+
+.primary:disabled {
+  background: var(--button-primary-disabled-surface);
+  color: var(--button-primary-disabled-text);
+  border-color: var(--button-primary-disabled-border);
+}
+
+.primaryMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* SECONDARY BUTTON */
+.secondary {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-secondary-default-surface);
+  color: var(--button-secondary-default-text);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-secondary-default-border);
+}
+
+.secondary:hover:not(:disabled) {
+  background: var(--button-secondary-hover-surface);
+  color: var(--button-secondary-hover-text);
+  border-color: var(--button-secondary-hover-border);
+}
+
+.secondary:active:not(:disabled) {
+  background: var(--button-secondary-action-surface);
+  color: var(--button-secondary-action-text);
+  border-color: var(--button-secondary-action-border);
+}
+
+.secondary:disabled {
+  background: var(--button-secondary-disabled-surface);
+  color: var(--button-secondary-disabled-text);
+  border-color: var(--button-secondary-disabled-border);
+}
+
+.secondaryMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* NEUTRAL BUTTON */
+.neutral {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-neutral-default-surface);
+  color: var(--button-neutral-default-text);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-neutral-default-border);
+}
+
+.neutral:hover:not(:disabled) {
+  background: var(--button-neutral-hover-surface);
+  color: var(--button-neutral-hover-text);
+  border-color: var(--button-neutral-hover-border);
+}
+
+.neutral:active:not(:disabled) {
+  background: var(--button-neutral-action-surface);
+  color: var(--button-neutral-action-text);
+  border-color: var(--button-neutral-action-border);
+}
+
+.neutral:disabled {
+  background: var(--button-neutral-disabled-surface);
+  color: var(--button-neutral-disabled-text);
+  border-color: var(--button-neutral-disabled-border);
+}
+
+.neutralMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* OUTLINE BUTTON */
+.outline {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-outlined-default-surface);
+  color: var(--button-outlined-default-text);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-outlined-default-border);
+}
+
+.outline:hover:not(:disabled) {
+  background: var(--button-outlined-hover-surface);
+  color: var(--button-outlined-hover-text);
+  border-color: var(--button-outlined-hover-border);
+}
+
+.outline:active:not(:disabled) {
+  background: var(--button-outlined-action-surface);
+  color: var(--button-outlined-action-text);
+  border-color: var(--button-outlined-action-border);
+}
+
+.outline:disabled {
+  background: var(--button-outlined-disabled-surface);
+  color: var(--button-outlined-disabled-text);
+  border-color: var(--button-outlined-disabled-border);
+}
+
+.outlineMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* TRANSPARENT BUTTON */
+.transparent {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-transperant-default-surface);
+  color: var(--button-transperant-default-text);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-transperant-default-border);
+}
+
+.transparent:hover:not(:disabled) {
+  background: var(--button-transperant-hover-surface);
+  color: var(--button-transperant-hover-text);
+  border-color: var(--button-transperant-hover-border);
+}
+
+.transparent:active:not(:disabled) {
+  background: var(--button-transperant-action-surface);
+  color: var(--button-transperant-action-text);
+  border-color: var(--button-transperant-action-border);
+}
+
+.transparent:disabled {
+  background: var(--button-transperant-disabled-surface);
+  color: var(--button-transperant-disabled-text);
+  border-color: var(--button-transperant-disabled-border);
+}
+
+.transparentMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* DANGER TRANSPARENT BUTTON - Using Error tokens from your theme */
+.dangerTransparent {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-transperant-default-surface);
+  color: var(--button-error-default-text);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-transperant-default-border);
+  
+  /* Special typography for danger transparent */
+  font-family: var(--labelunderline-fontfamily);
+  font-size: var(--labelunderline-size);
+  font-weight: var(--labelunderline-weight-regular);
+  letter-spacing: var(--labelunderline-letterspacing);
+  text-decoration: underline;
+  text-decoration-color: var(--button-error-default-text);
+  text-underline-offset: 2px;
+}
+
+.dangerTransparent:hover:not(:disabled) {
+  background: var(--button-transperant-hover-surface);
+  color: var(--button-error-hover-text);
+  text-decoration-color: var(--button-error-hover-text);
+}
+
+.dangerTransparent:active:not(:disabled) {
+  background: var(--button-transperant-action-surface);
+  color: var(--button-error-action-text);
+  text-decoration-color: var(--button-error-action-text);
+}
+
+.dangerTransparent:disabled {
+  background: var(--button-transperant-disabled-surface);
+  color: var(--button-error-disabled-text);
+  border-color: var(--button-transperant-disabled-border);
+  text-decoration-color: var(--button-error-disabled-text);
+}
+
+.dangerTransparentMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* SEMANTIC BUTTON - Using Information tokens */
+.semantic {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-information-default-surface);
+  color: var(--button-information-default-text);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-information-default-border);
+}
+
+.semantic:hover:not(:disabled) {
+  background: var(--button-information-hover-surface);
+  color: var(--button-information-hover-text);
+  border-color: var(--button-information-hover-border);
+}
+
+.semantic:active:not(:disabled) {
+  background: var(--button-information-action-surface);
+  color: var(--button-information-action-text);
+  border-color: var(--button-information-action-border);
+}
+
+.semantic:disabled {
+  background: var(--button-information-disabled-surface);
+  color: var(--button-information-disabled-text);
+  border-color: var(--button-information-disabled-border);
+}
+
+.semanticMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* ICON BUTTON NEUTRAL */
+.iconNeutral {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-neutral-default-surface);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-neutral-default-border);
+}
+
+.iconNeutral:hover:not(:disabled) {
+  background: var(--button-neutral-hover-surface);
+  border-color: var(--button-neutral-hover-border);
+}
+
+.iconNeutral:active:not(:disabled) {
+  background: var(--button-neutral-action-surface);
+  border-color: var(--button-neutral-action-border);
+}
+
+.iconNeutral:disabled {
+  background: var(--button-neutral-disabled-surface);
+  border-color: var(--button-neutral-disabled-border);
+}
+
+.iconNeutralMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* ICON BUTTON OUTLINE */
+.iconOutline {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-outlined-default-surface);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-outlined-default-border);
+}
+
+.iconOutline:hover:not(:disabled) {
+  background: var(--button-outlined-hover-surface);
+  border-color: var(--button-outlined-hover-border);
+}
+
+.iconOutline:active:not(:disabled) {
+  background: var(--button-outlined-action-surface);
+  border-color: var(--button-outlined-action-border);
+}
+
+.iconOutline:disabled {
+  background: var(--button-outlined-disabled-surface);
+  border-color: var(--button-outlined-disabled-border);
+}
+
+.iconOutlineMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* ICON BUTTON TRANSPARENT */
+.iconTransparent {
+  border-radius: var(--button-default-lg-corner-radius);
+  background: var(--button-transperant-default-surface);
+  border: var(--button-default-lg-stroke-thickness) solid var(--button-transperant-default-border);
+}
+
+.iconTransparent:hover:not(:disabled) {
+  background: var(--button-transperant-hover-surface);
+  border-color: var(--button-transperant-hover-border);
+}
+
+.iconTransparent:active:not(:disabled) {
+  background: var(--button-transperant-action-surface);
+  border-color: var(--stroke-neutral-subtle);
+}
+
+.iconTransparent:disabled {
+  background: var(--button-transperant-disabled-surface);
+  border-color: var(--button-transperant-disabled-border);
+}
+
+.iconTransparentMd {
+  border-radius: var(--button-default-md-corner-radius);
+  border-width: var(--button-default-md-stroke-thickness);
+}
+
+/* ELLIPSE TRANSPARENT BUTTON */
+.ellipseTransparent {
+  border-radius: var(--button-default-lg-corner-radius-max);
+  background: var(--button-transperant-default-surface);
+  border: var(--button-default-md-stroke-thickness) solid var(--stroke-neutral-subtle);
+  color: var(--button-transperant-default-text);
+  
+  /* Special layout for ellipse - uses mixed tokens */
+  height: var(--button-default-md-height);
+  min-width: var(--button-default-md-width);
+  padding: var(--button-default-lg-verticle-padding) var(--button-default-lg-horizontal-padding);
+  gap: var(--button-default-md-gap);
+}
+
+.ellipseTransparent:hover:not(:disabled) {
+  background: var(--button-transperant-hover-surface);
+  border-color: var(--stroke-neutral-subtle);
+}
+
+.ellipseTransparent:active:not(:disabled) {
+  background: var(--button-transperant-action-surface);
+  border-color: var(--stroke-neutral-subtle);
+}
+
+.ellipseTransparent:disabled {
+  background: var(--button-transperant-disabled-surface);
+  border-color: var(--stroke-semantic-disable);
+  color: var(--button-transperant-disabled-text);
+}
+
+/* ===== LOADING STATE ===== */
+.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ===== ICON STROKE COLORS - Based on your theme tokens ===== */
+.iconStrokeDefault {
+  stroke: var(--icon-neutral-extreme);
+}
+
+.iconStrokeWhite {
+  stroke: var(--icon-neutral-ondarksurface);
+}
+
+.iconStrokeDisabled {
+  stroke: var(--icon-semantic-disable);
+}
+
+/* ===== RESPONSIVE UTILITIES ===== */
+@media (max-width: 768px) {
+  .textButtonLg {
+    height: var(--button-default-md-height);
+    min-width: var(--button-default-md-width);
+    padding: var(--button-default-md-verticle-padding) var(--button-default-md-horizontal-padding);
+    gap: var(--button-default-md-gap);
+  }
+  
+  .iconButtonLg {
+    width: var(--button-iconcta-md-side);
+    height: var(--button-iconcta-md-side);
+    padding: var(--button-iconcta-md-verticle-padding) var(--button-iconcta-md-horizontal-padding);
+    gap: var(--button-iconcta-md-gap);
+  }
+}
