@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2020",
+    "types": ["node"],
     "useDefineForClassFields": true,
     "lib": ["ES2020", "DOM", "DOM.Iterable", "ES6"],
     "module": "ESNext",
@@ -36,11 +37,8 @@
     "forceConsistentCasingInFileNames": true,
 
     "typeRoots": [
-      "../../node_modules/.pnpm/@types+react@18.3.23/node_modules/@types",
-      "../../node_modules/.pnpm/@types+react-dom@18.3.7_@types+react@18.3.23/node_modules/@types",
-      "../../node_modules/.pnpm/@types+jest@29.5.14/node_modules/@types",
-      "../../node_modules/.pnpm/@testing-library+jest-dom@6.6.3/node_modules/@types",
-      "node_modules/@types"
+      "node_modules/@types",
+      "../../node_modules/@types"
     ]
   },
 
@@ -49,13 +47,12 @@
     "src/**/*.tsx",
     "src/**/*.ts",
     "src/**/*.css",
-    "../../node_modules/.pnpm/@types+react@18.3.23/node_modules/@types/react/index.d.ts",
-    "../../node_modules/.pnpm/@types+react-dom@18.3.7_@types+react@18.3.23/node_modules/@types/react-dom/index.d.ts"
+    "src/**/*.test.ts",
+    "src/**/*.test.tsx"
   ],
   "exclude": [
     "node_modules",
     "dist",
-    "**/*.stories.tsx",
-    "**/*.test.tsx"
+    "**/*.stories.tsx"
   ]
 }

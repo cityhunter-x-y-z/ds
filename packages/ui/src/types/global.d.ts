@@ -4,6 +4,15 @@
 
 declare global {
   var global: typeof globalThis;
+    var describe: jest.Describe;
+    var it: jest.It;
+    var expect: jest.Expect;
+    var test: jest.It;
+    var beforeAll: jest.Lifecycle;
+    var beforeEach: jest.Lifecycle;
+    var afterAll: jest.Lifecycle;
+    var afterEach: jest.Lifecycle;
+    var jest: typeof import('jest');
   
   namespace NodeJS {
     interface Global {
@@ -45,6 +54,22 @@ declare global {
       'aria-hidden'?: boolean | 'false' | 'true';
     }
   }
+}
+
+// CSS Modules
+declare module '*.module.css' {
+  const classes: { [key: string]: string };
+  export default classes;
+}
+
+declare module '*.module.scss' {
+  const classes: { [key: string]: string };
+  export default classes;
+}
+
+declare module '*.module.sass' {
+  const classes: { [key: string]: string };
+  export default classes;
 }
 
 export {};

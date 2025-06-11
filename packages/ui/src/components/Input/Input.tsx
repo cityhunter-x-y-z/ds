@@ -25,7 +25,6 @@ import {
   getInputType,
   isErrorState,
   isSuccessState,
-  isWarningState,
 } from './Input.types';
 import { DynamicIcon, IconName, ICON_REGISTRY } from '../Icons/index';
 import styles from './Input.module.css';
@@ -178,6 +177,7 @@ const TextInput = forwardRef<HTMLInputElement | HTMLTextAreaElement, TextInputPr
       resize = 'vertical',
       showCharacterCount = false,
       className,
+      style,
       'aria-label': ariaLabel,
       'data-testid': dataTestId,
       id,
@@ -210,7 +210,6 @@ const TextInput = forwardRef<HTMLInputElement | HTMLTextAreaElement, TextInputPr
     const currentState = disabled ? 'disabled' : (isFocused ? 'focus' : state);
     const hasError = isErrorState(state);
     const hasSuccess = isSuccessState(state);
-    const hasWarning = isWarningState(state);
     
     const containerClasses = getContainerClasses(variant, currentState, disabled, !!icon, !!label);
     const inputClasses = getInputClasses(variant, size, currentState, disabled, className);
@@ -241,7 +240,7 @@ const TextInput = forwardRef<HTMLInputElement | HTMLTextAreaElement, TextInputPr
     };
 
     return (
-      <div className={containerClasses}>
+      <div className={containerClasses} style={style}>
         {label && labelPosition === 'top' && (
           <label htmlFor={id} className={styles.label}>
             {label}
@@ -313,29 +312,19 @@ const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>((props, ref) 
 
   const [internalValue, setInternalValue] = useState(props.value || props.defaultValue || '');
 
-  const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const newValue = event.target.value;
     setInternalValue(newValue);
     props.onChange?.(event);
   }, [props]);
 
-  const handleKeyDown = useCallback((event: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = useCallback((event: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (event.key === 'Enter') {
       onSearch?.(internalValue);
     }
     props.onKeyDown?.(event);
   }, [onSearch, internalValue, props]);
 
-  const handleClear = useCallback(() => {
-    setInternalValue('');
-    if (props.onChange) {
-      const syntheticEvent = {
-        target: { value: '' },
-        currentTarget: { value: '' },
-      } as React.ChangeEvent<HTMLInputElement>;
-      props.onChange(syntheticEvent);
-    }
-  }, [props]);
 
   return (
     <TextInput
@@ -376,8 +365,7 @@ const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>((props, r
       <TextInput
         {...textProps}
         ref={ref}
-        variant="text"
-        type={showPassword ? 'text' : 'password'}
+        variant={showPassword ? 'text' : 'password'}
         icon={showPasswordToggle ? (
           <button
             type="button"
@@ -401,20 +389,31 @@ const CreditCardInput = forwardRef<HTMLInputElement, CreditCardInputProps>((prop
     showCardIcon = true,
     onCardTypeDetected,
     formatSpaces = true,
+    value,
+    defaultValue,
+    onChange,
     ...textProps
   } = props;
 
   const [cardType, setCardType] = useState<string>('');
+  const [internalValue, setInternalValue] = useState(() => {
+    const initialValue = value || defaultValue || '';
+    return formatSpaces ? formatCreditCard(initialValue) : initialValue;
+  });
 
-  const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-    let value = event.target.value;
+  const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    let rawValue = event.target.value;
+    let formattedValue = rawValue;
     
     if (formatSpaces) {
-      value = formatCreditCard(value);
+      formattedValue = formatCreditCard(rawValue);
     }
     
+    // Update internal state
+    setInternalValue(formattedValue);
+    
     // Detect card type (simplified logic)
-    const firstDigit = value.charAt(0);
+    const firstDigit = formattedValue.replace(/\s/g, '').charAt(0);
     let detectedType = '';
     if (firstDigit === '4') detectedType = 'visa';
     else if (firstDigit === '5') detectedType = 'mastercard';
@@ -426,18 +425,23 @@ const CreditCardInput = forwardRef<HTMLInputElement, CreditCardInputProps>((prop
       onCardTypeDetected?.(detectedType);
     }
 
+    // Create a new event with the formatted value
     const syntheticEvent = {
       ...event,
-      target: { ...event.target, value },
-    };
+      target: { ...event.target, value: formattedValue },
+    } as React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>;
     
-    textProps.onChange?.(syntheticEvent);
-  }, [formatSpaces, cardType, onCardTypeDetected, textProps]);
+    onChange?.(syntheticEvent);
+  }, [formatSpaces, cardType, onCardTypeDetected, onChange]);
+
+  // Use controlled value if provided, otherwise use internal state
+  const currentValue = value !== undefined ? (formatSpaces ? formatCreditCard(value) : value) : internalValue;
 
   return (
     <TextInput
       {...textProps}
       ref={ref}
+      value={currentValue}
       onChange={handleChange}
       icon={showCardIcon && cardType ? `card-${cardType}` : 'credit-card'}
       iconPosition="right"
@@ -461,8 +465,7 @@ const VerificationInput = forwardRef<HTMLDivElement, VerificationInputProps>((pr
     state = 'default',
     disabled = false,
     className,
-    'data-testid': dataTestId,
-    ...restProps
+    'data-testid': dataTestId
   } = props;
 
   const [internalValue, setInternalValue] = useState(value || defaultValue || '');

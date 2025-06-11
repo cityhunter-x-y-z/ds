@@ -3,27 +3,17 @@
   "compilerOptions": {
     "types": ["jest", "@testing-library/jest-dom", "node"],
     "typeRoots": [
-      "../../node_modules/.pnpm/@types+react@18.3.23/node_modules/@types",
-      "../../node_modules/.pnpm/@types+react-dom@18.3.7_@types+react@18.3.23/node_modules/@types",
-      "../../node_modules/.pnpm/@types+jest@29.5.14/node_modules/@types",
-      "../../node_modules/.pnpm/@types+node@22.15.3/node_modules/@types",
-      "../../node_modules/.pnpm/@testing-library+jest-dom@6.6.3/node_modules",
-      "../../node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules",
-      "../../node_modules/.pnpm/@testing-library+user-event@14.6.1_@testing-library+dom@10.4.0/node_modules",
-      "node_modules/@types"
+      "node_modules/@types",
+      "../../node_modules/@types"
     ],
-    "paths": {
-      "@testing-library/react": ["../../node_modules/.pnpm/@testing-library+react@13.4.0_@types+react@18.3.23_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@testing-library/react"],
-      "@testing-library/user-event": ["../../node_modules/.pnpm/@testing-library+user-event@14.6.1_@testing-library+dom@10.4.0/node_modules/@testing-library/user-event"],
-      "@testing-library/jest-dom": ["../../node_modules/.pnpm/@testing-library+jest-dom@6.6.3/node_modules/@testing-library/jest-dom"]
-    },
     "lib": ["ES2015", "DOM", "DOM.Iterable"],
     "target": "ES2015",
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "noEmit": true
+    "noEmit": true,
+    "isolatedModules": true
   },
   "include": [
     "src/**/*.test.ts",
@@ -31,9 +21,7 @@
     "src/**/*.spec.ts", 
     "src/**/*.spec.tsx",
     "src/setupTests.ts",
-    "src/types/**/*.d.ts",
-    "../../node_modules/.pnpm/@types+react@18.3.23/node_modules/@types/react/index.d.ts",
-    "../../node_modules/.pnpm/@types+react-dom@18.3.7_@types+react@18.3.23/node_modules/@types/react-dom/index.d.ts"
+    "src/types/**/*.d.ts"
   ],
   "exclude": []
 }

@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc:*)",
+      "Bash(SKIP_PREFLIGHT_CHECK=true npx tsc --noEmit --project ../../tsconfig.json --jsx react-jsx --esModuleInterop --skipLibCheck)",
+      "Bash(rm:*)"
+    ],
+    "deny": []
+  }
+}

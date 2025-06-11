@@ -57,6 +57,7 @@ export interface BaseInputProps {
   disabled?: boolean;
   required?: boolean;
   className?: string;
+  style?: React.CSSProperties;
   'aria-label'?: string;
   'data-testid'?: string;
   id?: string;
