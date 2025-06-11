@@ -1,6 +1,6 @@
 /* ===================================
    ICON SYSTEM EXPORTS
-   File: packages/ui/src/components/Icon/index.ts
+   File: packages/ui/src/components/Icons/index.ts
    ================================== */
 
 // Export all icon components
@@ -25,13 +25,19 @@ export {
   ErrorIcon,
   LoadingIcon,
   EyeIcon,
+  EyeOffIcon,
   HeartIcon,
   RefreshIcon,
+  CreditCardIcon,
+  CardVisaIcon,
+  CardMastercardIcon,
+  CardAmexIcon,
+  CardDiscoverIcon,
   ICON_REGISTRY,
   DynamicIcon,
   getIconByName,
   getAvailableIcons
-} from './icon';
+} from './Icons';
 
 // Export all types
 export type {
@@ -39,4 +45,11 @@ export type {
   IconComponent,
   IconName,
   DynamicIconProps
-} from './icon';
+} from './Icons';
+
+export type {
+  IconRegistry,
+  IconWrapperProps,
+  IconSize,
+  IconUtils
+} from './Icons.types';

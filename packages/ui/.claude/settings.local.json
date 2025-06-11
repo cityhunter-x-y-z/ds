@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install)",
+      "Bash(pnpm install:*)",
+      "Bash(sudo pnpm install:*)",
+      "Bash(ls:*)",
+      "Bash(npm run type-check:*)",
+      "Bash(npx:*)",
+      "Bash(find:*)",
+      "Bash(rg:*)",
+      "Bash(npm test:*)",
+      "Bash(node:*)",
+      "Bash(rm:*)"
+    ],
+    "deny": []
+  }
+}

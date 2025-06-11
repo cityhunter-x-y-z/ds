@@ -5,7 +5,7 @@
    =========================================== */
 
 /* Import design tokens */
-@import '../../tokens.css';
+@import '@gazebo/tokens/src/theme.css';
 
 /* ===== BASE BUTTON STYLES ===== */
 .button {

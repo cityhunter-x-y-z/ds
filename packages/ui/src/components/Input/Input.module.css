@@ -1,0 +1,501 @@
+/* ===========================================
+   INPUT STYLES - CSS Module - FIGMA MATCHED
+   File: packages/ui/src/components/Input/Input.module.css
+   Based on Figma design tokens and specifications (1.0-5.0 series)
+   =========================================== */
+
+/* Import design tokens */
+@import '@gazebo/tokens/src/theme.css';
+
+/* ===== BASE INPUT STYLES ===== */
+.input {
+  /* Reset default input styles */
+  border: none;
+  outline: none;
+  font-family: inherit;
+  background: transparent;
+  
+  /* Base typography - FIGMA MATCHED */
+  font-family: var(--body-fontfamily);
+  font-size: var(--body-size);
+  font-weight: var(--body-weight-regular);
+  line-height: var(--body-lineheight);
+  letter-spacing: var(--body-letterspacing);
+  
+  /* Transitions for smooth interactions */
+  transition: all var(--transition-fast, 0.2s ease);
+  
+  /* Prevent text selection on disabled inputs */
+  user-select: text;
+  
+  /* Ensure input doesn't shrink */
+  flex-shrink: 0;
+  
+  /* Base layout */
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--inputfield-static-default-placeholdertext);
+  opacity: 1;
+}
+
+.input:focus::placeholder {
+  color: var(--inputfield-interactive-placeholdertext-onfocus);
+}
+
+/* ===== CONTAINER STYLES ===== */
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ===== INPUT WRAPPER STYLES ===== */
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  
+  /* Base styling using Figma tokens */
+  background: var(--inputfield-static-default-surface);
+  border: var(--inputfield-divl2-stroke-thickness) solid var(--inputfield-static-default-border);
+  border-radius: var(--inputfield-divl2-corner-radius);
+  
+  /* Layout from Figma tokens */
+  min-height: var(--inputfield-height);
+  gap: var(--inputfield-divl3-gap);
+  padding: var(--inputfield-divl3-verticle-padding) var(--inputfield-divl3-horizontal-padding);
+}
+
+/* ===== SIZE VARIANTS ===== */
+.inputLg {
+  height: var(--inputfield-height);
+  padding: var(--inputfield-divl3-verticle-padding) var(--inputfield-divl3-horizontal-padding);
+  font-size: var(--body-size);
+}
+
+.inputMd {
+  height: calc(var(--inputfield-height) * 0.875);
+  padding: var(--inputfield-divl3-verticle-paddingotp) var(--inputfield-divl3-horizontal-padding);
+  font-size: calc(var(--body-size) * 0.875);
+}
+
+/* ===== INPUT STATES ===== */
+
+/* Default State */
+.default .inputWrapper {
+  background: var(--inputfield-static-default-surface);
+  border-color: var(--inputfield-static-default-border);
+  color: var(--text-neutral-extreme);
+}
+
+/* Focus State */
+.focus .inputWrapper,
+.inputWrapper:focus-within {
+  background: var(--inputfield-interactive-surface-onhover);
+  border-color: var(--inputfield-interactive-border-onfocus);
+  box-shadow: var(--focus-primary);
+}
+
+/* Hover State */
+.hover .inputWrapper:hover:not(:focus-within) {
+  background: var(--inputfield-interactive-surface-onhover);
+  border-color: var(--inputfield-static-default-border);
+}
+
+/* Warning State */
+.warning .inputWrapper {
+  background: var(--inputfield-static-default-surface);
+  border-color: var(--stroke-semantic-warining);
+  color: var(--text-semantic-warining);
+}
+
+/* Error State */
+.error .inputWrapper {
+  background: var(--inputfield-static-default-surface);
+  border-color: var(--stroke-semantic-error);
+  color: var(--text-semantic-error);
+}
+
+/* Success State */
+.success .inputWrapper {
+  background: var(--inputfield-static-default-surface);
+  border-color: var(--stroke-semantic-success);
+  color: var(--text-semantic-success);
+}
+
+/* Disabled State */
+.disabled .inputWrapper,
+.containerDisabled .inputWrapper {
+  background: var(--inputfield-static-disabled-surface);
+  border-color: var(--inputfield-static-disabled-border);
+  color: var(--inputfield-static-disabled-text);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.disabled .input,
+.containerDisabled .input {
+  color: var(--inputfield-static-disabled-text);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.disabled .input::placeholder,
+.containerDisabled .input::placeholder {
+  color: var(--inputfield-static-disabled-text);
+}
+
+/* ===== LABEL STYLES ===== */
+.label {
+  display: block;
+  margin-bottom: var(--inputfield-divl1-gap);
+  
+  /* Typography */
+  font-family: var(--body-fontfamily);
+  font-size: var(--body-size);
+  font-weight: var(--body-weight-semibold);
+  color: var(--text-neutral-extreme);
+  line-height: var(--body-lineheight);
+}
+
+.floatingLabel {
+  position: absolute;
+  left: var(--inputfield-divl3-horizontal-padding);
+  top: 50%;
+  transform: translateY(-50%);
+  
+  /* Typography */
+  font-family: var(--body-fontfamily);
+  font-size: var(--body-size);
+  font-weight: var(--body-weight-regular);
+  color: var(--inputfield-static-default-placeholdertext);
+  
+  /* Transitions */
+  transition: all var(--transition-fast, 0.2s ease);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.inputWrapper:focus-within .floatingLabel,
+.inputWrapper:has(.input:not(:placeholder-shown)) .floatingLabel {
+  top: calc(var(--inputfield-divl3-verticle-padding) * -1);
+  font-size: calc(var(--body-size) * 0.75);
+  color: var(--inputfield-interactive-border-onfocus);
+  background: var(--inputfield-static-default-surface);
+  padding: 0 var(--spacing-space-1);
+}
+
+.required {
+  color: var(--text-semantic-error);
+  margin-left: var(--spacing-space-1);
+}
+
+/* ===== ICON STYLES ===== */
+.icon {
+  color: var(--inputfield-static-default-icon);
+  flex-shrink: 0;
+}
+
+.iconLeft {
+  display: flex;
+  align-items: center;
+  margin-right: var(--inputfield-divl1-gap);
+}
+
+.iconRight {
+  display: flex;
+  align-items: center;
+  margin-left: var(--inputfield-divl1-gap);
+}
+
+.containerWithIcon .input {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ===== MESSAGE STYLES ===== */
+.helperText {
+  margin-top: var(--inputfield-divl1-gap);
+  font-family: var(--body-fontfamily);
+  font-size: calc(var(--body-size) * 0.875);
+  color: var(--inputfield-static-default-helptext);
+  line-height: var(--body-lineheight);
+}
+
+.errorMessage {
+  margin-top: var(--inputfield-divl1-gap);
+  font-family: var(--body-fontfamily);
+  font-size: calc(var(--body-size) * 0.875);
+  color: var(--inputfield-static-default-helptexterror);
+  line-height: var(--body-lineheight);
+}
+
+.successMessage {
+  margin-top: var(--inputfield-divl1-gap);
+  font-family: var(--body-fontfamily);
+  font-size: calc(var(--body-size) * 0.875);
+  color: var(--text-semantic-success);
+  line-height: var(--body-lineheight);
+}
+
+/* ===== TEXTAREA SPECIFIC STYLES ===== */
+.textarea .input {
+  resize: vertical;
+  min-height: calc(var(--inputfield-height) * 2);
+  padding: var(--inputfield-divl3-verticle-padding);
+}
+
+.textarea .inputWrapper {
+  align-items: flex-start;
+  min-height: calc(var(--inputfield-height) * 2);
+}
+
+.characterCount {
+  position: absolute;
+  bottom: var(--spacing-space-1);
+  right: var(--spacing-space-2);
+  font-size: calc(var(--body-size) * 0.75);
+  color: var(--text-neutral-moderate);
+  background: var(--inputfield-static-default-surface);
+  padding: 0 var(--spacing-space-1);
+}
+
+/* ===== SEARCH INPUT SPECIFIC STYLES ===== */
+.searchContainer .inputWrapper {
+  position: relative;
+}
+
+.clearButton {
+  background: none;
+  border: none;
+  padding: var(--spacing-space-1);
+  cursor: pointer;
+  color: var(--icon-neutral-moderate);
+  transition: color var(--transition-fast, 0.2s ease);
+}
+
+.clearButton:hover {
+  color: var(--icon-neutral-extreme);
+}
+
+/* ===== PASSWORD INPUT SPECIFIC STYLES ===== */
+.passwordContainer {
+  position: relative;
+}
+
+.passwordToggle {
+  background: none;
+  border: none;
+  padding: var(--spacing-space-1);
+  cursor: pointer;
+  color: var(--icon-neutral-moderate);
+  transition: color var(--transition-fast, 0.2s ease);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.passwordToggle:hover {
+  color: var(--icon-neutral-extreme);
+}
+
+.passwordToggle:focus {
+  outline: 2px solid var(--focus-primary-layerone-color);
+  outline-offset: 2px;
+  border-radius: var(--corners-sm);
+}
+
+/* ===== VERIFICATION INPUT STYLES ===== */
+.verificationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.verificationInputs {
+  display: flex;
+  gap: var(--inputfield-divl2-gap-otp);
+  align-items: center;
+}
+
+.verification .input {
+  width: var(--inputfield-divl3-width);
+  height: var(--inputfield-divl3-width);
+  text-align: center;
+  border: var(--inputfield-divl3-stroke-thicknessotp) solid var(--inputfield-static-default-border);
+  border-radius: var(--inputfield-divl3-corner-radiusotp);
+  background: var(--inputfield-static-default-surface);
+  font-size: var(--body-size);
+  font-weight: var(--body-weight-semibold);
+}
+
+.verification .input:focus {
+  border-color: var(--inputfield-interactive-border-onfocus);
+  box-shadow: var(--focus-primary);
+}
+
+.verificationSeparator {
+  color: var(--text-neutral-moderate);
+  font-weight: var(--body-weight-semibold);
+  margin: 0 var(--spacing-space-1);
+}
+
+/* ===== CREDIT CARD INPUT STYLES ===== */
+.creditcardContainer .inputWrapper {
+  position: relative;
+}
+
+.cardIcon {
+  position: absolute;
+  right: var(--inputfield-divl3-horizontal-padding);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--icon-neutral-moderate);
+}
+
+/* ===== SELECT INPUT STYLES (Placeholder) ===== */
+.select .inputWrapper {
+  cursor: pointer;
+  position: relative;
+}
+
+.select .input {
+  cursor: pointer;
+  caret-color: transparent;
+}
+
+.selectDropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--surface-neutral-lightsurface);
+  border: var(--inputfield-divl2-stroke-thickness) solid var(--inputfield-static-default-border);
+  border-radius: var(--inputfield-divl2-corner-radius);
+  box-shadow: var(--elevation-lowraised-layerone-color) var(--elevation-lowraised-layerone-x) var(--elevation-lowraised-layerone-y) var(--elevation-lowraised-layerone-blur) var(--elevation-lowraised-layerone-spread);
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: var(--spacing-space-1);
+}
+
+.selectOption {
+  padding: var(--inputfield-divl3-verticle-padding) var(--inputfield-divl3-horizontal-padding);
+  cursor: pointer;
+  color: var(--text-neutral-extreme);
+  transition: background-color var(--transition-fast, 0.2s ease);
+}
+
+.selectOption:hover {
+  background: var(--surface-neutral-muted);
+}
+
+.selectOption.selected {
+  background: var(--surface-primary-default);
+  color: var(--text-neutral-ondarksurface);
+}
+
+/* ===== VARIANT-SPECIFIC CONTAINER STYLES ===== */
+.textContainer { }
+.emailContainer { }
+.searchContainer { }
+.passwordContainer { }
+.creditcardContainer { }
+.multitextContainer { }
+.numberContainer { }
+.labelContainer { }
+.phoneContainer { }
+.currencyContainer { }
+.selectContainer { }
+.multiselectContainer { }
+.datepickerContainer { }
+.textareaContainer { }
+.verificationContainer { }
+
+/* Container state classes */
+.containerDefault { }
+.containerWarning { }
+.containerFocus { }
+.containerHover { }
+.containerError { }
+.containerSuccess { }
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  .inputLg {
+    height: calc(var(--inputfield-height) * 0.875);
+    padding: var(--inputfield-divl3-verticle-paddingotp) var(--inputfield-divl3-horizontal-padding);
+  }
+  
+  .inputMd {
+    height: calc(var(--inputfield-height) * 0.75);
+    padding: var(--inputfield-divl3-verticle-paddingotp) calc(var(--inputfield-divl3-horizontal-padding) * 0.75);
+  }
+  
+  .verificationInputs {
+    gap: calc(var(--inputfield-divl2-gap-otp) * 0.75);
+  }
+  
+  .verification .input {
+    width: calc(var(--inputfield-divl3-width) * 0.875);
+    height: calc(var(--inputfield-divl3-width) * 0.875);
+  }
+}
+
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+@media (prefers-reduced-motion: reduce) {
+  .input,
+  .inputWrapper,
+  .floatingLabel,
+  .passwordToggle,
+  .clearButton {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .inputWrapper {
+    border-width: 2px;
+  }
+  
+  .input:focus,
+  .inputWrapper:focus-within {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
+/* Focus management for keyboard navigation */
+.input:focus-visible,
+.passwordToggle:focus-visible,
+.clearButton:focus-visible {
+  outline: 2px solid var(--focus-primary-layerone-color);
+  outline-offset: 2px;
+  border-radius: var(--corners-sm);
+}
+
+/* ===== ANIMATION KEYFRAMES ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.selectDropdown {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* ===== DARK MODE SUPPORT (Future) ===== */
+@media (prefers-color-scheme: dark) {
+  /* Dark mode styles would go here */
+  /* Using the same token structure but with dark variants */
+}

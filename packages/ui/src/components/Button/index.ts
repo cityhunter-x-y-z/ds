@@ -13,8 +13,7 @@ export type {
   IconButtonProps,
   ButtonVariant,
   ButtonSize,
-  IconPosition,
-  IconSize
+  IconPosition
 } from './Button.types';
 
 // Function exports that actually exist

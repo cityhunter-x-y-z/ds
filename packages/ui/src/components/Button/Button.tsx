@@ -93,7 +93,7 @@ const renderIcon = (
   icon: React.ReactNode | IconName | undefined,
   size: 16 | 20 | 24,
   stroke: string,
-  disabled: boolean
+  _disabled: boolean
 ): React.ReactNode => {
   if (!icon) return null;
 

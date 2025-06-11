@@ -2,14 +2,10 @@
  * @jest-environment jsdom
  */
 
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { Button } from './Button';
-
-// Ensure jest globals are available
-declare const jest: any;
 
 describe('Button Component', () => {
   it('renders button with text', () => {

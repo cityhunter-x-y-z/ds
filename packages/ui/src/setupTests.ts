@@ -23,15 +23,15 @@ class MockIntersectionObserver implements IntersectionObserver {
   readonly thresholds: ReadonlyArray<number> = [0];
 
   constructor(
-    callback: IntersectionObserverCallback,
-    options?: IntersectionObserverInit
+    _callback: IntersectionObserverCallback,
+    _options?: IntersectionObserverInit
   ) {
     // Set properties based on options
   }
 
   disconnect(): void {}
-  observe(target: Element): void {}
-  unobserve(target: Element): void {}
+  observe(_target: Element): void {}
+  unobserve(_target: Element): void {}
   takeRecords(): IntersectionObserverEntry[] {
     return [];
   }
@@ -41,10 +41,10 @@ class MockIntersectionObserver implements IntersectionObserver {
 
 // Mock ResizeObserver
 class MockResizeObserver implements ResizeObserver {
-  constructor(callback: ResizeObserverCallback) {}
+  constructor(_callback: ResizeObserverCallback) {}
   disconnect(): void {}
-  observe(target: Element, options?: ResizeObserverOptions): void {}
-  unobserve(target: Element): void {}
+  observe(_target: Element, _options?: ResizeObserverOptions): void {}
+  unobserve(_target: Element): void {}
 }
 
 (global as any).ResizeObserver = MockResizeObserver;

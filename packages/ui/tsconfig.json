@@ -35,15 +35,22 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
 
-    "types": ["jest", "node"],
-    "typeRoots": ["node_modules/@types", "src/types"]
+    "typeRoots": [
+      "../../node_modules/.pnpm/@types+react@18.3.23/node_modules/@types",
+      "../../node_modules/.pnpm/@types+react-dom@18.3.7_@types+react@18.3.23/node_modules/@types",
+      "../../node_modules/.pnpm/@types+jest@29.5.14/node_modules/@types",
+      "../../node_modules/.pnpm/@testing-library+jest-dom@6.6.3/node_modules/@types",
+      "node_modules/@types"
+    ]
   },
 
   "include": [
     "src/**/*",
     "src/**/*.tsx",
     "src/**/*.ts",
-    "src/**/*.css"
+    "src/**/*.css",
+    "../../node_modules/.pnpm/@types+react@18.3.23/node_modules/@types/react/index.d.ts",
+    "../../node_modules/.pnpm/@types+react-dom@18.3.7_@types+react@18.3.23/node_modules/@types/react-dom/index.d.ts"
   ],
   "exclude": [
     "node_modules",

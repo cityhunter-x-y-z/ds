@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rg:*)",
+      "Bash(/home/amitesh/.npm-global/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg \"transperant|transparent\" /mnt/e/Projects/ds/packages/ui/src/components/Button/Button.module.css)",
+      "Bash(/home/amitesh/.npm-global/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg \"button-transparent-|button-transperant-\" /mnt/e/Projects/ds/packages/tokens/src/theme.css)",
+      "Bash(grep:*)",
+      "Bash(npm test:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run build:*)",
+      "Bash(timeout 10s npm run storybook)",
+      "Bash(ls:*)",
+      "Bash(npm run tokens:*)",
+      "Bash(/home/amitesh/.npm-global/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg -n -B2 -A2 \"transparent\" /mnt/e/Projects/ds/packages/tokens/tokens-studio.json)",
+      "Bash(/home/amitesh/.npm-global/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg -n -B5 -A5 \"button.*transparent|transparent.*button\" /mnt/e/Projects/ds/packages/tokens/tokens-studio.json)",
+      "Bash(/home/amitesh/.npm-global/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg -n -B5 -A5 \"button.*transperant|transperant.*button\" /mnt/e/Projects/ds/packages/tokens/tokens-studio.json)",
+      "Bash(/home/amitesh/.npm-global/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg -n -B3 -A3 '\"button\"' /mnt/e/Projects/ds/packages/tokens/tokens-studio.json)",
+      "Bash(/home/amitesh/.npm-global/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg -n \"Transperant\" /mnt/e/Projects/ds/packages/tokens/tokens-studio.json)",
+      "Bash(/home/amitesh/.npm-global/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg -n -B2 -A2 \"transperant\" /mnt/e/Projects/ds/packages/tokens/src/tokens-metadata.json)",
+      "Bash(/home/amitesh/.npm-global/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/x64-linux/rg -n \"Transparent\" /mnt/e/Projects/ds/packages/tokens/tokens-studio.json)",
+      "Bash(npm run type-check:*)",
+      "WebFetch(domain:www.figma.com)",
+      "Bash(npm run storybook:*)",
+      "Bash(pnpm install:*)",
+      "Bash(claude mcp:*)",
+      "Bash(rm:*)",
+      "Bash(npx tsc:*)",
+      "Bash(mv:*)",
+      "Bash(npm install)",
+      "Bash(pnpm store prune:*)",
+      "Bash(find:*)",
+      "Bash(timeout 180 pnpm install --force)",
+      "Bash(./node_modules/.bin/tsc:*)",
+      "Bash(pnpm --filter @repo/ui build)",
+      "Bash(npx:*)",
+      "Bash(node check-imports.js)",
+      "Bash(node:*)",
+      "Bash(../../node_modules/.pnpm/typescript@5.8.2/node_modules/typescript/bin/tsc --noEmit)",
+      "Bash(../../node_modules/.pnpm/typescript@5.8.2/node_modules/typescript/bin/tsc --noEmit --skipLibCheck)"
+    ],
+    "deny": []
+  }
+}

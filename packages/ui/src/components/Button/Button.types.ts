@@ -4,7 +4,7 @@
    ================================== */
 
 import React from 'react';
-import type { IconName } from '../Icons/index';
+import type { IconName, IconSize } from '../Icons/index';
 
 // Base button props shared by all button variants
 export interface BaseButtonProps {
@@ -42,8 +42,7 @@ export type ButtonSize = 'md' | 'lg';
 // Icon positioning for text buttons
 export type IconPosition = 'left' | 'right';
 
-// Icon sizes
-export type IconSize = 16 | 20 | 24;
+// Re-export IconSize from Icons component for convenience
 
 // Text button specific props
 export interface TextButtonProps extends BaseButtonProps {
