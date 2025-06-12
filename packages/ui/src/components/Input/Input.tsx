@@ -37,7 +37,7 @@ const isValidIconName = (icon: string): icon is IconName => {
 // Helper function to get input classes
 const getInputClasses = (
   variant: string,
-  size: 'md' | 'lg' = 'lg',
+  size: 'md' | 'lg' = 'md',
   state: string = 'default',
   disabled: boolean = false,
   className?: string
@@ -152,7 +152,7 @@ const TextInput = forwardRef<HTMLInputElement | HTMLTextAreaElement, TextInputPr
   (props, ref) => {
     const {
       variant,
-      size = 'lg',
+      size = 'md',
       state = 'default',
       disabled = false,
       value,
@@ -249,40 +249,42 @@ const TextInput = forwardRef<HTMLInputElement | HTMLTextAreaElement, TextInputPr
         )}
         
         <div className={styles.inputWrapper}>
-          {icon && iconPosition === 'left' && (
-            <div className={styles.iconLeft}>
-              {renderIcon(icon, size === 'md' ? 16 : 20, styles.icon)}
-            </div>
-          )}
-          
-          {label && labelPosition === 'floating' && (
-            <label htmlFor={id} className={styles.floatingLabel}>
-              {label}
-              {required && <span className={styles.required}>*</span>}
-            </label>
-          )}
-          
-          {isTextarea ? (
-            <textarea
-              {...(commonProps as any)}
-              ref={ref as React.Ref<HTMLTextAreaElement>}
-              rows={rows}
-              cols={cols}
-              style={{ resize }}
-            />
-          ) : (
-            <input
-              {...(commonProps as any)}
-              ref={ref as React.Ref<HTMLInputElement>}
-              type={inputType}
-            />
-          )}
-          
-          {icon && iconPosition === 'right' && (
-            <div className={styles.iconRight}>
-              {renderIcon(icon, size === 'md' ? 16 : 20, styles.icon)}
-            </div>
-          )}
+          <div className={styles.contentContainer}>
+            {icon && iconPosition === 'left' && (
+              <div className={styles.iconLeft}>
+                {renderIcon(icon, size === 'md' ? 16 : 20, styles.icon)}
+              </div>
+            )}
+            
+            {label && labelPosition === 'floating' && (
+              <label htmlFor={id} className={styles.floatingLabel}>
+                {label}
+                {required && <span className={styles.required}>*</span>}
+              </label>
+            )}
+            
+            {isTextarea ? (
+              <textarea
+                {...(commonProps as any)}
+                ref={ref as React.Ref<HTMLTextAreaElement>}
+                rows={rows}
+                cols={cols}
+                style={{ resize }}
+              />
+            ) : (
+              <input
+                {...(commonProps as any)}
+                ref={ref as React.Ref<HTMLInputElement>}
+                type={inputType}
+              />
+            )}
+            
+            {icon && iconPosition === 'right' && (
+              <div className={styles.iconRight}>
+                {renderIcon(icon, size === 'md' ? 16 : 20, styles.icon)}
+              </div>
+            )}
+          </div>
           
           {isTextarea && showCharacterCount && maxLength && (
             <div className={styles.characterCount}>
@@ -461,7 +463,7 @@ const VerificationInput = forwardRef<HTMLDivElement, VerificationInputProps>((pr
     autoFocus = true,
     secure = false,
     separator = '',
-    size = 'lg',
+    size = 'md',
     state = 'default',
     disabled = false,
     className,

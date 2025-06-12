@@ -7,6 +7,15 @@
 /* Import design tokens */
 @import '@gazebo/tokens/src/theme.css';
 
+/* Composed focus ring from design tokens */
+:root {
+  --focus-primary: 
+    var(--focus-primary-layerone-x) var(--focus-primary-layerone-y) var(--focus-primary-layerone-blur) var(--focus-primary-layerone-spread) var(--focus-primary-layerone-color),
+    var(--focus-primary-layertwo-x) var(--focus-primary-layertwo-y) var(--focus-primary-layertwo-blur) var(--focus-primary-layertwo-spread) var(--focus-primary-layertwo-color),
+    var(--focus-primary-layerthree-x) var(--focus-primary-layerthree-y) var(--focus-primary-layerthree-blur) var(--focus-primary-layerthree-spread) var(--focus-primary-layerthree-color),
+    var(--focus-primary-layerfour-x) var(--focus-primary-layerfour-y) var(--focus-primary-layerfour-blur) var(--focus-primary-layerfour-spread) var(--focus-primary-layerfour-color);
+}
+
 /* ===== BASE BUTTON STYLES ===== */
 .button {
   /* Reset default button styles */
@@ -61,14 +70,14 @@
 .textButtonLg {
   height: var(--button-default-lg-height);
   min-width: var(--button-default-lg-width);
-  padding: var(--button-default-lg-vertical-padding) var(--button-default-lg-horizontal-padding);
+  padding: var(--button-default-lg-verticle-padding) var(--button-default-lg-horizontal-padding);
   gap: var(--button-default-lg-gap);
 }
 
 .textButtonMd {
   height: var(--button-default-md-height);
   min-width: var(--button-default-md-width);
-  padding: var(--button-default-md-vertical-padding) var(--button-default-md-horizontal-padding);
+  padding: var(--button-default-md-verticle-padding) var(--button-default-md-horizontal-padding);
   gap: var(--button-default-md-gap);
 }
 
@@ -82,14 +91,14 @@
 .iconButtonLg {
   width: var(--button-iconcta-lg-side);
   height: var(--button-iconcta-lg-side);
-  padding: var(--button-iconcta-lg-vertical-padding) var(--button-iconcta-lg-horizontal-padding);
+  padding: var(--button-iconcta-lg-verticle-padding) var(--button-iconcta-lg-horizontal-padding);
   gap: var(--button-iconcta-lg-gap);
 }
 
 .iconButtonMd {
   width: var(--button-iconcta-md-side);
   height: var(--button-iconcta-md-side);
-  padding: var(--button-iconcta-md-vertical-padding) var(--button-iconcta-md-horizontal-padding);
+  padding: var(--button-iconcta-md-verticle-padding) var(--button-iconcta-md-horizontal-padding);
   gap: var(--button-iconcta-md-gap);
 }
 
@@ -97,14 +106,14 @@
 .iconButtonOutlineLg {
   width: var(--button-default-lg-height);
   height: var(--button-default-lg-height);
-  padding: var(--button-iconcta-lg-vertical-padding) var(--button-iconcta-lg-horizontal-padding);
+  padding: var(--button-iconcta-lg-verticle-padding) var(--button-iconcta-lg-horizontal-padding);
   gap: var(--button-iconcta-lg-gap);
 }
 
 .iconButtonOutlineMd {
   width: var(--button-default-md-height);
   height: var(--button-default-md-height);
-  padding: var(--button-iconcta-md-vertical-padding) var(--button-iconcta-md-horizontal-padding);
+  padding: var(--button-iconcta-md-verticle-padding) var(--button-iconcta-md-horizontal-padding);
   gap: var(--button-iconcta-md-gap);
 }
 
@@ -464,7 +473,7 @@
   /* Special layout for ellipse - uses mixed tokens */
   height: var(--button-default-md-height);
   min-width: var(--button-default-md-width);
-  padding: var(--button-default-lg-vertical-padding) var(--button-default-lg-horizontal-padding);
+  padding: var(--button-default-lg-verticle-padding) var(--button-default-lg-horizontal-padding);
   gap: var(--button-default-md-gap);
 }
 
@@ -524,14 +533,14 @@
   .textButtonLg {
     height: var(--button-default-md-height);
     min-width: var(--button-default-md-width);
-    padding: var(--button-default-md-vertical-padding) var(--button-default-md-horizontal-padding);
+    padding: var(--button-default-md-verticle-padding) var(--button-default-md-horizontal-padding);
     gap: var(--button-default-md-gap);
   }
   
   .iconButtonLg {
     width: var(--button-iconcta-md-side);
     height: var(--button-iconcta-md-side);
-    padding: var(--button-iconcta-md-vertical-padding) var(--button-iconcta-md-horizontal-padding);
+    padding: var(--button-iconcta-md-verticle-padding) var(--button-iconcta-md-horizontal-padding);
     gap: var(--button-iconcta-md-gap);
   }
 }

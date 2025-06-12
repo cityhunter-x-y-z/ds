@@ -7,12 +7,28 @@
 /* Import design tokens */
 @import '@gazebo/tokens/src/theme.css';
 
-/* ===== BASE INPUT STYLES ===== */
+/* Composed focus ring from design tokens */
+:root {
+  --focus-primary: 
+    var(--focus-primary-layerone-x) var(--focus-primary-layerone-y) var(--focus-primary-layerone-blur) var(--focus-primary-layerone-spread) var(--focus-primary-layerone-color),
+    var(--focus-primary-layertwo-x) var(--focus-primary-layertwo-y) var(--focus-primary-layertwo-blur) var(--focus-primary-layertwo-spread) var(--focus-primary-layertwo-color),
+    var(--focus-primary-layerthree-x) var(--focus-primary-layerthree-y) var(--focus-primary-layerthree-blur) var(--focus-primary-layerthree-spread) var(--focus-primary-layerthree-color),
+    var(--focus-primary-layerfour-x) var(--focus-primary-layerfour-y) var(--focus-primary-layerfour-blur) var(--focus-primary-layerfour-spread) var(--focus-primary-layerfour-color);
+}
+
+/* ===== BASE INPUT STYLES - DIVL4 ===== */
 .input {
+  /* DIVL4: From Figma dev mode */
+  display: flex;
+  align-items: center;
+  flex: 1 0 0;
+  gap: var(--inputfield-divl4-gap); /* 0px */
+  padding: var(--inputfield-divl4-verticle-padding) var(--inputfield-divl4-horizontal-padding); /* 0px */
+  border-radius: var(--inputfield-divl4-corner-radius); /* 0px */
+  
   /* Reset default input styles */
   border: none;
   outline: none;
-  font-family: inherit;
   background: transparent;
   
   /* Base typography - FIGMA MATCHED */
@@ -28,18 +44,10 @@
   /* Prevent text selection on disabled inputs */
   user-select: text;
   
-  /* Ensure input doesn't shrink */
-  flex-shrink: 0;
-  
   /* Base layout */
-  display: block;
-  width: 100%;
   box-sizing: border-box;
 }
 
-.input:focus {
-  outline: none;
-}
 
 .input::placeholder {
   color: var(--inputfield-static-default-placeholdertext);
@@ -50,83 +58,182 @@
   color: var(--inputfield-interactive-placeholdertext-onfocus);
 }
 
-/* ===== CONTAINER STYLES ===== */
+/* ===== CONTAINER STYLES - DIVL1 (Outer Container) ===== */
 .container {
   position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
+  /* DIVL1: Main container with gap between label, input, and messages */
+  gap: var(--inputfield-divl1-gap); /* 8px between elements */
+  padding: var(--inputfield-divl1-verticle-padding) var(--inputfield-divl1-horizontal-padding); /* 0px */
 }
 
-/* ===== INPUT WRAPPER STYLES ===== */
+/* ===== INPUT WRAPPER STYLES - DIVL2 (Border Container) ===== */
 .inputWrapper {
   position: relative;
   display: flex;
   align-items: center;
+  align-self: stretch;
   
-  /* Base styling using Figma tokens */
+  /* DIVL2: HAS BORDER, BACKGROUND, CORNER RADIUS (from Figma) */
   background: var(--inputfield-static-default-surface);
   border: var(--inputfield-divl2-stroke-thickness) solid var(--inputfield-static-default-border);
   border-radius: var(--inputfield-divl2-corner-radius);
   
-  /* Layout from Figma tokens */
-  min-height: var(--inputfield-height);
-  gap: var(--inputfield-divl3-gap);
-  padding: var(--inputfield-divl3-verticle-padding) var(--inputfield-divl3-horizontal-padding);
+  /* DIVL2: No gap or padding (from Figma) */
+  gap: var(--inputfield-divl2-gap); /* 0px */
+  padding: var(--inputfield-divl2-verticle-padding) var(--inputfield-divl2-horizontal-padding); /* 0px */
+  
+  /* Layout properties */
+  box-sizing: border-box;
+  overflow: hidden;
+  min-width: 0;
+}
+
+/* ===== CONTENT CONTAINER - DIVL3 (Padding Container) ===== */
+.contentContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  flex: 1 0 0;
+  
+  /* DIVL3: HAS PADDING AND GAP (from Figma) */
+  gap: var(--inputfield-divl3-gap); /* 12px between icons and input */
+  padding: var(--inputfield-divl3-verticle-padding) var(--inputfield-divl3-horizontal-padding); /* 12px 16px */
+  
+  /* DIVL3: NO BORDER, NO BACKGROUND (from Figma) */
+  background: transparent;
+  border: none;
+  border-radius: var(--inputfield-divl3-corner-radius); /* 0px */
+  box-sizing: border-box;
 }
 
 /* ===== SIZE VARIANTS ===== */
-.inputLg {
-  height: var(--inputfield-height);
-  padding: var(--inputfield-divl3-verticle-padding) var(--inputfield-divl3-horizontal-padding);
+/* Medium size is default - using existing inputfield-height token */
+.inputMd {
   font-size: var(--body-size);
 }
 
-.inputMd {
-  height: calc(var(--inputfield-height) * 0.875);
-  padding: var(--inputfield-divl3-verticle-paddingotp) var(--inputfield-divl3-horizontal-padding);
-  font-size: calc(var(--body-size) * 0.875);
+/* DIVL2 (Border) height for medium */
+.containerMd .inputWrapper {
+  height: var(--inputfield-height); /* 24px - design token default */
+}
+
+/* Large size - using global size scale like buttons */
+.inputLg {
+  font-size: var(--body-size);
+}
+
+/* DIVL2 (Border) height for large */
+.containerLg .inputWrapper {
+  height: var(--global-size-8); /* 32px - follows button sizing pattern */
+}
+
+/* Default wrapper height (when no size specified) should be medium */
+.inputWrapper {
+  height: var(--inputfield-height); /* Default to medium size - DIVL2 */
+}
+
+/* DIVL3 Content container always stretches */
+.contentContainer {
+  /* No height - stretches to fill parent */
+}
+
+/* DIVL3 Content container always uses same padding regardless of size */
+.contentContainer {
+  /* Padding is consistent across sizes - handled by design tokens */
 }
 
 /* ===== INPUT STATES ===== */
 
-/* Default State */
-.default .inputWrapper {
+/* Default State - Applied to DIVL2 (Border Layer) */
+.default .inputWrapper,
+.containerDefault .inputWrapper {
   background: var(--inputfield-static-default-surface);
   border-color: var(--inputfield-static-default-border);
   color: var(--text-neutral-extreme);
 }
 
-/* Focus State */
+/* Focus State - Applied to DIVL2 (Border Layer) */
 .focus .inputWrapper,
-.inputWrapper:focus-within {
+.containerFocus .inputWrapper,
+.inputWrapper:focus-within,
+.inputWrapper:has(.input:focus) {
   background: var(--inputfield-interactive-surface-onhover);
   border-color: var(--inputfield-interactive-border-onfocus);
   box-shadow: var(--focus-primary);
 }
 
+/* Ensure focus state persists during typing */
+.inputWrapper:focus-within .input,
+.inputWrapper:has(.input:focus) .input {
+  /* Maintain focus appearance while actively typing */
+  background: transparent;
+}
+
+/* Ensure focus ring stays visible during text input */
+.inputWrapper:focus-within {
+  outline: none; /* Remove default outline */
+  background: var(--inputfield-interactive-surface-onhover) !important;
+  border-color: var(--inputfield-interactive-border-onfocus) !important;
+  box-shadow: var(--focus-primary) !important;
+}
+
+.input:focus {
+  outline: none; /* Remove default outline from input */
+  background: transparent !important;
+  border: none !important; /* Remove any input-specific borders */
+  box-shadow: none !important; /* Remove any input-specific shadows */
+}
+
+/* Additional focus state for active typing */
+.inputWrapper:has(.input:focus),
+.inputWrapper:focus-within {
+  /* Maintain focus ring during active typing */
+  background: var(--inputfield-interactive-surface-onhover) !important;
+  border-color: var(--inputfield-interactive-border-onfocus) !important;
+  box-shadow: var(--focus-primary) !important;
+}
+
+/* Ensure input element never has its own border/background */
+.input,
+.input:hover,
+.input:focus,
+.input:active {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
 /* Hover State */
-.hover .inputWrapper:hover:not(:focus-within) {
+.hover .inputWrapper:hover:not(:focus-within),
+.containerHover .inputWrapper:hover:not(:focus-within) {
   background: var(--inputfield-interactive-surface-onhover);
   border-color: var(--inputfield-static-default-border);
 }
 
-/* Warning State */
-.warning .inputWrapper {
+/* Warning State - Applied to DIVL2 (Border Layer) */
+.warning .inputWrapper,
+.containerWarning .inputWrapper {
   background: var(--inputfield-static-default-surface);
-  border-color: var(--stroke-semantic-warining);
-  color: var(--text-semantic-warining);
+  border-color: var(--stroke-semantic-warning);
+  color: var(--text-semantic-warning);
 }
 
-/* Error State */
-.error .inputWrapper {
+/* Error State - Applied to DIVL2 (Border Layer) */
+.error .inputWrapper,
+.containerError .inputWrapper {
   background: var(--inputfield-static-default-surface);
   border-color: var(--stroke-semantic-error);
   color: var(--text-semantic-error);
 }
 
-/* Success State */
-.success .inputWrapper {
+/* Success State - Applied to DIVL2 (Border Layer) */
+.success .inputWrapper,
+.containerSuccess .inputWrapper {
   background: var(--inputfield-static-default-surface);
   border-color: var(--stroke-semantic-success);
   color: var(--text-semantic-success);
@@ -205,26 +312,91 @@
   flex-shrink: 0;
 }
 
+/* Icon state colors */
+.warning .icon,
+.containerWarning .icon {
+  color: var(--icon-semantic-warning);
+}
+
+.error .icon,
+.containerError .icon {
+  color: var(--icon-semantic-error);
+}
+
+.success .icon,
+.containerSuccess .icon {
+  color: var(--icon-semantic-success);
+}
+
+.disabled .icon,
+.containerDisabled .icon {
+  color: var(--inputfield-static-disabled-icon);
+}
+
 .iconLeft {
   display: flex;
   align-items: center;
-  margin-right: var(--inputfield-divl1-gap);
+  justify-content: center;
+  flex-shrink: 0;
+  /* Default icon size for medium inputs */
+  width: 16px;
+  height: 16px;
+  /* Icons are handled by DIVL3 gap, no additional margin needed */
+}
+
+/* Large input icon sizing */
+.containerLg .iconLeft {
+  width: 20px;
+  height: 20px;
 }
 
 .iconRight {
   display: flex;
   align-items: center;
-  margin-left: var(--inputfield-divl1-gap);
+  justify-content: center;
+  flex-shrink: 0;
+  /* Default icon size for medium inputs */
+  width: 16px;
+  height: 16px;
+  /* Icons are handled by DIVL3 gap, no additional margin needed */
+}
+
+/* Large input icon sizing */
+.containerLg .iconRight {
+  width: 20px;
+  height: 20px;
 }
 
 .containerWithIcon .input {
-  padding-left: 0;
-  padding-right: 0;
+  /* Input never needs padding - wrapper handles all spacing */
+  padding: 0;
+}
+
+/* Container with icons - no special wrapper styling needed */
+.containerWithIcon .inputWrapper {
+  /* DIVL2 layer remains unchanged for icons */
+}
+
+.containerWithIcon .iconLeft {
+  /* Icons are positioned by DIVL3 content container */
+  position: relative;
+  z-index: 1;
+}
+
+.containerWithIcon .iconRight {
+  /* Icons are positioned by DIVL3 content container */
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure all inputs follow DIVL4 Figma structure */
+.input {
+  /* DIVL4 structure already defined above */
 }
 
 /* ===== MESSAGE STYLES ===== */
 .helperText {
-  margin-top: var(--inputfield-divl1-gap);
+  /* Messages are spaced from the input using DIVL1 gap */
   font-family: var(--body-fontfamily);
   font-size: calc(var(--body-size) * 0.875);
   color: var(--inputfield-static-default-helptext);
@@ -232,7 +404,7 @@
 }
 
 .errorMessage {
-  margin-top: var(--inputfield-divl1-gap);
+  /* Messages are spaced from the input using DIVL1 gap */
   font-family: var(--body-fontfamily);
   font-size: calc(var(--body-size) * 0.875);
   color: var(--inputfield-static-default-helptexterror);
@@ -240,7 +412,7 @@
 }
 
 .successMessage {
-  margin-top: var(--inputfield-divl1-gap);
+  /* Messages are spaced from the input using DIVL1 gap */
   font-family: var(--body-fontfamily);
   font-size: calc(var(--body-size) * 0.875);
   color: var(--text-semantic-success);
@@ -248,15 +420,44 @@
 }
 
 /* ===== TEXTAREA SPECIFIC STYLES ===== */
+/* DIVL4: Textarea element - no padding, transparent */
 .textarea .input {
   resize: vertical;
-  min-height: calc(var(--inputfield-height) * 2);
-  padding: var(--inputfield-divl3-verticle-padding);
+  min-height: calc(var(--inputfield-height) * 2 - (var(--inputfield-divl3-verticle-padding) * 2));
+  /* DIVL4: No styling - handled by outer layers */
+  padding: var(--inputfield-divl4-verticle-padding) var(--inputfield-divl4-horizontal-padding); /* 0px */
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
-.textarea .inputWrapper {
+/* DIVL2: Textarea outer container */
+.textarea .inputWrapper,
+.textareaContainer .inputWrapper {
   align-items: flex-start;
-  min-height: calc(var(--inputfield-height) * 2);
+  /* No height - content container handles sizing */
+}
+
+/* DIVL3: Textarea content container with border */
+.textarea .contentContainer,
+.textareaContainer .contentContainer {
+  align-items: flex-start;
+  min-height: calc(var(--inputfield-height) * 2); /* 48px including padding and border */
+}
+
+/* Textarea size variants - DIVL3 content with border */
+.textareaContainer.containerMd .contentContainer {
+  min-height: calc(var(--inputfield-height) * 2); /* Medium textarea: 48px */
+}
+
+.textareaContainer.containerLg .contentContainer {
+  min-height: calc(var(--global-size-8) * 2); /* Large textarea: 64px */
+}
+
+/* Large textarea input element - DIVL4 */
+.textareaContainer.containerLg .input {
+  min-height: calc(var(--global-size-8) * 2 - (var(--inputfield-divl3-verticle-padding) * 2));
 }
 
 .characterCount {
@@ -264,7 +465,7 @@
   bottom: var(--spacing-space-1);
   right: var(--spacing-space-2);
   font-size: calc(var(--body-size) * 0.75);
-  color: var(--text-neutral-moderate);
+  color: var(--inputfield-static-default-helptext);
   background: var(--inputfield-static-default-surface);
   padding: 0 var(--spacing-space-1);
 }
@@ -272,6 +473,26 @@
 /* ===== SEARCH INPUT SPECIFIC STYLES ===== */
 .searchContainer .inputWrapper {
   position: relative;
+}
+
+/* Fix search input white border issue */
+.searchContainer .inputWrapper:focus-within {
+  background: var(--inputfield-interactive-surface-onhover) !important;
+  border-color: var(--inputfield-interactive-border-onfocus) !important;
+  box-shadow: var(--focus-primary) !important;
+  /* Override any conflicting border styles */
+}
+
+.searchContainer .input:focus {
+  background: transparent !important;
+  /* Ensure no additional white border layers */
+}
+
+/* Specific search input focus handling */
+.searchContainer .inputWrapper:has(.input:focus) {
+  background: var(--inputfield-interactive-surface-onhover) !important;
+  border-color: var(--inputfield-interactive-border-onfocus) !important;
+  box-shadow: var(--focus-primary) !important;
 }
 
 .clearButton {

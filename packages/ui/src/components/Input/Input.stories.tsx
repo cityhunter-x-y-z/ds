@@ -80,7 +80,6 @@ type Story = StoryObj<typeof Input>;
 export const Text: Story = {
   args: {
     variant: 'text',
-    size: 'lg',
     label: 'Full Name',
     placeholder: 'Enter your full name',
     helperText: 'This will be displayed on your profile',
@@ -91,7 +90,6 @@ export const Text: Story = {
 export const Email: Story = {
   args: {
     variant: 'email',
-    size: 'lg',
     label: 'Email Address',
     placeholder: 'user@example.com',
     helperText: 'We\'ll never share your email',
@@ -102,7 +100,6 @@ export const Email: Story = {
 export const Search: Story = {
   args: {
     variant: 'search',
-    size: 'lg',
     placeholder: 'Search...',
     helperText: 'Press Enter to search',
     state: 'default',
@@ -303,13 +300,13 @@ export const Sizes: Story = {
       <Input
         variant="text"
         size="lg"
-        label="Large Size"
+        label="Large Size (32px)"
         placeholder="Large input"
       />
       <Input
         variant="text"
         size="md"
-        label="Medium Size"
+        label="Medium Size (24px) - Default"
         placeholder="Medium input"
       />
     </div>
