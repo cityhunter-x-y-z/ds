@@ -1,7 +1,7 @@
 /* =========================================
-   INPUT STYLES - FIGMA MATCHED IMPLEMENTATION
+   INPUT STYLES - SCALABLE DESIGN SYSTEM
    File: packages/ui/src/components/Input/Input.module.css
-   Based on Figma component: State=Default, Status=Default (299:5187)
+   Based on design tokens from theme.css - NO HARDCODED VALUES
    ========================================= */
 
 /* Import design tokens */
@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 8px; /* Gap between label, input, and messages */
+  gap: var(--inputfield-divl1-gap, 8px);
 }
 
 /* Input Wrapper - The bordered container (matches Figma input frame) */
@@ -25,14 +25,14 @@
   align-items: center;
   align-self: stretch;
   
-  /* Direct Figma values - State=Default, Status=Default */
-  background: #FFFFFF;
-  border: 1px solid #98A2B3;
-  border-radius: 4px;
+  /* Using design tokens */
+  background: var(--inputfield-static-default-surface, #FFFFFF);
+  border: var(--inputfield-divl2-stroke-thickness, 1px) solid var(--inputfield-static-default-border, #98A2B3);
+  border-radius: var(--inputfield-divl2-corner-radius, 4px);
   
-  /* Layout from Figma content-container */
-  gap: 12px;
-  padding: 12px 16px;
+  /* Layout from design tokens */
+  gap: var(--inputfield-divl3-gap, 12px);
+  padding: var(--inputfield-divl3-vertical-padding, 12px) var(--inputfield-divl3-horizontal-padding, 16px);
   
   /* Base properties */
   box-sizing: border-box;
@@ -40,9 +40,9 @@
   min-width: 0;
   
   /* Smooth transitions */
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast, 0.2s) ease;
   
-  /* IMPORTANT: Remove focus outline from wrapper - focus should be on input element only */
+  /* Remove focus outline from wrapper */
   outline: none;
 }
 
@@ -53,20 +53,18 @@
   align-items: center;
   align-self: stretch;
   flex: 1 0 0;
-  gap: 12px;
+  gap: var(--inputfield-divl3-gap, 12px);
   
-  /* No additional padding - wrapper handles it */
+  /* No additional styling - wrapper handles all visual aspects */
   background: transparent;
   border: none;
   border-radius: 0;
-  
-  /* IMPORTANT: Remove focus outline from content container */
   outline: none;
 }
 
 /* =====  INPUT ELEMENT STYLES ===== */
 
-/* The actual input element - completely unstyled, inherits from wrapper */
+/* The actual input element - uses design tokens for typography */
 .input {
   display: flex;
   align-items: center;
@@ -77,52 +75,50 @@
   outline: none;
   background: transparent;
   
-  /* Typography from Figma */
-  font-family: 'Red Hat Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.3229999542236328em;
-  letter-spacing: -0.15px;
-  color: #101828;
+  /* Typography from design tokens */
+  font-family: var(--body-fontfamily, 'Red Hat Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: var(--body-size, 14px);
+  font-weight: var(--body-weight-regular, 400);
+  line-height: var(--body-lineheight, 1.3229999542236328em);
+  letter-spacing: var(--body-letterspacing, -0.15px);
+  color: var(--text-neutral-extreme, #101828);
   
   /* Layout */
   box-sizing: border-box;
   width: 100%;
-  
-  /* Ensure no additional styling interferes */
   margin: 0;
   padding: 0;
 }
 
 .input::placeholder {
-  color: #98A2B3;
+  color: var(--inputfield-static-default-placeholdertext, #98A2B3);
   opacity: 1;
 }
 
-/* Focus state placeholder color change - matches Figma */
+/* Focus state placeholder color change */
 .input:focus::placeholder {
-  color: #D0D5DD;
+  color: var(--inputfield-interactive-placeholdertext-onfocus, #D0D5DD);
 }
 
 /* =====  SIZE VARIANTS ===== */
 
 /* Medium size (default) */
 .inputMd {
-  font-size: 14px;
+  font-size: var(--body-size, 14px);
 }
 
 .containerMd .inputWrapper {
-  min-height: 44px; /* Standard medium input height */
+  min-height: var(--inputfield-height, 44px);
 }
 
 /* Large size */
 .inputLg {
-  font-size: 14px; /* Keep same font size as Figma */
+  font-size: var(--body-size, 14px);
 }
 
 .containerLg .inputWrapper {
-  min-height: 48px; /* Larger input height */
-  padding: 14px 16px; /* Slightly more vertical padding */
+  min-height: var(--global-size-8, 48px);
+  padding: var(--inputfield-divl3-vertical-paddinglg, 14px) var(--inputfield-divl3-horizontal-padding, 16px);
 }
 
 /* =====  STATE STYLES ===== */
@@ -130,110 +126,107 @@
 /* Default State */
 .default .inputWrapper,
 .containerDefault .inputWrapper {
-  background: #FFFFFF;
-  border-color: #98A2B3;
-  color: #101828;
+  background: var(--inputfield-static-default-surface, #FFFFFF);
+  border-color: var(--inputfield-static-default-border, #98A2B3);
+  color: var(--text-neutral-extreme, #101828);
 }
 
-/* Focus State - CORRECTED FOCUS RING COLOR */
+/* Focus State - CORRECTED: Using exact Figma box-shadow order */
 .focus .inputWrapper,
 .containerFocus .inputWrapper,
 .inputWrapper:has(.input:focus) {
-  background: #FFFFFF;
-  border-color: #344054;
-  /* Corrected box-shadow with proper focus ring color #2E90FA */
+  background: var(--inputfield-static-default-surface, #FFFFFF);
+  border-color: var(--inputfield-interactive-border-onfocus, #344054);
+  /* Correct box-shadow order from Figma - NO GRADIENT EFFECT */
   box-shadow: 
-    0px 1px 2px 0px rgba(233, 235, 237, 1), 
-    0px 1px 3px 2px rgba(255, 255, 255, 1), 
-    0px 0px 0px 3px rgba(46, 144, 250, 1), 
-    0px 0px 0px 1.5px rgba(255, 255, 255, 1);
+    0px 0px 0px 1.5px #FFF,
+    0px 0px 0px 3px #2E90FA,
+    0px 1px 3px 2px #FFF,
+    0px 1px 2px 0px #E9EBED;
 }
 
-/* Focus state icon color change - only when input is focused */
+/* Focus state icon color change */
 .focus .icon,
 .containerFocus .icon,
 .inputWrapper:has(.input:focus) .icon {
-  color: #344054;
+  color: var(--inputfield-interactive-icon-onfocus, #344054);
 }
-
-/* IMPORTANT: Remove focus-within selectors that were causing wrapper to be focusable */
-/* Only use :has(.input:focus) to ensure focus is on the actual input element */
 
 /* Hover State */
 .hover .inputWrapper:hover:not(:has(.input:focus)),
 .containerHover .inputWrapper:hover:not(:has(.input:focus)) {
-  background: #FFFFFF;
-  border-color: #98A2B3;
+  background: var(--inputfield-interactive-surface-onhover, #FFFFFF);
+  border-color: var(--inputfield-static-default-border, #98A2B3);
 }
 
 /* Error State */
 .error .inputWrapper,
 .containerError .inputWrapper {
-  background: #FFFFFF;
-  border-color: #F04438;
-  color: #101828;
+  background: var(--inputfield-static-default-surface, #FFFFFF);
+  border-color: var(--stroke-semantic-error, #F04438);
+  color: var(--text-semantic-error, #F04438);
 }
 
 .error .inputWrapper:has(.input:focus),
 .containerError .inputWrapper:has(.input:focus) {
-  border-color: #F04438;
-  box-shadow: 0px 0px 0px 4px #FEF3F2;
+  border-color: var(--stroke-semantic-error, #F04438);
+  box-shadow: 0px 0px 0px 4px var(--surface-semantic-error-muted, #FEF3F2);
 }
 
 /* Success State */
 .success .inputWrapper,
 .containerSuccess .inputWrapper {
-  background: #FFFFFF;
-  border-color: #17B26A;
-  color: #101828;
+  background: var(--inputfield-static-default-surface, #FFFFFF);
+  border-color: var(--stroke-semantic-success, #17B26A);
+  color: var(--text-semantic-success, #17B26A);
 }
 
 .success .inputWrapper:has(.input:focus),
 .containerSuccess .inputWrapper:has(.input:focus) {
-  border-color: #17B26A;
-  box-shadow: 0px 0px 0px 4px #ECFDF3;
+  border-color: var(--stroke-semantic-success, #17B26A);
+  box-shadow: 0px 0px 0px 4px var(--surface-semantic-success-muted, #ECFDF3);
 }
 
 /* Warning State */
 .warning .inputWrapper,
 .containerWarning .inputWrapper {
-  background: #FFFFFF;
-  border-color: #F79009;
-  color: #101828;
+  background: var(--inputfield-static-default-surface, #FFFFFF);
+  border-color: var(--stroke-semantic-warning, #F79009);
+  color: var(--text-semantic-warning, #F79009);
 }
 
 .warning .inputWrapper:has(.input:focus),
 .containerWarning .inputWrapper:has(.input:focus) {
-  border-color: #F79009;
-  box-shadow: 0px 0px 0px 4px #FFFAEB;
+  border-color: var(--stroke-semantic-warning, #F79009);
+  box-shadow: 0px 0px 0px 4px var(--surface-semantic-warning-muted, #FFFAEB);
 }
 
 /* Disabled State */
 .disabled .inputWrapper,
 .containerDisabled .inputWrapper {
-  background: #F9FAFB;
-  border-color: #EAECF0;
-  color: #98A2B3;
+  background: var(--inputfield-static-disabled-surface, #F9FAFB);
+  border-color: var(--inputfield-static-disabled-border, #EAECF0);
+  color: var(--inputfield-static-disabled-text, #98A2B3);
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .disabled .input,
 .containerDisabled .input {
-  color: #98A2B3;
+  color: var(--inputfield-static-disabled-text, #98A2B3);
   cursor: not-allowed;
   pointer-events: none;
 }
 
 .disabled .input::placeholder,
 .containerDisabled .input::placeholder {
-  color: #98A2B3;
+  color: var(--inputfield-static-disabled-text, #98A2B3);
 }
 
 /* =====  ICON STYLES ===== */
 
 .icon {
-  color: #344054;
+  color: var(--inputfield-static-default-icon, #344054);
   flex-shrink: 0;
 }
 
@@ -242,8 +235,8 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 16px;
-  height: 16px;
+  width: var(--icon-size-md, 16px);
+  height: var(--icon-size-md, 16px);
 }
 
 .iconRight {
@@ -251,116 +244,116 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  width: 16px;
-  height: 16px;
+  width: var(--icon-size-md, 16px);
+  height: var(--icon-size-md, 16px);
 }
 
 /* Large input icon sizing */
 .containerLg .iconLeft {
-  width: 20px;
-  height: 20px;
+  width: var(--icon-size-lg, 20px);
+  height: var(--icon-size-lg, 20px);
 }
 
 .containerLg .iconRight {
-  width: 20px;
-  height: 20px;
+  width: var(--icon-size-lg, 20px);
+  height: var(--icon-size-lg, 20px);
 }
 
 /* Icon state colors */
 .error .icon,
 .containerError .icon {
-  color: #F04438;
+  color: var(--icon-semantic-error, #F04438);
 }
 
 .success .icon,
 .containerSuccess .icon {
-  color: #17B26A;
+  color: var(--icon-semantic-success, #17B26A);
 }
 
 .warning .icon,
 .containerWarning .icon {
-  color: #F79009;
+  color: var(--icon-semantic-warning, #F79009);
 }
 
 .disabled .icon,
 .containerDisabled .icon {
-  color: #98A2B3;
+  color: var(--inputfield-static-disabled-icon, #98A2B3);
 }
 
 /* =====  LABEL STYLES ===== */
 
 .label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: var(--inputfield-divl1-gap, 8px);
   
-  /* Typography */
-  font-family: 'Red Hat Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  color: #101828;
-  line-height: 1.3229999542236328em;
+  /* Typography from tokens */
+  font-family: var(--body-fontfamily, 'Red Hat Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: var(--body-size, 14px);
+  font-weight: var(--body-weight-semibold, 600);
+  color: var(--text-neutral-extreme, #101828);
+  line-height: var(--body-lineheight, 1.3229999542236328em);
 }
 
 .floatingLabel {
   position: absolute;
-  left: 16px;
+  left: var(--inputfield-divl3-horizontal-padding, 16px);
   top: 50%;
   transform: translateY(-50%);
   
-  /* Typography */
-  font-family: 'Red Hat Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: #98A2B3;
+  /* Typography from tokens */
+  font-family: var(--body-fontfamily, 'Red Hat Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: var(--body-size, 14px);
+  font-weight: var(--body-weight-regular, 400);
+  color: var(--inputfield-static-default-placeholdertext, #98A2B3);
   
   /* Transitions */
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast, 0.2s) ease;
   pointer-events: none;
   z-index: 1;
 }
 
 .inputWrapper:has(.input:focus) .floatingLabel,
 .inputWrapper:has(.input:not(:placeholder-shown)) .floatingLabel {
-  top: -8px;
-  font-size: 12px;
-  color: #2E90FA;
-  background: #FFFFFF;
-  padding: 0 4px;
+  top: calc(var(--inputfield-divl3-vertical-padding, 12px) * -1);
+  font-size: calc(var(--body-size, 14px) * 0.75);
+  color: var(--inputfield-interactive-border-onfocus, #2E90FA);
+  background: var(--inputfield-static-default-surface, #FFFFFF);
+  padding: 0 var(--spacing-space-1, 4px);
 }
 
 .required {
-  color: #F04438;
-  margin-left: 4px;
+  color: var(--text-semantic-error, #F04438);
+  margin-left: var(--spacing-space-1, 4px);
 }
 
 /* =====  MESSAGE STYLES ===== */
 
 .helperText {
-  font-family: 'Red Hat Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 12px;
-  color: #667085;
-  line-height: 1.3229999542236328em;
+  font-family: var(--body-fontfamily, 'Red Hat Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: calc(var(--body-size, 14px) * 0.875);
+  color: var(--inputfield-static-default-helptext, #667085);
+  line-height: var(--body-lineheight, 1.3229999542236328em);
 }
 
 .errorMessage {
-  font-family: 'Red Hat Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 12px;
-  color: #F04438;
-  line-height: 1.3229999542236328em;
+  font-family: var(--body-fontfamily, 'Red Hat Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: calc(var(--body-size, 14px) * 0.875);
+  color: var(--inputfield-static-default-helptexterror, #F04438);
+  line-height: var(--body-lineheight, 1.3229999542236328em);
 }
 
 .successMessage {
-  font-family: 'Red Hat Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 12px;
-  color: #17B26A;
-  line-height: 1.3229999542236328em;
+  font-family: var(--body-fontfamily, 'Red Hat Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: calc(var(--body-size, 14px) * 0.875);
+  color: var(--text-semantic-success, #17B26A);
+  line-height: var(--body-lineheight, 1.3229999542236328em);
 }
 
 /* =====  TEXTAREA SPECIFIC STYLES ===== */
 
 .textarea .input {
   resize: vertical;
-  min-height: 80px;
+  min-height: calc(var(--inputfield-height, 44px) * 2 - (var(--inputfield-divl3-vertical-padding, 12px) * 2));
   padding: 0;
   line-height: 1.5;
 }
@@ -368,7 +361,7 @@
 .textarea .inputWrapper,
 .textareaContainer .inputWrapper {
   align-items: flex-start;
-  min-height: 80px;
+  min-height: calc(var(--inputfield-height, 44px) * 2);
 }
 
 .textarea .contentContainer,
@@ -378,12 +371,12 @@
 
 .characterCount {
   position: absolute;
-  bottom: 8px;
-  right: 12px;
-  font-size: 12px;
-  color: #667085;
-  background: #FFFFFF;
-  padding: 0 4px;
+  bottom: var(--spacing-space-2, 8px);
+  right: var(--spacing-space-3, 12px);
+  font-size: calc(var(--body-size, 14px) * 0.75);
+  color: var(--inputfield-static-default-helptext, #667085);
+  background: var(--inputfield-static-default-surface, #FFFFFF);
+  padding: 0 var(--spacing-space-1, 4px);
 }
 
 /* =====  SEARCH INPUT STYLES ===== */
@@ -395,14 +388,14 @@
 .clearButton {
   background: none;
   border: none;
-  padding: 4px;
+  padding: var(--spacing-space-1, 4px);
   cursor: pointer;
-  color: #667085;
-  transition: color 0.2s ease;
+  color: var(--icon-neutral-moderate, #667085);
+  transition: color var(--transition-fast, 0.2s) ease;
 }
 
 .clearButton:hover {
-  color: #344054;
+  color: var(--icon-neutral-extreme, #344054);
 }
 
 /* =====  PASSWORD INPUT STYLES ===== */
@@ -414,23 +407,23 @@
 .passwordToggle {
   background: none;
   border: none;
-  padding: 4px;
+  padding: var(--spacing-space-1, 4px);
   cursor: pointer;
-  color: #667085;
-  transition: color 0.2s ease;
+  color: var(--icon-neutral-moderate, #667085);
+  transition: color var(--transition-fast, 0.2s) ease;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .passwordToggle:hover {
-  color: #344054;
+  color: var(--icon-neutral-extreme, #344054);
 }
 
 .passwordToggle:focus {
-  outline: 2px solid #2E90FA;
+  outline: 2px solid var(--focus-primary-layerone-color, #2E90FA);
   outline-offset: 2px;
-  border-radius: 4px;
+  border-radius: var(--corners-sm, 4px);
 }
 
 /* =====  VERIFICATION INPUT STYLES ===== */
@@ -443,34 +436,34 @@
 
 .verificationInputs {
   display: flex;
-  gap: 12px;
+  gap: var(--inputfield-divl2-gap-otp, 12px);
   align-items: center;
 }
 
 .verification .input {
-  width: 48px;
-  height: 48px;
+  width: var(--inputfield-divl3-width, 48px);
+  height: var(--inputfield-divl3-width, 48px);
   text-align: center;
-  border: 1px solid #98A2B3;
-  border-radius: 4px;
-  background: #FFFFFF;
-  font-size: 16px;
-  font-weight: 600;
+  border: var(--inputfield-divl3-stroke-thicknessotp, 1px) solid var(--inputfield-static-default-border, #98A2B3);
+  border-radius: var(--inputfield-divl3-corner-radiusotp, 4px);
+  background: var(--inputfield-static-default-surface, #FFFFFF);
+  font-size: var(--body-size, 16px);
+  font-weight: var(--body-weight-semibold, 600);
 }
 
 .verification .input:focus {
-  border-color: #344054;
+  border-color: var(--inputfield-interactive-border-onfocus, #344054);
   box-shadow: 
-    0px 1px 2px 0px rgba(233, 235, 237, 1), 
-    0px 1px 3px 2px rgba(255, 255, 255, 1), 
-    0px 0px 0px 3px rgba(46, 144, 250, 1), 
-    0px 0px 0px 1.5px rgba(255, 255, 255, 1);
+    0px 0px 0px 1.5px #FFF,
+    0px 0px 0px 3px #2E90FA,
+    0px 1px 3px 2px #FFF,
+    0px 1px 2px 0px #E9EBED;
 }
 
 .verificationSeparator {
-  color: #667085;
-  font-weight: 600;
-  margin: 0 4px;
+  color: var(--text-neutral-moderate, #667085);
+  font-weight: var(--body-weight-semibold, 600);
+  margin: 0 var(--spacing-space-1, 4px);
 }
 
 /* =====  CREDIT CARD INPUT STYLES ===== */
@@ -481,10 +474,10 @@
 
 .cardIcon {
   position: absolute;
-  right: 16px;
+  right: var(--inputfield-divl3-horizontal-padding, 16px);
   top: 50%;
   transform: translateY(-50%);
-  color: #667085;
+  color: var(--icon-neutral-moderate, #667085);
 }
 
 /* =====  SELECT INPUT STYLES ===== */
@@ -505,29 +498,29 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: #FFFFFF;
-  border: 1px solid #EAECF0;
-  border-radius: 4px;
-  box-shadow: 0px 4px 6px -2px rgba(16, 24, 40, 0.03), 0px 12px 16px -4px rgba(16, 24, 40, 0.08);
+  background: var(--surface-neutral-lightsurface, #FFFFFF);
+  border: var(--inputfield-divl2-stroke-thickness, 1px) solid var(--inputfield-static-default-border, #EAECF0);
+  border-radius: var(--inputfield-divl2-corner-radius, 4px);
+  box-shadow: var(--elevation-lowraised-layerone-color, rgba(16, 24, 40, 0.03)) var(--elevation-lowraised-layerone-x, 0px) var(--elevation-lowraised-layerone-y, 4px) var(--elevation-lowraised-layerone-blur, 6px) var(--elevation-lowraised-layerone-spread, -2px);
   max-height: 200px;
   overflow-y: auto;
-  margin-top: 4px;
+  margin-top: var(--spacing-space-1, 4px);
 }
 
 .selectOption {
-  padding: 12px 16px;
+  padding: var(--inputfield-divl3-vertical-padding, 12px) var(--inputfield-divl3-horizontal-padding, 16px);
   cursor: pointer;
-  color: #101828;
-  transition: background-color 0.2s ease;
+  color: var(--text-neutral-extreme, #101828);
+  transition: background-color var(--transition-fast, 0.2s) ease;
 }
 
 .selectOption:hover {
-  background: #F9FAFB;
+  background: var(--surface-neutral-muted, #F9FAFB);
 }
 
 .selectOption.selected {
-  background: #2E90FA;
-  color: #FFFFFF;
+  background: var(--surface-primary-default, #2E90FA);
+  color: var(--text-neutral-ondarkstatus, #FFFFFF);
 }
 
 /* =====  CONTAINER STATE CLASSES ===== */
@@ -582,17 +575,16 @@
   }
 }
 
-/* Focus management for keyboard navigation - ONLY on actual input elements */
+/* Focus management for keyboard navigation */
 .input:focus-visible {
-  /* Input element should not have its own outline - wrapper handles the visual focus */
   outline: none;
 }
 
 .passwordToggle:focus-visible,
 .clearButton:focus-visible {
-  outline: 2px solid #2E90FA;
+  outline: 2px solid var(--focus-primary-layerone-color, #2E90FA);
   outline-offset: 2px;
-  border-radius: 4px;
+  border-radius: var(--corners-sm, 4px);
 }
 
 /* =====  ANIMATION KEYFRAMES ===== */
@@ -603,28 +595,28 @@
 }
 
 .selectDropdown {
-  animation: fadeIn 0.2s ease-out;
+  animation: fadeIn var(--transition-fast, 0.2s) ease-out;
 }
 
 /* =====  RESPONSIVE DESIGN ===== */
 
 @media (max-width: 768px) {
   .inputLg {
-    min-height: calc(44px * 0.875);
-    padding: 10px 14px;
+    min-height: calc(var(--inputfield-height, 44px) * 0.875);
+    padding: var(--inputfield-divl3-vertical-paddingotp, 10px) calc(var(--inputfield-divl3-horizontal-padding, 16px) * 0.875);
   }
   
   .inputMd {
-    min-height: calc(44px * 0.75);
-    padding: 8px 12px;
+    min-height: calc(var(--inputfield-height, 44px) * 0.75);
+    padding: var(--inputfield-divl3-vertical-paddingotp, 8px) calc(var(--inputfield-divl3-horizontal-padding, 16px) * 0.75);
   }
   
   .verificationInputs {
-    gap: 8px;
+    gap: calc(var(--inputfield-divl2-gap-otp, 12px) * 0.75);
   }
   
   .verification .input {
-    width: calc(48px * 0.875);
-    height: calc(48px * 0.875);
+    width: calc(var(--inputfield-divl3-width, 48px) * 0.875);
+    height: calc(var(--inputfield-divl3-width, 48px) * 0.875);
   }
 }
