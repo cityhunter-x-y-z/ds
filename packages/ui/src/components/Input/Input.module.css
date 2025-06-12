@@ -41,6 +41,9 @@
   
   /* Smooth transitions */
   transition: all 0.2s ease;
+  
+  /* IMPORTANT: Remove focus outline from wrapper - focus should be on input element only */
+  outline: none;
 }
 
 /* Content Container - Houses the actual input and icons */
@@ -56,6 +59,9 @@
   background: transparent;
   border: none;
   border-radius: 0;
+  
+  /* IMPORTANT: Remove focus outline from content container */
+  outline: none;
 }
 
 /* =====  INPUT ELEMENT STYLES ===== */
@@ -129,10 +135,10 @@
   color: #101828;
 }
 
-/* Focus State - FIXED TO MATCH FIGMA EXACTLY */
+/* Focus State - FIXED: Only apply when actual input is focused, not wrapper */
 .focus .inputWrapper,
 .containerFocus .inputWrapper,
-.inputWrapper:focus-within {
+.inputWrapper:has(.input:focus) {
   background: #FFFFFF;
   border-color: #344054;
   /* Complex multi-layer box-shadow from Figma focus state */
@@ -143,16 +149,19 @@
     0px 0px 0px 1.5px rgba(255, 255, 255, 1);
 }
 
-/* Focus state icon color change */
+/* Focus state icon color change - only when input is focused */
 .focus .icon,
 .containerFocus .icon,
-.inputWrapper:focus-within .icon {
+.inputWrapper:has(.input:focus) .icon {
   color: #344054;
 }
 
+/* IMPORTANT: Remove focus-within selectors that were causing wrapper to be focusable */
+/* Only use :has(.input:focus) to ensure focus is on the actual input element */
+
 /* Hover State */
-.hover .inputWrapper:hover:not(:focus-within),
-.containerHover .inputWrapper:hover:not(:focus-within) {
+.hover .inputWrapper:hover:not(:has(.input:focus)),
+.containerHover .inputWrapper:hover:not(:has(.input:focus)) {
   background: #FFFFFF;
   border-color: #98A2B3;
 }
@@ -165,8 +174,8 @@
   color: #101828;
 }
 
-.error .inputWrapper:focus-within,
-.containerError .inputWrapper:focus-within {
+.error .inputWrapper:has(.input:focus),
+.containerError .inputWrapper:has(.input:focus) {
   border-color: #F04438;
   box-shadow: 0px 0px 0px 4px #FEF3F2;
 }
@@ -179,8 +188,8 @@
   color: #101828;
 }
 
-.success .inputWrapper:focus-within,
-.containerSuccess .inputWrapper:focus-within {
+.success .inputWrapper:has(.input:focus),
+.containerSuccess .inputWrapper:has(.input:focus) {
   border-color: #17B26A;
   box-shadow: 0px 0px 0px 4px #ECFDF3;
 }
@@ -193,8 +202,8 @@
   color: #101828;
 }
 
-.warning .inputWrapper:focus-within,
-.containerWarning .inputWrapper:focus-within {
+.warning .inputWrapper:has(.input:focus),
+.containerWarning .inputWrapper:has(.input:focus) {
   border-color: #F79009;
   box-shadow: 0px 0px 0px 4px #FFFAEB;
 }
@@ -310,7 +319,7 @@
   z-index: 1;
 }
 
-.inputWrapper:focus-within .floatingLabel,
+.inputWrapper:has(.input:focus) .floatingLabel,
 .inputWrapper:has(.input:not(:placeholder-shown)) .floatingLabel {
   top: -8px;
   font-size: 12px;
@@ -567,15 +576,18 @@
     border-width: 2px;
   }
   
-  .input:focus,
-  .inputWrapper:focus-within {
+  .input:focus {
     outline: 2px solid currentColor;
     outline-offset: 2px;
   }
 }
 
-/* Focus management for keyboard navigation */
-.input:focus-visible,
+/* Focus management for keyboard navigation - ONLY on actual input elements */
+.input:focus-visible {
+  /* Input element should not have its own outline - wrapper handles the visual focus */
+  outline: none;
+}
+
 .passwordToggle:focus-visible,
 .clearButton:focus-visible {
   outline: 2px solid #155EEF;
