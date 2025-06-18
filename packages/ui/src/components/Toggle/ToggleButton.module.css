@@ -1,0 +1,153 @@
+/* ===========================================
+   TOGGLE BUTTON STYLES - CSS Module - FIGMA DESIGN SYSTEM
+   File: packages/ui/src/components/Toggle/ToggleButton.module.css
+   Based on Figma Toggle Button specifications (Node: 416-9646)
+   Dimensions: 151px × 32px (no icons), 211px × 32px (with icons)
+   =========================================== */
+
+/* Import design tokens */
+@import '@gazebo/tokens/src/theme.css';
+
+/* ===== BASE TOGGLE BUTTON GROUP STYLES ===== */
+.toggleButtonGroup {
+  display: inline-flex;
+  background-color: var(--surface-neutral-muted); /* Figma items-container background */
+  border-radius: var(--togglebutton-div-l2-corner-radius); /* Container corner radius */
+  padding: var(--togglebutton-div-l2-verticle-padding); /* Container padding around items */
+  gap: var(--togglebutton-div-l2-gap); /* Container item spacing */
+  font-family: var(--family-default);
+  position: relative;
+}
+
+.toggleButtonGroup.disabled {
+  cursor: not-allowed;
+}
+
+/* ===== TOGGLE BUTTON ITEM STYLES ===== */
+.toggleButtonItem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--togglebutton-div-l3-gap); /* Figma spacing */
+  padding: var(--togglebutton-div-l3-verticle-padding) var(--togglebutton-div-l3-horizontal-padding); /* Figma spec */
+  background-color: transparent; /* Ghost/Default state - opacity 0.0 in Figma */
+  border: none;
+  border-radius: var(--togglebutton-div-l3-corner-radius); /* Figma spec */
+  font-family: var(--family-default); /* Figma font */
+  font-weight: var(--weight-semibold); /* SemiBold from design tokens */
+  font-size: 14px; /* Figma spec */
+  letter-spacing: -0.15px; /* Figma spec */
+  color: var(--text-neutral-highcontrast); /* Figma text color */
+  cursor: pointer;
+  transition: all 319ms ease-out; /* Figma exact: 319.4ms "GENTLE" easing */
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* ===== SELECTED STATE ===== */
+.toggleButtonItem.selected {
+  background-color: var(--surface-neutral-lightsurface); /* Active state - white background from Figma API */
+  color: var(--text-neutral-highcontrast); /* Figma text color */
+  /* Figma shadow effects - exact color values from API */
+  box-shadow: 
+    0 4px 4px -2px rgba(233, 236, 239, 1), /* Drop shadow 1: #e9ecef */
+    0 4px 8px -2px rgba(223, 228, 231, 1); /* Drop shadow 2: #dfe4e7 */
+}
+
+/* ===== HOVER STATE ===== */
+.toggleButtonItem:hover:not(.disabled):not(.selected) {
+  background-color: var(--surface-neutral-subtle); /* Light gray hover state */
+  /* Subtle shadow for hover transition */
+  box-shadow: 
+    0 2px 2px -1px rgba(233, 236, 239, 0.6),
+    0 2px 4px -1px rgba(223, 228, 231, 0.6);
+}
+
+.toggleButtonItem:hover:not(.disabled).selected {
+  /* Enhance selected state on hover */
+  box-shadow: 
+    0 6px 6px -2px rgba(233, 236, 239, 1),
+    0 6px 12px -2px rgba(223, 228, 231, 1);
+}
+
+/* ===== DISABLED STATE ===== */
+.toggleButtonItem.disabled {
+  color: var(--text-semantic-disable); /* Figma disabled text */
+  background-color: var(--surface-semantic-disable); /* Disabled background */
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ===== FOCUS STATE ===== */
+.toggleButtonItem:focus-visible {
+  outline: 2px solid var(--focus-primary-layertwo-color); /* Focus color */
+  outline-offset: 2px;
+}
+
+/* ===== ACTIVE STATE ===== */
+.toggleButtonItem:active:not(.disabled) {
+  transform: scale(0.98);
+}
+
+/* ===== ICON STYLES ===== */
+.toggleButtonIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: inherit;
+}
+
+/* ===== SIZE VARIANTS ===== */
+.toggleButtonGroup.withoutIcons {
+  min-width: 151px; /* Figma spec */
+  height: 32px; /* Figma spec */
+}
+
+.toggleButtonGroup.withIcons {
+  min-width: 211px; /* Figma spec */
+  height: 32px; /* Figma spec */
+}
+
+/* ===== LAYOUT VARIANTS ===== */
+.toggleButtonGroup.horizontal {
+  flex-direction: row;
+}
+
+.toggleButtonGroup.vertical {
+  flex-direction: column;
+  gap: var(--togglebutton-div-l1-gap); /* Vertical spacing */
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  .toggleButtonItem {
+    transition: none;
+  }
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
+  .toggleButtonItem {
+    border: 1px solid transparent;
+  }
+  
+  .toggleButtonItem.selected {
+    border-color: var(--neutral-black-1000);
+  }
+  
+  .toggleButtonItem:focus-visible {
+    outline-width: 3px;
+  }
+}
+
+/* ===== RESPONSIVE BEHAVIOR ===== */
+@media (max-width: 768px) {
+  .toggleButtonGroup {
+    flex-wrap: wrap;
+  }
+  
+  .toggleButtonItem {
+    flex: 1;
+    min-width: 0;
+  }
+}

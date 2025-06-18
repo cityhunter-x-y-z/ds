@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Radio & Cube Toggle</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Red Hat Display', sans-serif;
+            padding: 40px;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e4e7ec;
+            border-radius: 6px;
+            background: #fafbfc;
+        }
+        
+        /* Radio styles */
+        .radio {
+            display: inline-flex;
+            align-items: flex-start;
+            gap: 12px;
+            cursor: pointer;
+            font-family: 'Red Hat Display', sans-serif;
+            position: relative;
+            min-height: 16px;
+            margin: 10px 0;
+        }
+
+        .radio-input {
+            position: absolute;
+            opacity: 0;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            border: 0;
+            padding: 0;
+            white-space: nowrap;
+            clip-path: inset(100%);
+            clip: rect(0 0 0 0);
+            overflow: hidden;
+        }
+
+        .radio-visual {
+            position: relative;
+            width: 16px;
+            height: 16px;
+            background-color: #ffffff;
+            border: 1px solid #1d2939;
+            border-radius: 50%;
+            transition: all 0.2s;
+            cursor: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .radio-visual.checked {
+            background-color: #1d2939;
+            border-color: #1d2939;
+        }
+
+        .radio-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #ffffff;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .radio-visual.checked .radio-dot {
+            opacity: 1;
+        }
+        
+        /* Cube toggle styles */
+        .cube-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 68px;
+            height: 32px;
+            background-color: #ffffff;
+            border: 1px solid #1d2939;
+            border-radius: 4px;
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 500;
+            font-size: 12px;
+            color: #1d2939;
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+            position: relative;
+            flex-shrink: 0;
+            margin: 10px 0;
+        }
+
+        .cube-toggle.checked {
+            background-color: #1d2939;
+            border-color: #1d2939;
+            color: #ffffff;
+        }
+        
+        .debug-info {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            margin-top: 10px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐛 Debug Radio & Cube Toggle</h1>
+        
+        <div class="test-section">
+            <h2>1. Native Radio Button Test</h2>
+            <label>
+                <input type="radio" name="native-radio" value="option1"> Native Radio 1
+            </label>
+            <label>
+                <input type="radio" name="native-radio" value="option2"> Native Radio 2
+            </label>
+            <div class="debug-info" id="native-radio-debug">No selection</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>2. Custom Radio Button Test</h2>
+            <label class="radio" for="custom-radio1">
+                <input type="radio" name="custom-radio" value="option1" class="radio-input" id="custom-radio1">
+                <div class="radio-visual" id="custom-radio1-visual">
+                    <div class="radio-dot"></div>
+                </div>
+                <span>Custom Radio 1</span>
+            </label>
+            <label class="radio" for="custom-radio2">
+                <input type="radio" name="custom-radio" value="option2" class="radio-input" id="custom-radio2">
+                <div class="radio-visual" id="custom-radio2-visual">
+                    <div class="radio-dot"></div>
+                </div>
+                <span>Custom Radio 2</span>
+            </label>
+            <div class="debug-info" id="custom-radio-debug">No selection</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>3. Single Radio Test (Like our component)</h2>
+            <label class="radio" for="single-radio">
+                <input type="radio" name="single-radio" value="single" class="radio-input" id="single-radio">
+                <div class="radio-visual" id="single-radio-visual">
+                    <div class="radio-dot"></div>
+                </div>
+                <span>Single Radio (problematic?)</span>
+            </label>
+            <div class="debug-info" id="single-radio-debug">Unchecked</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>4. Cube Toggle Test</h2>
+            <label class="cube-toggle" id="cube-toggle-label">
+                <input type="checkbox" class="radio-input" id="cube-checkbox">
+                <span id="cube-content">OFF</span>
+            </label>
+            <div class="debug-info" id="cube-debug">State: OFF</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>🔍 Debug Log</h2>
+            <div id="debug-log" class="debug-info" style="max-height: 200px; overflow-y: auto;"></div>
+        </div>
+    </div>
+
+    <script>
+        let debugLog = document.getElementById('debug-log');
+        
+        function log(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            debugLog.textContent += `[${timestamp}] ${message}\n`;
+            debugLog.scrollTop = debugLog.scrollHeight;
+        }
+        
+        // Native radio test
+        document.querySelectorAll('input[name="native-radio"]').forEach(radio => {
+            radio.addEventListener('change', function(e) {
+                document.getElementById('native-radio-debug').textContent = `Selected: ${e.target.value}`;
+                log(`Native radio: ${e.target.value} checked`);
+            });
+        });
+        
+        // Custom radio test
+        document.querySelectorAll('input[name="custom-radio"]').forEach(radio => {
+            radio.addEventListener('change', function(e) {
+                // Reset all visuals
+                document.querySelectorAll('[id$="radio1-visual"], [id$="radio2-visual"]').forEach(visual => {
+                    visual.classList.remove('checked');
+                });
+                
+                // Set the checked one
+                if (e.target.checked) {
+                    document.getElementById(e.target.id + '-visual').classList.add('checked');
+                }
+                
+                document.getElementById('custom-radio-debug').textContent = `Selected: ${e.target.value}`;
+                log(`Custom radio: ${e.target.value} checked, visual updated`);
+            });
+        });
+        
+        // Single radio test - this might be the problem!
+        document.getElementById('single-radio').addEventListener('change', function(e) {
+            const visual = document.getElementById('single-radio-visual');
+            
+            if (e.target.checked) {
+                visual.classList.add('checked');
+                document.getElementById('single-radio-debug').textContent = 'Checked';
+                log(`Single radio: checked (this might not work correctly)`);
+            } else {
+                visual.classList.remove('checked');
+                document.getElementById('single-radio-debug').textContent = 'Unchecked';
+                log(`Single radio: unchecked`);
+            }
+        });
+        
+        // Single radio click test
+        document.getElementById('single-radio').addEventListener('click', function(e) {
+            log(`Single radio clicked, checked state: ${e.target.checked}`);
+        });
+        
+        // Cube toggle test
+        let cubeState = false;
+        const cubeLabel = document.getElementById('cube-toggle-label');
+        const cubeCheckbox = document.getElementById('cube-checkbox');
+        const cubeContent = document.getElementById('cube-content');
+        
+        function updateCubeState(newState) {
+            cubeState = newState;
+            cubeCheckbox.checked = newState;
+            
+            if (newState) {
+                cubeLabel.classList.add('checked');
+                cubeContent.textContent = 'ON';
+            } else {
+                cubeLabel.classList.remove('checked');
+                cubeContent.textContent = 'OFF';
+            }
+            
+            document.getElementById('cube-debug').textContent = `State: ${newState ? 'ON' : 'OFF'}`;
+            log(`Cube toggle: ${newState ? 'ON' : 'OFF'}, checkbox checked: ${cubeCheckbox.checked}`);
+        }
+        
+        cubeLabel.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default label behavior
+            updateCubeState(!cubeState);
+        });
+        
+        log('Debug test loaded. The single radio and cube toggle might reveal the issues.');
+    </script>
+</body>
+</html>

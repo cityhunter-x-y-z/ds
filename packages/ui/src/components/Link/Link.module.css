@@ -1,0 +1,240 @@
+/* ===========================================
+   LINK STYLES - Design System Implementation
+   File: packages/ui/src/components/Link/Link.module.css
+   Based on design tokens and scalable approach
+   =========================================== */
+
+/* Import design tokens */
+@import '@gazebo/tokens/src/theme.css';
+
+/* ===== BASE LINK STYLES ===== */
+.link {
+  /* Reset default link styles */
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  
+  /* Base typography from design tokens */
+  font-family: var(--family-default);
+  color: var(--text-link-default);
+  
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  vertical-align: baseline;
+  
+  /* Smooth transitions */
+  transition: all var(--transition-fast) ease;
+  
+  /* Prevent text selection on click */
+  user-select: none;
+  -webkit-user-select: none;
+  
+  /* Base positioning */
+  position: relative;
+}
+
+/* Focus styles using design tokens */
+.link:focus-visible {
+  box-shadow: 
+    var(--focus-primary-layerone-x) var(--focus-primary-layerone-y) var(--focus-primary-layerone-blur) var(--focus-primary-layerone-spread) var(--focus-primary-layerone-color),
+    var(--focus-primary-layertwo-x) var(--focus-primary-layertwo-y) var(--focus-primary-layertwo-blur) var(--focus-primary-layertwo-spread) var(--focus-primary-layertwo-color),
+    var(--focus-primary-layerthree-x) var(--focus-primary-layerthree-y) var(--focus-primary-layerthree-blur) var(--focus-primary-layerthree-spread) var(--focus-primary-layerthree-color);
+  border-radius: var(--corners-sm);
+  z-index: 1;
+}
+
+/* ===== LINK VARIANTS ===== */
+
+/* Default text link variant */
+.default {
+  color: var(--text-link-default);
+}
+
+.default:hover:not(.disabled) {
+  color: var(--text-link-hovered);
+}
+
+.default:active:not(.disabled) {
+  color: var(--text-link-action);
+}
+
+.default.disabled {
+  color: var(--text-semantic-disable);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Button-style link variant using button-link tokens */
+.button {
+  color: var(--button-link-default-text);
+  padding: var(--spacing-space-1) var(--spacing-space-2);
+  border-radius: var(--corners-sm);
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.button:hover:not(.disabled) {
+  color: var(--button-link-hover-text);
+  background: var(--surface-neutral-lightsurface);
+}
+
+.button:active:not(.disabled) {
+  color: var(--button-link-action-text);
+  background: var(--surface-neutral-muted);
+}
+
+.button.disabled {
+  color: var(--button-link-disabled-text);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ===== LINK SIZES ===== */
+
+.sm {
+  font-size: var(--font-size-body-xs);
+  line-height: var(--lineheight-body-xs);
+  gap: var(--spacing-space-0-5);
+}
+
+.md {
+  font-size: var(--font-size-body-sm);
+  line-height: var(--lineheight-body-sm);
+  gap: var(--spacing-space-1);
+}
+
+.lg {
+  font-size: var(--font-size-body-md);
+  line-height: var(--lineheight-body-md);
+  gap: var(--spacing-space-1);
+}
+
+/* ===== UNDERLINE STYLES ===== */
+
+.underlineAlways {
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+.underlineHover {
+  text-decoration: none;
+}
+
+.underlineHover:hover:not(.disabled) {
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+.underlineNone {
+  text-decoration: none;
+}
+
+/* ===== ICON SUPPORT ===== */
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.iconLeft {
+  order: -1;
+}
+
+.iconRight {
+  order: 1;
+}
+
+/* Icon sizes based on text size */
+.sm .iconContainer {
+  width: 12px;
+  height: 12px;
+}
+
+.md .iconContainer {
+  width: 16px;
+  height: 16px;
+}
+
+.lg .iconContainer {
+  width: 20px;
+  height: 20px;
+}
+
+/* Icon colors inherit from link */
+.link .iconContainer {
+  color: currentColor;
+}
+
+/* ===== EXTERNAL LINK INDICATOR ===== */
+
+.externalIcon {
+  margin-left: var(--spacing-space-0-5);
+  opacity: 0.7;
+}
+
+.externalIcon:after {
+  content: "↗";
+  font-size: 0.8em;
+  line-height: 1;
+}
+
+/* ===== DISABLED STATE ===== */
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+  
+  .underlineAlways,
+  .underlineHover:hover:not(.disabled) {
+    text-decoration-thickness: 2px;
+  }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .link {
+    transition: none;
+  }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .link {
+    color: inherit;
+    text-decoration: underline;
+  }
+  
+  .external:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: var(--text-neutral-subtle);
+  }
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+  .button {
+    /* Ensure minimum touch target size */
+    min-height: 44px;
+    min-width: 44px;
+    padding: var(--spacing-space-2) var(--spacing-space-3);
+  }
+}

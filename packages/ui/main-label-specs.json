@@ -1,0 +1,1093 @@
+{
+  "name": "1.0 Label",
+  "type": "COMPONENT_SET",
+  "id": "502:27898",
+  "description": null,
+  "componentPropertyDefinitions": {
+    "⮑ 🔄 Icon#502:10": {
+      "type": "INSTANCE_SWAP",
+      "defaultValue": "10:9",
+      "preferredValues": []
+    },
+    "⮑ ✏️ Subtitle#502:11": {
+      "type": "TEXT",
+      "defaultValue": "Subtitle"
+    },
+    "⮑ ✏️ Hint#502:12": {
+      "type": "TEXT",
+      "defaultValue": "Hint"
+    },
+    "Hint#502:13": {
+      "type": "BOOLEAN",
+      "defaultValue": false
+    },
+    "Subtitle#502:14": {
+      "type": "BOOLEAN",
+      "defaultValue": false
+    },
+    "Icon#502:15": {
+      "type": "BOOLEAN",
+      "defaultValue": false
+    },
+    "Title#502:16": {
+      "type": "TEXT",
+      "defaultValue": "Label"
+    },
+    "End Icon#3364:3": {
+      "type": "BOOLEAN",
+      "defaultValue": false
+    },
+    "Width": {
+      "type": "VARIANT",
+      "defaultValue": "MD",
+      "variantOptions": [
+        "MD",
+        "LG"
+      ]
+    }
+  },
+  "variants": [
+    {
+      "id": "502:27895",
+      "name": "Width=MD",
+      "type": "COMPONENT",
+      "properties": {
+        "Width": "MD"
+      },
+      "layout": {
+        "width": 36,
+        "height": 19,
+        "x": -2312,
+        "y": 36,
+        "layoutMode": "VERTICAL",
+        "primaryAxisSizingMode": null,
+        "counterAxisSizingMode": "FIXED",
+        "primaryAxisAlignItems": "CENTER",
+        "counterAxisAlignItems": null,
+        "paddingLeft": null,
+        "paddingRight": null,
+        "paddingTop": null,
+        "paddingBottom": null,
+        "itemSpacing": 4,
+        "cornerRadius": null,
+        "layoutGrow": null,
+        "layoutAlign": null
+      },
+      "styles": {},
+      "children": [
+        {
+          "id": "502:27893",
+          "name": "text-container",
+          "type": "FRAME",
+          "characters": null,
+          "layout": {
+            "width": 36,
+            "height": 19,
+            "x": -2312,
+            "y": 36,
+            "layoutMode": "HORIZONTAL",
+            "primaryAxisSizingMode": "FIXED",
+            "counterAxisSizingMode": null,
+            "primaryAxisAlignItems": null,
+            "counterAxisAlignItems": "CENTER",
+            "paddingLeft": null,
+            "paddingRight": null,
+            "paddingTop": null,
+            "paddingBottom": null,
+            "itemSpacing": 8,
+            "cornerRadius": null,
+            "layoutGrow": null,
+            "layoutAlign": "STRETCH"
+          },
+          "styles": {},
+          "constraints": {
+            "vertical": "TOP",
+            "horizontal": "LEFT"
+          },
+          "children": [
+            {
+              "id": "502:27896",
+              "name": "1.0 Icon Solid",
+              "type": "INSTANCE",
+              "characters": null,
+              "layout": {
+                "width": 12,
+                "height": 12,
+                "x": -2312,
+                "y": 38,
+                "layoutMode": null,
+                "primaryAxisSizingMode": null,
+                "counterAxisSizingMode": null,
+                "primaryAxisAlignItems": null,
+                "counterAxisAlignItems": null,
+                "paddingLeft": null,
+                "paddingRight": null,
+                "paddingTop": null,
+                "paddingBottom": null,
+                "itemSpacing": null,
+                "cornerRadius": null,
+                "layoutGrow": null,
+                "layoutAlign": "INHERIT"
+              },
+              "styles": {},
+              "constraints": {
+                "vertical": "TOP",
+                "horizontal": "LEFT"
+              },
+              "children": [
+                {
+                  "id": "I502:27896;11060:29580",
+                  "name": "Regular/Paperclip",
+                  "type": "INSTANCE",
+                  "characters": null,
+                  "layout": {
+                    "width": 12,
+                    "height": 12,
+                    "x": -2312,
+                    "y": 38,
+                    "layoutMode": null,
+                    "primaryAxisSizingMode": null,
+                    "counterAxisSizingMode": null,
+                    "primaryAxisAlignItems": null,
+                    "counterAxisAlignItems": null,
+                    "paddingLeft": null,
+                    "paddingRight": null,
+                    "paddingTop": null,
+                    "paddingBottom": null,
+                    "itemSpacing": null,
+                    "cornerRadius": null,
+                    "layoutGrow": null,
+                    "layoutAlign": null
+                  },
+                  "styles": {
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#ffffff",
+                        "opacity": 1,
+                        "visible": false
+                      }
+                    ]
+                  },
+                  "constraints": {
+                    "vertical": "CENTER",
+                    "horizontal": "CENTER"
+                  },
+                  "children": [
+                    {
+                      "id": "I502:27896;11060:29580;2877:4574",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "characters": null,
+                      "layout": {
+                        "width": 12,
+                        "height": 12,
+                        "x": -2312,
+                        "y": 38,
+                        "layoutMode": null,
+                        "primaryAxisSizingMode": null,
+                        "counterAxisSizingMode": null,
+                        "primaryAxisAlignItems": null,
+                        "counterAxisAlignItems": null,
+                        "paddingLeft": null,
+                        "paddingRight": null,
+                        "paddingTop": null,
+                        "paddingBottom": null,
+                        "itemSpacing": null,
+                        "cornerRadius": null,
+                        "layoutGrow": null,
+                        "layoutAlign": null
+                      },
+                      "styles": {},
+                      "constraints": {
+                        "vertical": "SCALE",
+                        "horizontal": "SCALE"
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "I502:27896;11060:29580;2877:4575",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "characters": null,
+                      "layout": {
+                        "width": 7.820077419281006,
+                        "height": 8.945075988769531,
+                        "x": -2310.122314453125,
+                        "y": 39.55219650268555,
+                        "layoutMode": null,
+                        "primaryAxisSizingMode": null,
+                        "counterAxisSizingMode": null,
+                        "primaryAxisAlignItems": null,
+                        "counterAxisAlignItems": null,
+                        "paddingLeft": null,
+                        "paddingRight": null,
+                        "paddingTop": null,
+                        "paddingBottom": null,
+                        "itemSpacing": null,
+                        "cornerRadius": null,
+                        "layoutGrow": null,
+                        "layoutAlign": null
+                      },
+                      "styles": {
+                        "strokes": [
+                          {
+                            "type": "SOLID",
+                            "color": "#344054",
+                            "opacity": 1
+                          }
+                        ],
+                        "strokeWeight": 1,
+                        "strokeAlign": "CENTER"
+                      },
+                      "constraints": {
+                        "vertical": "SCALE",
+                        "horizontal": "SCALE"
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "502:27888",
+              "name": "Label",
+              "type": "TEXT",
+              "characters": "Label",
+              "layout": {
+                "width": 36,
+                "height": 19,
+                "x": -2312,
+                "y": 36,
+                "layoutMode": null,
+                "primaryAxisSizingMode": null,
+                "counterAxisSizingMode": null,
+                "primaryAxisAlignItems": null,
+                "counterAxisAlignItems": null,
+                "paddingLeft": null,
+                "paddingRight": null,
+                "paddingTop": null,
+                "paddingBottom": null,
+                "itemSpacing": null,
+                "cornerRadius": null,
+                "layoutGrow": null,
+                "layoutAlign": "INHERIT"
+              },
+              "styles": {
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#1d2939",
+                    "opacity": 1,
+                    "visible": true
+                  }
+                ],
+                "typography": {
+                  "fontFamily": "Red Hat Display",
+                  "fontSize": 14,
+                  "fontWeight": 600,
+                  "lineHeight": 1,
+                  "letterSpacing": -0.15000000596046448,
+                  "textAlignHorizontal": "LEFT",
+                  "textAlignVertical": "TOP",
+                  "textDecoration": null
+                }
+              },
+              "constraints": {
+                "vertical": "SCALE",
+                "horizontal": "SCALE"
+              },
+              "children": []
+            },
+            {
+              "id": "502:27889",
+              "name": "Hint",
+              "type": "TEXT",
+              "characters": "Hint",
+              "layout": {
+                "width": 25,
+                "height": 19,
+                "x": -2007,
+                "y": 37,
+                "layoutMode": null,
+                "primaryAxisSizingMode": null,
+                "counterAxisSizingMode": null,
+                "primaryAxisAlignItems": null,
+                "counterAxisAlignItems": null,
+                "paddingLeft": null,
+                "paddingRight": null,
+                "paddingTop": null,
+                "paddingBottom": null,
+                "itemSpacing": null,
+                "cornerRadius": null,
+                "layoutGrow": null,
+                "layoutAlign": "INHERIT"
+              },
+              "styles": {
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#667085",
+                    "opacity": 1,
+                    "visible": true
+                  }
+                ],
+                "typography": {
+                  "fontFamily": "Red Hat Display",
+                  "fontSize": 14,
+                  "fontWeight": 400,
+                  "lineHeight": 1,
+                  "letterSpacing": -0.15000000596046448,
+                  "textAlignHorizontal": "LEFT",
+                  "textAlignVertical": "TOP",
+                  "textDecoration": null
+                }
+              },
+              "constraints": {
+                "vertical": "SCALE",
+                "horizontal": "SCALE"
+              },
+              "children": []
+            },
+            {
+              "id": "3364:65687",
+              "name": "1.0 Icon Solid",
+              "type": "INSTANCE",
+              "characters": null,
+              "layout": {
+                "width": 12,
+                "height": 12,
+                "x": -1974,
+                "y": 40,
+                "layoutMode": null,
+                "primaryAxisSizingMode": null,
+                "counterAxisSizingMode": null,
+                "primaryAxisAlignItems": null,
+                "counterAxisAlignItems": null,
+                "paddingLeft": null,
+                "paddingRight": null,
+                "paddingTop": null,
+                "paddingBottom": null,
+                "itemSpacing": null,
+                "cornerRadius": null,
+                "layoutGrow": null,
+                "layoutAlign": "INHERIT"
+              },
+              "styles": {},
+              "constraints": {
+                "vertical": "TOP",
+                "horizontal": "LEFT"
+              },
+              "children": [
+                {
+                  "id": "I3364:65687;11060:29580",
+                  "name": "Regular/Paperclip",
+                  "type": "INSTANCE",
+                  "characters": null,
+                  "layout": {
+                    "width": 12,
+                    "height": 12,
+                    "x": -1974,
+                    "y": 40,
+                    "layoutMode": null,
+                    "primaryAxisSizingMode": null,
+                    "counterAxisSizingMode": null,
+                    "primaryAxisAlignItems": null,
+                    "counterAxisAlignItems": null,
+                    "paddingLeft": null,
+                    "paddingRight": null,
+                    "paddingTop": null,
+                    "paddingBottom": null,
+                    "itemSpacing": null,
+                    "cornerRadius": null,
+                    "layoutGrow": null,
+                    "layoutAlign": null
+                  },
+                  "styles": {
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#ffffff",
+                        "opacity": 1,
+                        "visible": false
+                      }
+                    ]
+                  },
+                  "constraints": {
+                    "vertical": "CENTER",
+                    "horizontal": "CENTER"
+                  },
+                  "children": [
+                    {
+                      "id": "I3364:65687;11060:29580;2877:4574",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "characters": null,
+                      "layout": {
+                        "width": 12,
+                        "height": 12,
+                        "x": -1974,
+                        "y": 40,
+                        "layoutMode": null,
+                        "primaryAxisSizingMode": null,
+                        "counterAxisSizingMode": null,
+                        "primaryAxisAlignItems": null,
+                        "counterAxisAlignItems": null,
+                        "paddingLeft": null,
+                        "paddingRight": null,
+                        "paddingTop": null,
+                        "paddingBottom": null,
+                        "itemSpacing": null,
+                        "cornerRadius": null,
+                        "layoutGrow": null,
+                        "layoutAlign": null
+                      },
+                      "styles": {},
+                      "constraints": {
+                        "vertical": "SCALE",
+                        "horizontal": "SCALE"
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "I3364:65687;11060:29580;2877:4575",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "characters": null,
+                      "layout": {
+                        "width": 7.820077419281006,
+                        "height": 8.945075988769531,
+                        "x": -1972.122314453125,
+                        "y": 41.55219650268555,
+                        "layoutMode": null,
+                        "primaryAxisSizingMode": null,
+                        "counterAxisSizingMode": null,
+                        "primaryAxisAlignItems": null,
+                        "counterAxisAlignItems": null,
+                        "paddingLeft": null,
+                        "paddingRight": null,
+                        "paddingTop": null,
+                        "paddingBottom": null,
+                        "itemSpacing": null,
+                        "cornerRadius": null,
+                        "layoutGrow": null,
+                        "layoutAlign": null
+                      },
+                      "styles": {
+                        "strokes": [
+                          {
+                            "type": "SOLID",
+                            "color": "#344054",
+                            "opacity": 1
+                          }
+                        ],
+                        "strokeWeight": 1,
+                        "strokeAlign": "CENTER"
+                      },
+                      "constraints": {
+                        "vertical": "SCALE",
+                        "horizontal": "SCALE"
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "502:27894",
+          "name": "Subtitle",
+          "type": "TEXT",
+          "characters": "Subtitle",
+          "layout": {
+            "width": 350,
+            "height": 19,
+            "x": -2312,
+            "y": 60,
+            "layoutMode": null,
+            "primaryAxisSizingMode": null,
+            "counterAxisSizingMode": null,
+            "primaryAxisAlignItems": null,
+            "counterAxisAlignItems": null,
+            "paddingLeft": null,
+            "paddingRight": null,
+            "paddingTop": null,
+            "paddingBottom": null,
+            "itemSpacing": null,
+            "cornerRadius": null,
+            "layoutGrow": null,
+            "layoutAlign": "STRETCH"
+          },
+          "styles": {
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#667085",
+                "opacity": 1,
+                "visible": true
+              }
+            ],
+            "typography": {
+              "fontFamily": "Red Hat Display",
+              "fontSize": 14,
+              "fontWeight": 400,
+              "lineHeight": 1,
+              "letterSpacing": -0.15000000596046448,
+              "textAlignHorizontal": "LEFT",
+              "textAlignVertical": "TOP",
+              "textDecoration": null
+            }
+          },
+          "constraints": {
+            "vertical": "SCALE",
+            "horizontal": "SCALE"
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "1202:90292",
+      "name": "Width=LG",
+      "type": "COMPONENT",
+      "properties": {
+        "Width": "LG"
+      },
+      "layout": {
+        "width": 40,
+        "height": 21,
+        "x": -2081,
+        "y": 36,
+        "layoutMode": "VERTICAL",
+        "primaryAxisSizingMode": null,
+        "counterAxisSizingMode": "FIXED",
+        "primaryAxisAlignItems": "CENTER",
+        "counterAxisAlignItems": null,
+        "paddingLeft": null,
+        "paddingRight": null,
+        "paddingTop": null,
+        "paddingBottom": null,
+        "itemSpacing": 4,
+        "cornerRadius": null,
+        "layoutGrow": null,
+        "layoutAlign": null
+      },
+      "styles": {},
+      "children": [
+        {
+          "id": "1202:90293",
+          "name": "text-container",
+          "type": "FRAME",
+          "characters": null,
+          "layout": {
+            "width": 40,
+            "height": 21,
+            "x": -2081,
+            "y": 36,
+            "layoutMode": "HORIZONTAL",
+            "primaryAxisSizingMode": "FIXED",
+            "counterAxisSizingMode": null,
+            "primaryAxisAlignItems": null,
+            "counterAxisAlignItems": "CENTER",
+            "paddingLeft": null,
+            "paddingRight": null,
+            "paddingTop": null,
+            "paddingBottom": null,
+            "itemSpacing": 8,
+            "cornerRadius": null,
+            "layoutGrow": null,
+            "layoutAlign": "STRETCH"
+          },
+          "styles": {},
+          "constraints": {
+            "vertical": "TOP",
+            "horizontal": "LEFT"
+          },
+          "children": [
+            {
+              "id": "1202:90294",
+              "name": "1.0 Icon Solid",
+              "type": "INSTANCE",
+              "characters": null,
+              "layout": {
+                "width": 12,
+                "height": 12,
+                "x": -2081,
+                "y": 40,
+                "layoutMode": null,
+                "primaryAxisSizingMode": null,
+                "counterAxisSizingMode": null,
+                "primaryAxisAlignItems": null,
+                "counterAxisAlignItems": null,
+                "paddingLeft": null,
+                "paddingRight": null,
+                "paddingTop": null,
+                "paddingBottom": null,
+                "itemSpacing": null,
+                "cornerRadius": null,
+                "layoutGrow": null,
+                "layoutAlign": "INHERIT"
+              },
+              "styles": {},
+              "constraints": {
+                "vertical": "TOP",
+                "horizontal": "LEFT"
+              },
+              "children": [
+                {
+                  "id": "I1202:90294;11060:29580",
+                  "name": "Regular/Paperclip",
+                  "type": "INSTANCE",
+                  "characters": null,
+                  "layout": {
+                    "width": 12,
+                    "height": 12,
+                    "x": -2081,
+                    "y": 40,
+                    "layoutMode": null,
+                    "primaryAxisSizingMode": null,
+                    "counterAxisSizingMode": null,
+                    "primaryAxisAlignItems": null,
+                    "counterAxisAlignItems": null,
+                    "paddingLeft": null,
+                    "paddingRight": null,
+                    "paddingTop": null,
+                    "paddingBottom": null,
+                    "itemSpacing": null,
+                    "cornerRadius": null,
+                    "layoutGrow": null,
+                    "layoutAlign": null
+                  },
+                  "styles": {
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#ffffff",
+                        "opacity": 1,
+                        "visible": false
+                      }
+                    ]
+                  },
+                  "constraints": {
+                    "vertical": "CENTER",
+                    "horizontal": "CENTER"
+                  },
+                  "children": [
+                    {
+                      "id": "I1202:90294;11060:29580;2877:4574",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "characters": null,
+                      "layout": {
+                        "width": 12,
+                        "height": 12,
+                        "x": -2081,
+                        "y": 40,
+                        "layoutMode": null,
+                        "primaryAxisSizingMode": null,
+                        "counterAxisSizingMode": null,
+                        "primaryAxisAlignItems": null,
+                        "counterAxisAlignItems": null,
+                        "paddingLeft": null,
+                        "paddingRight": null,
+                        "paddingTop": null,
+                        "paddingBottom": null,
+                        "itemSpacing": null,
+                        "cornerRadius": null,
+                        "layoutGrow": null,
+                        "layoutAlign": null
+                      },
+                      "styles": {},
+                      "constraints": {
+                        "vertical": "SCALE",
+                        "horizontal": "SCALE"
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "I1202:90294;11060:29580;2877:4575",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "characters": null,
+                      "layout": {
+                        "width": 7.820077419281006,
+                        "height": 8.945075988769531,
+                        "x": -2079.122314453125,
+                        "y": 41.55219650268555,
+                        "layoutMode": null,
+                        "primaryAxisSizingMode": null,
+                        "counterAxisSizingMode": null,
+                        "primaryAxisAlignItems": null,
+                        "counterAxisAlignItems": null,
+                        "paddingLeft": null,
+                        "paddingRight": null,
+                        "paddingTop": null,
+                        "paddingBottom": null,
+                        "itemSpacing": null,
+                        "cornerRadius": null,
+                        "layoutGrow": null,
+                        "layoutAlign": null
+                      },
+                      "styles": {
+                        "strokes": [
+                          {
+                            "type": "SOLID",
+                            "color": "#344054",
+                            "opacity": 1
+                          }
+                        ],
+                        "strokeWeight": 1,
+                        "strokeAlign": "CENTER"
+                      },
+                      "constraints": {
+                        "vertical": "SCALE",
+                        "horizontal": "SCALE"
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "1202:90295",
+              "name": "Label",
+              "type": "TEXT",
+              "characters": "Label",
+              "layout": {
+                "width": 40,
+                "height": 21,
+                "x": -2081,
+                "y": 36,
+                "layoutMode": null,
+                "primaryAxisSizingMode": null,
+                "counterAxisSizingMode": null,
+                "primaryAxisAlignItems": null,
+                "counterAxisAlignItems": null,
+                "paddingLeft": null,
+                "paddingRight": null,
+                "paddingTop": null,
+                "paddingBottom": null,
+                "itemSpacing": null,
+                "cornerRadius": null,
+                "layoutGrow": null,
+                "layoutAlign": "INHERIT"
+              },
+              "styles": {
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#1d2939",
+                    "opacity": 1,
+                    "visible": true
+                  }
+                ],
+                "typography": {
+                  "fontFamily": "Red Hat Display",
+                  "fontSize": 16,
+                  "fontWeight": 600,
+                  "lineHeight": 1,
+                  "letterSpacing": -0.3100000023841858,
+                  "textAlignHorizontal": "LEFT",
+                  "textAlignVertical": "TOP",
+                  "textDecoration": null
+                }
+              },
+              "constraints": {
+                "vertical": "SCALE",
+                "horizontal": "SCALE"
+              },
+              "children": []
+            },
+            {
+              "id": "3364:73906",
+              "name": "1.0 Icon Solid",
+              "type": "INSTANCE",
+              "characters": null,
+              "layout": {
+                "width": 12,
+                "height": 12,
+                "x": -2013,
+                "y": 40,
+                "layoutMode": null,
+                "primaryAxisSizingMode": null,
+                "counterAxisSizingMode": null,
+                "primaryAxisAlignItems": null,
+                "counterAxisAlignItems": null,
+                "paddingLeft": null,
+                "paddingRight": null,
+                "paddingTop": null,
+                "paddingBottom": null,
+                "itemSpacing": null,
+                "cornerRadius": null,
+                "layoutGrow": null,
+                "layoutAlign": "INHERIT"
+              },
+              "styles": {},
+              "constraints": {
+                "vertical": "TOP",
+                "horizontal": "LEFT"
+              },
+              "children": [
+                {
+                  "id": "I3364:73906;11060:29580",
+                  "name": "Regular/Paperclip",
+                  "type": "INSTANCE",
+                  "characters": null,
+                  "layout": {
+                    "width": 12,
+                    "height": 12,
+                    "x": -2013,
+                    "y": 40,
+                    "layoutMode": null,
+                    "primaryAxisSizingMode": null,
+                    "counterAxisSizingMode": null,
+                    "primaryAxisAlignItems": null,
+                    "counterAxisAlignItems": null,
+                    "paddingLeft": null,
+                    "paddingRight": null,
+                    "paddingTop": null,
+                    "paddingBottom": null,
+                    "itemSpacing": null,
+                    "cornerRadius": null,
+                    "layoutGrow": null,
+                    "layoutAlign": null
+                  },
+                  "styles": {
+                    "fills": [
+                      {
+                        "type": "SOLID",
+                        "color": "#ffffff",
+                        "opacity": 1,
+                        "visible": false
+                      }
+                    ]
+                  },
+                  "constraints": {
+                    "vertical": "CENTER",
+                    "horizontal": "CENTER"
+                  },
+                  "children": [
+                    {
+                      "id": "I3364:73906;11060:29580;2877:4574",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "characters": null,
+                      "layout": {
+                        "width": 12,
+                        "height": 12,
+                        "x": -2013,
+                        "y": 40,
+                        "layoutMode": null,
+                        "primaryAxisSizingMode": null,
+                        "counterAxisSizingMode": null,
+                        "primaryAxisAlignItems": null,
+                        "counterAxisAlignItems": null,
+                        "paddingLeft": null,
+                        "paddingRight": null,
+                        "paddingTop": null,
+                        "paddingBottom": null,
+                        "itemSpacing": null,
+                        "cornerRadius": null,
+                        "layoutGrow": null,
+                        "layoutAlign": null
+                      },
+                      "styles": {},
+                      "constraints": {
+                        "vertical": "SCALE",
+                        "horizontal": "SCALE"
+                      },
+                      "children": []
+                    },
+                    {
+                      "id": "I3364:73906;11060:29580;2877:4575",
+                      "name": "Vector",
+                      "type": "VECTOR",
+                      "characters": null,
+                      "layout": {
+                        "width": 7.820077419281006,
+                        "height": 8.945075988769531,
+                        "x": -2011.122314453125,
+                        "y": 41.55219650268555,
+                        "layoutMode": null,
+                        "primaryAxisSizingMode": null,
+                        "counterAxisSizingMode": null,
+                        "primaryAxisAlignItems": null,
+                        "counterAxisAlignItems": null,
+                        "paddingLeft": null,
+                        "paddingRight": null,
+                        "paddingTop": null,
+                        "paddingBottom": null,
+                        "itemSpacing": null,
+                        "cornerRadius": null,
+                        "layoutGrow": null,
+                        "layoutAlign": null
+                      },
+                      "styles": {
+                        "strokes": [
+                          {
+                            "type": "SOLID",
+                            "color": "#344054",
+                            "opacity": 1
+                          }
+                        ],
+                        "strokeWeight": 1,
+                        "strokeAlign": "CENTER"
+                      },
+                      "constraints": {
+                        "vertical": "SCALE",
+                        "horizontal": "SCALE"
+                      },
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "1202:90296",
+              "name": "Hint",
+              "type": "TEXT",
+              "characters": "Hint",
+              "layout": {
+                "width": 25,
+                "height": 19,
+                "x": -1993,
+                "y": 37,
+                "layoutMode": null,
+                "primaryAxisSizingMode": null,
+                "counterAxisSizingMode": null,
+                "primaryAxisAlignItems": null,
+                "counterAxisAlignItems": null,
+                "paddingLeft": null,
+                "paddingRight": null,
+                "paddingTop": null,
+                "paddingBottom": null,
+                "itemSpacing": null,
+                "cornerRadius": null,
+                "layoutGrow": null,
+                "layoutAlign": "INHERIT"
+              },
+              "styles": {
+                "fills": [
+                  {
+                    "type": "SOLID",
+                    "color": "#667085",
+                    "opacity": 1,
+                    "visible": true
+                  }
+                ],
+                "typography": {
+                  "fontFamily": "Red Hat Display",
+                  "fontSize": 14,
+                  "fontWeight": 400,
+                  "lineHeight": 1,
+                  "letterSpacing": -0.15000000596046448,
+                  "textAlignHorizontal": "LEFT",
+                  "textAlignVertical": "TOP",
+                  "textDecoration": null
+                }
+              },
+              "constraints": {
+                "vertical": "SCALE",
+                "horizontal": "SCALE"
+              },
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "1202:90297",
+          "name": "Subtitle",
+          "type": "TEXT",
+          "characters": "Subtitle",
+          "layout": {
+            "width": 47,
+            "height": 19,
+            "x": -2081,
+            "y": 60,
+            "layoutMode": null,
+            "primaryAxisSizingMode": null,
+            "counterAxisSizingMode": null,
+            "primaryAxisAlignItems": null,
+            "counterAxisAlignItems": null,
+            "paddingLeft": null,
+            "paddingRight": null,
+            "paddingTop": null,
+            "paddingBottom": null,
+            "itemSpacing": null,
+            "cornerRadius": null,
+            "layoutGrow": null,
+            "layoutAlign": "INHERIT"
+          },
+          "styles": {
+            "fills": [
+              {
+                "type": "SOLID",
+                "color": "#667085",
+                "opacity": 1,
+                "visible": true
+              }
+            ],
+            "typography": {
+              "fontFamily": "Red Hat Display",
+              "fontSize": 14,
+              "fontWeight": 400,
+              "lineHeight": 1,
+              "letterSpacing": -0.15000000596046448,
+              "textAlignHorizontal": "LEFT",
+              "textAlignVertical": "TOP",
+              "textDecoration": null
+            }
+          },
+          "constraints": {
+            "vertical": "SCALE",
+            "horizontal": "SCALE"
+          },
+          "children": []
+        }
+      ]
+    }
+  ],
+  "layout": {
+    "width": 566,
+    "height": 86,
+    "x": -2344,
+    "y": 4,
+    "layoutMode": null,
+    "primaryAxisSizingMode": null,
+    "counterAxisSizingMode": null,
+    "primaryAxisAlignItems": null,
+    "counterAxisAlignItems": null,
+    "paddingLeft": null,
+    "paddingRight": null,
+    "paddingTop": null,
+    "paddingBottom": null,
+    "itemSpacing": null,
+    "cornerRadius": 8,
+    "layoutGrow": null,
+    "layoutAlign": null
+  },
+  "styles": {
+    "fills": [
+      {
+        "type": "SOLID",
+        "color": "#ffffff",
+        "opacity": 1,
+        "visible": true
+      }
+    ],
+    "strokes": [
+      {
+        "type": "SOLID",
+        "color": "#1d2939",
+        "opacity": 1
+      }
+    ],
+    "strokeWeight": 1,
+    "strokeAlign": "INSIDE"
+  }
+}

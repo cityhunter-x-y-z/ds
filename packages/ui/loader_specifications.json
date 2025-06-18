@@ -1,0 +1,3888 @@
+{
+  "standard": {
+    "componentType": "standard",
+    "nodeId": "365:13535",
+    "variants": [
+      {
+        "name": "Size=MD",
+        "id": "365:15006",
+        "properties": {
+          "Size": "MD"
+        },
+        "dimensions": {
+          "width": 24,
+          "height": 24
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 24,
+              "height": 24,
+              "x": -2423,
+              "y": 206
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 24,
+                  "height": 24,
+                  "x": -2423,
+                  "y": 206
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 24,
+                  "height": 24,
+                  "x": -2423,
+                  "y": 206
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 52,
+                        "g": 64,
+                        "b": 84,
+                        "a": 1,
+                        "hex": "#344054"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 62,
+              "height": 22,
+              "x": -2423,
+              "y": 238
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 14,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 22.399999618530273,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      },
+      {
+        "name": "Size=XS",
+        "id": "253:5051",
+        "properties": {
+          "Size": "XS"
+        },
+        "dimensions": {
+          "width": 12,
+          "height": 12
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 12,
+              "height": 12,
+              "x": -2343,
+              "y": 206
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 12,
+                  "height": 12,
+                  "x": -2343,
+                  "y": 206
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 12,
+                  "height": 12,
+                  "x": -2343,
+                  "y": 206
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 44,
+              "height": 16,
+              "x": -2343,
+              "y": 226
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 10,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 16,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      },
+      {
+        "name": "Size=SM",
+        "id": "365:15001",
+        "properties": {
+          "Size": "SM"
+        },
+        "dimensions": {
+          "width": 16,
+          "height": 16
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 16,
+              "height": 16,
+              "x": -2275,
+              "y": 206
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 16,
+                  "height": 16,
+                  "x": -2275,
+                  "y": 206
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 16,
+                  "height": 16,
+                  "x": -2275,
+                  "y": 206
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 53,
+              "height": 19,
+              "x": -2275,
+              "y": 230
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 12,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 19.200000762939453,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      },
+      {
+        "name": "Size=LG",
+        "id": "365:15011",
+        "properties": {
+          "Size": "LG"
+        },
+        "dimensions": {
+          "width": 32,
+          "height": 32
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 32,
+              "height": 32,
+              "x": -2203,
+              "y": 206
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 32,
+                  "height": 32,
+                  "x": -2203,
+                  "y": 206
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 32,
+                  "height": 32,
+                  "x": -2203,
+                  "y": 206
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 70,
+              "height": 26,
+              "x": -2203,
+              "y": 246
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 16,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 25.600000381469727,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      }
+    ],
+    "properties": {
+      "Label#365:137": {
+        "type": "BOOLEAN",
+        "defaultValue": false
+      },
+      "⮑ ✏️ Label#365:139": {
+        "type": "TEXT",
+        "defaultValue": "Loading..."
+      },
+      "Size": {
+        "type": "VARIANT",
+        "defaultValue": "MD",
+        "variantOptions": [
+          "XS",
+          "SM",
+          "MD",
+          "LG"
+        ]
+      }
+    },
+    "designSpecifications": {
+      "name": "1.0 Loader",
+      "type": "COMPONENT_SET"
+    },
+    "extractedAt": "2025-06-15T19:55:20.585Z"
+  },
+  "determinate": {
+    "componentType": "determinate",
+    "nodeId": "367:9134",
+    "variants": [
+      {
+        "name": "Size=LG, Value=100%",
+        "id": "367:9288",
+        "properties": {
+          "Size": "LG",
+          "Value": "100%"
+        },
+        "dimensions": {
+          "width": 32,
+          "height": 32
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 32,
+              "height": 32,
+              "x": -2203,
+              "y": 739
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 32,
+                  "height": 32,
+                  "x": -2203,
+                  "y": 739
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 32,
+                  "height": 32,
+                  "x": -2203,
+                  "y": 739
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "100",
+                "type": "TEXT",
+                "dimensions": {
+                  "width": 20,
+                  "height": 16,
+                  "x": -2197,
+                  "y": 748
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 52,
+                        "g": 64,
+                        "b": 84,
+                        "a": 1,
+                        "hex": "#344054"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "CENTER",
+                  "horizontal": "CENTER"
+                },
+                "children": [],
+                "textProperties": {
+                  "characters": "100",
+                  "style": {
+                    "fontFamily": "Red Hat Display",
+                    "fontPostScriptName": "RedHatDisplay-Regular",
+                    "fontStyle": "Regular",
+                    "fontWeight": 400,
+                    "paragraphSpacing": 2,
+                    "textAutoResize": "WIDTH_AND_HEIGHT",
+                    "fontSize": 12,
+                    "textAlignHorizontal": "CENTER",
+                    "textAlignVertical": "TOP",
+                    "letterSpacing": -0.15000000596046448,
+                    "lineHeightPx": 15.875999450683594,
+                    "lineHeightPercent": 100,
+                    "lineHeightUnit": "INTRINSIC_%"
+                  },
+                  "characterStyleOverrides": [],
+                  "styleOverrideTable": {}
+                }
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 70,
+              "height": 26,
+              "x": -2203,
+              "y": 779
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 16,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 25.600000381469727,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      },
+      {
+        "name": "Size=SM, Value=100%",
+        "id": "367:9283",
+        "properties": {
+          "Size": "SM",
+          "Value": "100%"
+        },
+        "dimensions": {
+          "width": 16,
+          "height": 16
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 16,
+              "height": 16,
+              "x": -2275,
+              "y": 739
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 16,
+                  "height": 16,
+                  "x": -2275,
+                  "y": 739
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 16,
+                  "height": 16,
+                  "x": -2275,
+                  "y": 739
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 53,
+              "height": 19,
+              "x": -2275,
+              "y": 763
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 12,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 19.200000762939453,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      },
+      {
+        "name": "Size=XS, Value=100%",
+        "id": "367:9278",
+        "properties": {
+          "Size": "XS",
+          "Value": "100%"
+        },
+        "dimensions": {
+          "width": 12,
+          "height": 12
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 12,
+              "height": 12,
+              "x": -2343,
+              "y": 739
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 12,
+                  "height": 12,
+                  "x": -2343,
+                  "y": 739
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 12,
+                  "height": 12,
+                  "x": -2343,
+                  "y": 739
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 44,
+              "height": 16,
+              "x": -2343,
+              "y": 759
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 10,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 16,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      },
+      {
+        "name": "Size=MD, Value=100%",
+        "id": "367:9272",
+        "properties": {
+          "Size": "MD",
+          "Value": "100%"
+        },
+        "dimensions": {
+          "width": 24,
+          "height": 24
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 24,
+              "height": 24,
+              "x": -2423,
+              "y": 739
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 24,
+                  "height": 24,
+                  "x": -2423,
+                  "y": 739
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 24,
+                  "height": 24,
+                  "x": -2423,
+                  "y": 739
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "100",
+                "type": "TEXT",
+                "dimensions": {
+                  "width": 17,
+                  "height": 16,
+                  "x": -2420,
+                  "y": 744
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 52,
+                        "g": 64,
+                        "b": 84,
+                        "a": 1,
+                        "hex": "#344054"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "CENTER",
+                  "horizontal": "CENTER"
+                },
+                "children": [],
+                "textProperties": {
+                  "characters": "100",
+                  "style": {
+                    "fontFamily": "Red Hat Display",
+                    "fontPostScriptName": "RedHatDisplay-Regular",
+                    "fontStyle": "Regular",
+                    "fontWeight": 400,
+                    "paragraphSpacing": 2,
+                    "textAutoResize": "HEIGHT",
+                    "textTruncation": "ENDING",
+                    "maxLines": 1,
+                    "fontSize": 12,
+                    "textAlignHorizontal": "CENTER",
+                    "textAlignVertical": "TOP",
+                    "letterSpacing": -0.15000000596046448,
+                    "lineHeightPx": 15.875999450683594,
+                    "lineHeightPercent": 100,
+                    "lineHeightUnit": "INTRINSIC_%"
+                  },
+                  "characterStyleOverrides": [],
+                  "styleOverrideTable": {}
+                }
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 62,
+              "height": 22,
+              "x": -2423,
+              "y": 771
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 14,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 22.399999618530273,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      },
+      {
+        "name": "Size=LG, Value=75%",
+        "id": "367:9244",
+        "properties": {
+          "Size": "LG",
+          "Value": "75%"
+        },
+        "dimensions": {
+          "width": 32,
+          "height": 32
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 32,
+              "height": 32,
+              "x": -2203,
+              "y": 683
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 32,
+                  "height": 32,
+                  "x": -2203,
+                  "y": 683
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 32,
+                  "height": 32,
+                  "x": -2203,
+                  "y": 683
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "75",
+                "type": "TEXT",
+                "dimensions": {
+                  "width": 14,
+                  "height": 16,
+                  "x": -2194,
+                  "y": 692
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 52,
+                        "g": 64,
+                        "b": 84,
+                        "a": 1,
+                        "hex": "#344054"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "CENTER",
+                  "horizontal": "CENTER"
+                },
+                "children": [],
+                "textProperties": {
+                  "characters": "75",
+                  "style": {
+                    "fontFamily": "Red Hat Display",
+                    "fontPostScriptName": "RedHatDisplay-Regular",
+                    "fontStyle": "Regular",
+                    "fontWeight": 400,
+                    "paragraphSpacing": 2,
+                    "textAutoResize": "WIDTH_AND_HEIGHT",
+                    "fontSize": 12,
+                    "textAlignHorizontal": "CENTER",
+                    "textAlignVertical": "TOP",
+                    "letterSpacing": -0.15000000596046448,
+                    "lineHeightPx": 15.875999450683594,
+                    "lineHeightPercent": 100,
+                    "lineHeightUnit": "INTRINSIC_%"
+                  },
+                  "characterStyleOverrides": [],
+                  "styleOverrideTable": {}
+                }
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 70,
+              "height": 26,
+              "x": -2203,
+              "y": 723
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 16,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 25.600000381469727,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      },
+      {
+        "name": "Size=SM, Value=75%",
+        "id": "367:9239",
+        "properties": {
+          "Size": "SM",
+          "Value": "75%"
+        },
+        "dimensions": {
+          "width": 16,
+          "height": 16
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 16,
+              "height": 16,
+              "x": -2275,
+              "y": 683
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 16,
+                  "height": 16,
+                  "x": -2275,
+                  "y": 683
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 16,
+                  "height": 16,
+                  "x": -2275,
+                  "y": 683
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 53,
+              "height": 19,
+              "x": -2275,
+              "y": 707
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 12,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 19.200000762939453,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      },
+      {
+        "name": "Size=XS, Value=75%",
+        "id": "367:9234",
+        "properties": {
+          "Size": "XS",
+          "Value": "75%"
+        },
+        "dimensions": {
+          "width": 12,
+          "height": 12
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 12,
+              "height": 12,
+              "x": -2343,
+              "y": 683
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 12,
+                  "height": 12,
+                  "x": -2343,
+                  "y": 683
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 12,
+                  "height": 12,
+                  "x": -2343,
+                  "y": 683
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 44,
+              "height": 16,
+              "x": -2343,
+              "y": 703
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 10,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 16,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      },
+      {
+        "name": "Size=MD, Value=75%",
+        "id": "367:9228",
+        "properties": {
+          "Size": "MD",
+          "Value": "75%"
+        },
+        "dimensions": {
+          "width": 24,
+          "height": 24
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 24,
+              "height": 24,
+              "x": -2423,
+              "y": 683
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 24,
+                  "height": 24,
+                  "x": -2423,
+                  "y": 683
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 24,
+                  "height": 24,
+                  "x": -2423,
+                  "y": 683
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "75",
+                "type": "TEXT",
+                "dimensions": {
+                  "width": 14,
+                  "height": 16,
+                  "x": -2418,
+                  "y": 688
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 52,
+                        "g": 64,
+                        "b": 84,
+                        "a": 1,
+                        "hex": "#344054"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "CENTER",
+                  "horizontal": "CENTER"
+                },
+                "children": [],
+                "textProperties": {
+                  "characters": "75",
+                  "style": {
+                    "fontFamily": "Red Hat Display",
+                    "fontPostScriptName": "RedHatDisplay-Regular",
+                    "fontStyle": "Regular",
+                    "fontWeight": 400,
+                    "paragraphSpacing": 2,
+                    "textAutoResize": "WIDTH_AND_HEIGHT",
+                    "fontSize": 12,
+                    "textAlignHorizontal": "CENTER",
+                    "textAlignVertical": "TOP",
+                    "letterSpacing": -0.15000000596046448,
+                    "lineHeightPx": 15.875999450683594,
+                    "lineHeightPercent": 100,
+                    "lineHeightUnit": "INTRINSIC_%"
+                  },
+                  "characterStyleOverrides": [],
+                  "styleOverrideTable": {}
+                }
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 62,
+              "height": 22,
+              "x": -2423,
+              "y": 715
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 14,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 22.399999618530273,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      },
+      {
+        "name": "Size=LG, Value=50%",
+        "id": "367:9200",
+        "properties": {
+          "Size": "LG",
+          "Value": "50%"
+        },
+        "dimensions": {
+          "width": 32,
+          "height": 32
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 32,
+              "height": 32,
+              "x": -2203,
+              "y": 627
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 32,
+                  "height": 32,
+                  "x": -2203,
+                  "y": 627
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 32,
+                  "height": 32,
+                  "x": -2203,
+                  "y": 627
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "50",
+                "type": "TEXT",
+                "dimensions": {
+                  "width": 15,
+                  "height": 16,
+                  "x": -2195,
+                  "y": 636
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 52,
+                        "g": 64,
+                        "b": 84,
+                        "a": 1,
+                        "hex": "#344054"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "CENTER",
+                  "horizontal": "CENTER"
+                },
+                "children": [],
+                "textProperties": {
+                  "characters": "50",
+                  "style": {
+                    "fontFamily": "Red Hat Display",
+                    "fontPostScriptName": "RedHatDisplay-Regular",
+                    "fontStyle": "Regular",
+                    "fontWeight": 400,
+                    "paragraphSpacing": 2,
+                    "textAutoResize": "WIDTH_AND_HEIGHT",
+                    "fontSize": 12,
+                    "textAlignHorizontal": "CENTER",
+                    "textAlignVertical": "TOP",
+                    "letterSpacing": -0.15000000596046448,
+                    "lineHeightPx": 15.875999450683594,
+                    "lineHeightPercent": 100,
+                    "lineHeightUnit": "INTRINSIC_%"
+                  },
+                  "characterStyleOverrides": [],
+                  "styleOverrideTable": {}
+                }
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 70,
+              "height": 26,
+              "x": -2203,
+              "y": 667
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 16,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 25.600000381469727,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      },
+      {
+        "name": "Size=SM, Value=50%",
+        "id": "367:9195",
+        "properties": {
+          "Size": "SM",
+          "Value": "50%"
+        },
+        "dimensions": {
+          "width": 16,
+          "height": 16
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 16,
+              "height": 16,
+              "x": -2275,
+              "y": 627
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 16,
+                  "height": 16,
+                  "x": -2275,
+                  "y": 627
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 16,
+                  "height": 16,
+                  "x": -2275,
+                  "y": 627
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 53,
+              "height": 19,
+              "x": -2275,
+              "y": 651
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 12,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 19.200000762939453,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      },
+      {
+        "name": "Size=XS, Value=50%",
+        "id": "367:9190",
+        "properties": {
+          "Size": "XS",
+          "Value": "50%"
+        },
+        "dimensions": {
+          "width": 12,
+          "height": 12
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 12,
+              "height": 12,
+              "x": -2343,
+              "y": 627
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 12,
+                  "height": 12,
+                  "x": -2343,
+                  "y": 627
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 12,
+                  "height": 12,
+                  "x": -2343,
+                  "y": 627
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 44,
+              "height": 16,
+              "x": -2343,
+              "y": 647
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 10,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 16,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      },
+      {
+        "name": "Size=MD, Value=50%",
+        "id": "367:9184",
+        "properties": {
+          "Size": "MD",
+          "Value": "50%"
+        },
+        "dimensions": {
+          "width": 24,
+          "height": 24
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 24,
+              "height": 24,
+              "x": -2423,
+              "y": 627
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 24,
+                  "height": 24,
+                  "x": -2423,
+                  "y": 627
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 24,
+                  "height": 24,
+                  "x": -2423,
+                  "y": 627
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "50",
+                "type": "TEXT",
+                "dimensions": {
+                  "width": 15,
+                  "height": 16,
+                  "x": -2419,
+                  "y": 632
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 52,
+                        "g": 64,
+                        "b": 84,
+                        "a": 1,
+                        "hex": "#344054"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "CENTER",
+                  "horizontal": "CENTER"
+                },
+                "children": [],
+                "textProperties": {
+                  "characters": "50",
+                  "style": {
+                    "fontFamily": "Red Hat Display",
+                    "fontPostScriptName": "RedHatDisplay-Regular",
+                    "fontStyle": "Regular",
+                    "fontWeight": 400,
+                    "paragraphSpacing": 2,
+                    "textAutoResize": "WIDTH_AND_HEIGHT",
+                    "fontSize": 12,
+                    "textAlignHorizontal": "CENTER",
+                    "textAlignVertical": "TOP",
+                    "letterSpacing": -0.15000000596046448,
+                    "lineHeightPx": 15.875999450683594,
+                    "lineHeightPercent": 100,
+                    "lineHeightUnit": "INTRINSIC_%"
+                  },
+                  "characterStyleOverrides": [],
+                  "styleOverrideTable": {}
+                }
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 62,
+              "height": 22,
+              "x": -2423,
+              "y": 659
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 14,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 22.399999618530273,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      },
+      {
+        "name": "Size=LG, Value=25%",
+        "id": "367:9150",
+        "properties": {
+          "Size": "LG",
+          "Value": "25%"
+        },
+        "dimensions": {
+          "width": 32,
+          "height": 32
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 32,
+              "height": 32,
+              "x": -2203,
+              "y": 571
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 32,
+                  "height": 32,
+                  "x": -2203,
+                  "y": 571
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 32,
+                  "height": 32,
+                  "x": -2203,
+                  "y": 571
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "25",
+                "type": "TEXT",
+                "dimensions": {
+                  "width": 14,
+                  "height": 16,
+                  "x": -2194,
+                  "y": 580
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 52,
+                        "g": 64,
+                        "b": 84,
+                        "a": 1,
+                        "hex": "#344054"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "CENTER",
+                  "horizontal": "CENTER"
+                },
+                "children": [],
+                "textProperties": {
+                  "characters": "25",
+                  "style": {
+                    "fontFamily": "Red Hat Display",
+                    "fontPostScriptName": "RedHatDisplay-Regular",
+                    "fontStyle": "Regular",
+                    "fontWeight": 400,
+                    "paragraphSpacing": 2,
+                    "textAutoResize": "WIDTH_AND_HEIGHT",
+                    "fontSize": 12,
+                    "textAlignHorizontal": "CENTER",
+                    "textAlignVertical": "TOP",
+                    "letterSpacing": -0.15000000596046448,
+                    "lineHeightPx": 15.875999450683594,
+                    "lineHeightPercent": 100,
+                    "lineHeightUnit": "INTRINSIC_%"
+                  },
+                  "characterStyleOverrides": [],
+                  "styleOverrideTable": {}
+                }
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 70,
+              "height": 26,
+              "x": -2203,
+              "y": 611
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 16,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 25.600000381469727,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      },
+      {
+        "name": "Size=SM, Value=25%",
+        "id": "367:9145",
+        "properties": {
+          "Size": "SM",
+          "Value": "25%"
+        },
+        "dimensions": {
+          "width": 16,
+          "height": 16
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 16,
+              "height": 16,
+              "x": -2275,
+              "y": 571
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 16,
+                  "height": 16,
+                  "x": -2275,
+                  "y": 571
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 16,
+                  "height": 16,
+                  "x": -2275,
+                  "y": 571
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 53,
+              "height": 19,
+              "x": -2275,
+              "y": 595
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 12,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 19.200000762939453,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      },
+      {
+        "name": "Size=XS, Value=25%",
+        "id": "367:9140",
+        "properties": {
+          "Size": "XS",
+          "Value": "25%"
+        },
+        "dimensions": {
+          "width": 12,
+          "height": 12
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 12,
+              "height": 12,
+              "x": -2343,
+              "y": 571
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 12,
+                  "height": 12,
+                  "x": -2343,
+                  "y": 571
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 12,
+                  "height": 12,
+                  "x": -2343,
+                  "y": 571
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 44,
+              "height": 16,
+              "x": -2343,
+              "y": 591
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 10,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 16,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      },
+      {
+        "name": "Size=MD, Value=25%",
+        "id": "367:9135",
+        "properties": {
+          "Size": "MD",
+          "Value": "25%"
+        },
+        "dimensions": {
+          "width": 24,
+          "height": 24
+        },
+        "styling": {
+          "fills": [
+            {
+              "type": "SOLID",
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1,
+                "hex": "#ffffff"
+              }
+            }
+          ],
+          "strokes": [],
+          "effects": []
+        },
+        "children": [
+          {
+            "name": "svg-container",
+            "type": "FRAME",
+            "dimensions": {
+              "width": 24,
+              "height": 24,
+              "x": -2423,
+              "y": 571
+            },
+            "styling": {
+              "fills": [],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "TOP",
+              "horizontal": "LEFT"
+            },
+            "children": [
+              {
+                "name": "background",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 24,
+                  "height": 24,
+                  "x": -2423,
+                  "y": 571
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 234,
+                        "g": 236,
+                        "b": 240,
+                        "a": 1,
+                        "hex": "#eaecf0"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "svg",
+                "type": "ELLIPSE",
+                "dimensions": {
+                  "width": 24,
+                  "height": 24,
+                  "x": -2423,
+                  "y": 571
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 16,
+                        "g": 24,
+                        "b": 40,
+                        "a": 1,
+                        "hex": "#101828"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "SCALE",
+                  "horizontal": "SCALE"
+                },
+                "children": []
+              },
+              {
+                "name": "25",
+                "type": "TEXT",
+                "dimensions": {
+                  "width": 14,
+                  "height": 16,
+                  "x": -2418,
+                  "y": 576
+                },
+                "styling": {
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 52,
+                        "g": 64,
+                        "b": 84,
+                        "a": 1,
+                        "hex": "#344054"
+                      }
+                    }
+                  ],
+                  "strokes": [],
+                  "effects": []
+                },
+                "constraints": {
+                  "vertical": "CENTER",
+                  "horizontal": "CENTER"
+                },
+                "children": [],
+                "textProperties": {
+                  "characters": "25",
+                  "style": {
+                    "fontFamily": "Red Hat Display",
+                    "fontPostScriptName": "RedHatDisplay-Regular",
+                    "fontStyle": "Regular",
+                    "fontWeight": 400,
+                    "paragraphSpacing": 2,
+                    "textAutoResize": "WIDTH_AND_HEIGHT",
+                    "fontSize": 12,
+                    "textAlignHorizontal": "CENTER",
+                    "textAlignVertical": "TOP",
+                    "letterSpacing": -0.15000000596046448,
+                    "lineHeightPx": 15.875999450683594,
+                    "lineHeightPercent": 100,
+                    "lineHeightUnit": "INTRINSIC_%"
+                  },
+                  "characterStyleOverrides": [],
+                  "styleOverrideTable": {}
+                }
+              }
+            ],
+            "layoutProperties": {}
+          },
+          {
+            "name": "Loading...",
+            "type": "TEXT",
+            "dimensions": {
+              "width": 62,
+              "height": 22,
+              "x": -2423,
+              "y": 603
+            },
+            "styling": {
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 16,
+                    "g": 24,
+                    "b": 40,
+                    "a": 1,
+                    "hex": "#101828"
+                  }
+                }
+              ],
+              "strokes": [],
+              "effects": []
+            },
+            "constraints": {
+              "vertical": "SCALE",
+              "horizontal": "SCALE"
+            },
+            "children": [],
+            "textProperties": {
+              "characters": "Loading...",
+              "style": {
+                "fontFamily": "Red Hat Display",
+                "fontPostScriptName": null,
+                "fontStyle": "Regular",
+                "fontWeight": 400,
+                "textAutoResize": "WIDTH_AND_HEIGHT",
+                "fontSize": 14,
+                "textAlignHorizontal": "LEFT",
+                "textAlignVertical": "TOP",
+                "letterSpacing": 0,
+                "lineHeightPx": 22.399999618530273,
+                "lineHeightPercent": 120.93727111816406,
+                "lineHeightPercentFontSize": 160,
+                "lineHeightUnit": "FONT_SIZE_%"
+              },
+              "characterStyleOverrides": [],
+              "styleOverrideTable": {}
+            }
+          }
+        ]
+      }
+    ],
+    "properties": {
+      "Label#365:137": {
+        "type": "BOOLEAN",
+        "defaultValue": false
+      },
+      "⮑ ✏️ Label#365:139": {
+        "type": "TEXT",
+        "defaultValue": "Loading..."
+      },
+      "Size": {
+        "type": "VARIANT",
+        "defaultValue": "MD",
+        "variantOptions": [
+          "XS",
+          "SM",
+          "MD",
+          "LG"
+        ]
+      },
+      "Value": {
+        "type": "VARIANT",
+        "defaultValue": "25%",
+        "variantOptions": [
+          "25%",
+          "50%",
+          "75%",
+          "100%"
+        ]
+      }
+    },
+    "designSpecifications": {
+      "name": "1.1 Loader Determinate",
+      "type": "COMPONENT_SET"
+    },
+    "extractedAt": "2025-06-15T19:55:22.336Z"
+  }
+}

@@ -1,0 +1,344 @@
+{
+  "figma_file_key": "7WfEeCID05qU0gdKCtJHHY",
+  "figma_file_name": "Gazebo Design System",
+  "extraction_date": "2025-06-16",
+  "components": {
+    "checkbox": {
+      "node_id": "396:13807",
+      "name": "1.0 Checkbox",
+      "type": "COMPONENT_SET",
+      "description": "Checkbox component with support for checked, unchecked, and indeterminate states",
+      "properties": {
+        "State": {
+          "type": "VARIANT",
+          "options": ["Default", "Hover", "Focus", "Disable"],
+          "default": "Default"
+        },
+        "Toggle": {
+          "type": "VARIANT", 
+          "options": ["OFF", "ON", "Indeterminate"],
+          "default": "OFF"
+        },
+        "Label": {
+          "type": "VARIANT",
+          "options": ["False", "True"],
+          "default": "False"
+        }
+      },
+      "variants": 24,
+      "dimensions": {
+        "without_label": "16px × 16px",
+        "with_label": "369px × 42px"
+      },
+      "design_specs": {
+        "border_width": "1px",
+        "corner_radius": "4px",
+        "layout": "horizontal",
+        "gap": "12px",
+        "checkbox_size": "16px × 16px"
+      },
+      "states": {
+        "default": "Standard appearance",
+        "hover": "Hover state styling",
+        "focus": "Focus state with focus ring",
+        "disabled": "Disabled state with reduced opacity"
+      },
+      "key_design_tokens": [
+        "VariableID:11580:47754 (itemSpacing)",
+        "VariableID:11580:47755 (paddingLeft/Right)",
+        "VariableID:11524:19069 (fill color)",
+        "VariableID:11524:19071 (stroke color)"
+      ]
+    },
+    "radio": {
+      "node_id": "392:10690",
+      "name": "2.0 Radio",
+      "type": "COMPONENT_SET",
+      "description": "Radio button component for single selection from a group",
+      "properties": {
+        "State": {
+          "type": "VARIANT",
+          "options": ["Default", "Hover", "Focus", "Disable"],
+          "default": "Default"
+        },
+        "Toggle": {
+          "type": "VARIANT",
+          "options": ["OFF", "ON"],
+          "default": "OFF"
+        },
+        "Label": {
+          "type": "VARIANT",
+          "options": ["False", "True"],
+          "default": "False"
+        }
+      },
+      "variants": 16,
+      "dimensions": {
+        "without_label": "16px × 16px",
+        "with_label": "369px × 42px"
+      },
+      "design_specs": {
+        "border_width": "1px",
+        "corner_radius": "50% (circular)",
+        "layout": "horizontal",
+        "gap": "12px",
+        "radio_size": "16px × 16px"
+      },
+      "states": {
+        "default": "Standard circular radio button",
+        "hover": "Hover state styling",
+        "focus": "Focus state with focus ring and shadow effects",
+        "disabled": "Disabled state with reduced opacity"
+      },
+      "focus_effects": [
+        "Drop shadow: rgba(233, 235, 237, 1) offset(0, 1) blur(2px)",
+        "White border: rgba(255, 255, 255, 1) offset(0, 1) blur(3px) spread(2px)",
+        "Blue focus ring: rgba(46, 144, 250, 1) spread(3px)",
+        "Inner white ring: rgba(255, 255, 255, 1) spread(1.5px)"
+      ],
+      "key_design_tokens": [
+        "VariableID:11524:19063 (selected fill)",
+        "VariableID:11524:19069 (background fill)",
+        "VariableID:11524:19071 (stroke color)"
+      ]
+    },
+    "switch": {
+      "node_id": "388:9960",
+      "name": "3.0 Switch",
+      "type": "COMPONENT_SET",
+      "description": "Toggle switch component for on/off states",
+      "properties": {
+        "State": {
+          "type": "VARIANT",
+          "options": ["Default", "Hover", "Focus", "Disable"],
+          "default": "Default"
+        },
+        "Toggle": {
+          "type": "VARIANT",
+          "options": ["OFF", "ON"],
+          "default": "OFF"
+        },
+        "Label": {
+          "type": "VARIANT",
+          "options": ["False", "True"],
+          "default": "False"
+        }
+      },
+      "variants": 16,
+      "dimensions": {
+        "without_label": "40px × 24px",
+        "with_label": "369px × 42px"
+      },
+      "design_specs": {
+        "border_width": "1px",
+        "corner_radius": "12px (pill shape)",
+        "layout": "horizontal",
+        "gap": "12px",
+        "switch_size": "40px × 24px",
+        "thumb_size": "~20px diameter"
+      },
+      "states": {
+        "default": "Standard switch appearance",
+        "hover": "Hover state styling",
+        "focus": "Focus state with focus ring",
+        "disabled": "Disabled state with reduced opacity"
+      },
+      "key_design_tokens": [
+        "VariableID:11524:19069 (track background)",
+        "VariableID:11524:19070 (thumb fill)",
+        "Design tokens for spacing and sizing"
+      ]
+    },
+    "toggle_button": {
+      "node_id": "416:9646",
+      "name": "4.0 Toggle Button",
+      "type": "COMPONENT_SET",
+      "description": "Toggle button component with multiple selectable items",
+      "properties": {
+        "Item #06#416:17": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Item #04#416:18": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Item #02#416:19": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Item #05#416:20": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "Item #03#416:21": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "Icon": {
+          "type": "VARIANT",
+          "options": ["False", "True"],
+          "default": "False"
+        }
+      },
+      "variants": 2,
+      "dimensions": {
+        "without_icons": "151px × 32px",
+        "with_icons": "211px × 32px"
+      },
+      "design_specs": {
+        "border_width": "1px",
+        "layout": "vertical",
+        "gap": "4px",
+        "height": "32px"
+      },
+      "states": {
+        "default": "Multi-item toggle button group"
+      },
+      "key_design_tokens": [
+        "VariableID:11654:16545 (itemSpacing)",
+        "VariableID:11654:16539 (fill color)",
+        "Button group specific tokens"
+      ]
+    },
+    "cube_toggle": {
+      "node_id": "1206:89512",
+      "name": "5.0 Cube/Toggle",
+      "type": "COMPONENT_SET",
+      "description": "Compact toggle component with pill-style design",
+      "properties": {
+        "Icon-start#1206:0": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "⮑ 🔄 Icon-start#1206:2": {
+          "type": "INSTANCE_SWAP",
+          "default": "10:9"
+        },
+        "Icon-end#1206:4": {
+          "type": "BOOLEAN",
+          "default": false
+        },
+        "⮑ 🔄 Icon-end#1206:6": {
+          "type": "INSTANCE_SWAP",
+          "default": "10:9"
+        },
+        "Label#1206:12": {
+          "type": "BOOLEAN",
+          "default": true
+        },
+        "⮑ ✏️ Label#1206:14": {
+          "type": "TEXT",
+          "default": "Label"
+        },
+        "State": {
+          "type": "VARIANT",
+          "options": ["Default", "Hover", "Focus", "Disable"],
+          "default": "Default"
+        },
+        "Toggle": {
+          "type": "VARIANT",
+          "options": ["OFF", "ON"],
+          "default": "OFF"
+        }
+      },
+      "variants": 8,
+      "dimensions": {
+        "fixed_size": "68px × 32px"
+      },
+      "design_specs": {
+        "border_width": "1px",
+        "corner_radius": "9999px (fully rounded)",
+        "layout": "horizontal",
+        "gap": "8px",
+        "padding": "16px 4px (top/bottom) (left/right)",
+        "min_width": "68px",
+        "height": "32px"
+      },
+      "color_specs": {
+        "default_off": {
+          "background": "#ffffff",
+          "border": "#1d2939"
+        },
+        "default_on": {
+          "background": "#1d2939",
+          "border": "#1d2939"
+        },
+        "hover_off": {
+          "background": "#eaecf0",
+          "border": "#1d2939"
+        },
+        "hover_on": {
+          "background": "#667085",
+          "border": "#667085"
+        },
+        "disabled_off": {
+          "background": "#eaecf0",
+          "border": "#d5d7da"
+        },
+        "disabled_on": {
+          "background": "#eaecf0",
+          "border": "#d5d7da"
+        }
+      },
+      "focus_effects": [
+        "Drop shadow: rgba(233, 235, 237, 1) offset(0, 1) blur(2px)",
+        "White border: rgba(255, 255, 255, 1) offset(0, 1) blur(3px) spread(2px)",
+        "Blue focus ring: rgba(46, 144, 250, 1) spread(3px)",
+        "Inner white ring: rgba(255, 255, 255, 1) spread(1.5px)"
+      ],
+      "key_design_tokens": [
+        "VariableID:11524:19061 (default background)",
+        "VariableID:11524:19064 (border color)",
+        "VariableID:11654:16551 (itemSpacing)",
+        "VariableID:10804:321 (minWidth)"
+      ]
+    }
+  },
+  "common_design_patterns": {
+    "states": ["Default", "Hover", "Focus", "Disable"],
+    "layout_mode": "horizontal",
+    "border_width": "1px",
+    "focus_ring_system": {
+      "color": "rgba(46, 144, 250, 1)",
+      "spread": "3px",
+      "additional_effects": [
+        "Drop shadow for depth",
+        "White border for contrast",
+        "Inner white ring for definition"
+      ]
+    },
+    "spacing_system": {
+      "item_spacing": "8px - 12px",
+      "padding": "4px - 16px",
+      "component_gap": "8px - 12px"
+    },
+    "color_system": {
+      "primary_dark": "#1d2939",
+      "primary_light": "#ffffff",
+      "secondary_gray": "#667085",
+      "disabled_gray": "#eaecf0",
+      "border_gray": "#d5d7da",
+      "focus_blue": "#2e90fa"
+    }
+  },
+  "implementation_notes": {
+    "accessibility": [
+      "All components support keyboard navigation",
+      "Focus states have proper focus rings",
+      "Disabled states reduce opacity and interaction",
+      "Labels are supported for all components"
+    ],
+    "responsive_behavior": [
+      "Components maintain fixed sizes",
+      "Labels can be toggled on/off",
+      "Icons are swappable instances"
+    ],
+    "design_token_usage": [
+      "Extensive use of design tokens for consistency",
+      "Color tokens for fills and strokes",
+      "Spacing tokens for padding and gaps", 
+      "Typography tokens for text styling"
+    ]
+  }
+}

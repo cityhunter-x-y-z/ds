@@ -1,0 +1,261 @@
+/* ===========================================
+   CHIP STYLES - Figma Design System Implementation
+   File: packages/ui/src/components/Chip/Chip.module.css
+   Based on Figma "1.0 Chip" component and design tokens
+   =========================================== */
+
+/* Import design tokens */
+@import '@gazebo/tokens/src/theme.css';
+
+/* ===== BASE CHIP STYLES ===== */
+.chip {
+  /* Layout and structure from Figma */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  
+  /* Figma exact dimensions using design tokens */
+  height: var(--chip-height);
+  padding: var(--chip-verticle-padding) var(--chip-horizontal-padding);
+  gap: var(--chip-gap);
+  
+  /* Figma surface and border styling */
+  background: var(--chip-default-surface);
+  border: var(--chip-stroke-thickness) solid var(--chip-default-border);
+  border-radius: var(--chip-corner-radius);
+  
+  /* Typography from Figma spec */
+  font-family: var(--chiplabel-fontfamily);
+  font-size: var(--chiplabel-size);
+  font-weight: var(--chiplabel-weight-regular);
+  line-height: var(--chiplabel-lineheight);
+  letter-spacing: var(--chiplabel-letterspacing);
+  color: var(--chip-default-text);
+  
+  /* Interaction and accessibility */
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  outline: none;
+  position: relative;
+  
+  /* Smooth transitions for state changes */
+  transition: all var(--transition-fast) ease;
+  
+  /* Ensure chip doesn't shrink */
+  flex-shrink: 0;
+}
+
+/* ===== INTERACTIVE STATES FROM FIGMA ===== */
+
+/* Clickable chips */
+.chip.clickable {
+  cursor: pointer;
+}
+
+/* Hover state - from Figma "State=Hover" */
+.chip:hover:not(.disabled) {
+  background: var(--chip-hover-surface);
+  border-color: var(--chip-hover-border);
+  color: var(--chip-hover-text);
+}
+
+/* Focus state - from Figma "State=Focus" */
+.chip:focus-visible {
+  background: var(--chip-default-surface);
+  border-color: var(--chip-default-border);
+  color: var(--chip-default-text);
+  /* Focus ring using design tokens */
+  box-shadow: 
+    var(--focus-primary-layerone-x) var(--focus-primary-layerone-y) var(--focus-primary-layerone-blur) var(--focus-primary-layerone-spread) var(--focus-primary-layerone-color),
+    var(--focus-primary-layertwo-x) var(--focus-primary-layertwo-y) var(--focus-primary-layertwo-blur) var(--focus-primary-layertwo-spread) var(--focus-primary-layertwo-color),
+    var(--focus-primary-layerthree-x) var(--focus-primary-layerthree-y) var(--focus-primary-layerthree-blur) var(--focus-primary-layerthree-spread) var(--focus-primary-layerthree-color);
+  z-index: 1;
+}
+
+/* Active state - from Figma "State=Active" */
+.chip:active:not(.disabled),
+.chip.active {
+  background: var(--chip-active-surface);
+  border-color: var(--chip-active-border);
+  color: var(--chip-active-text);
+}
+
+/* Active-focus state - from Figma "State=Active-focus" */
+.chip.active:focus-visible {
+  background: var(--chip-active-surface);
+  border-color: var(--chip-active-border);
+  color: var(--chip-active-text);
+  box-shadow: 
+    var(--focus-primary-layerone-x) var(--focus-primary-layerone-y) var(--focus-primary-layerone-blur) var(--focus-primary-layerone-spread) var(--focus-primary-layerone-color),
+    var(--focus-primary-layertwo-x) var(--focus-primary-layertwo-y) var(--focus-primary-layertwo-blur) var(--focus-primary-layertwo-spread) var(--focus-primary-layertwo-color),
+    var(--focus-primary-layerthree-x) var(--focus-primary-layerthree-y) var(--focus-primary-layerthree-blur) var(--focus-primary-layerthree-spread) var(--focus-primary-layerthree-color);
+}
+
+/* Disabled state - from Figma "State=Disable" */
+.chip.disabled {
+  background: var(--chip-disabled-surface);
+  border-color: var(--chip-disabled-border);
+  color: var(--chip-disabled-text);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ===== CHIP CONTENT ELEMENTS ===== */
+
+/* Status dot - 4x4px from Figma */
+.dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 999px;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* Avatar container - 16x16px from Figma */
+.avatar {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Icon container - 12x12px from Figma */
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--chip-trailing-icon);
+  height: var(--chip-trailing-icon);
+  flex-shrink: 0;
+}
+
+/* Chip label text */
+.label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+  min-width: 0;
+}
+
+/* ===== REMOVE BUTTON STYLES ===== */
+.removeButton {
+  /* Reset button styles */
+  border: none;
+  background: none;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  
+  /* Layout to match Figma close icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--chip-trailing-icon);
+  height: var(--chip-trailing-icon);
+  border-radius: calc(var(--chip-trailing-icon) / 2);
+  
+  /* Interactive styles */
+  cursor: pointer;
+  transition: all var(--transition-fast) ease;
+  flex-shrink: 0;
+}
+
+.removeButton:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.removeButton:active:not(:disabled) {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.removeButton:focus-visible {
+  box-shadow: 
+    var(--focus-primary-layerone-x) var(--focus-primary-layerone-y) var(--focus-primary-layerone-blur) var(--focus-primary-layerone-spread) var(--focus-primary-layerone-color),
+    var(--focus-primary-layertwo-x) var(--focus-primary-layertwo-y) var(--focus-primary-layertwo-blur) var(--focus-primary-layertwo-spread) var(--focus-primary-layertwo-color);
+  z-index: 1;
+}
+
+.removeButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Remove button hover states for different chip states */
+.chip:hover .removeButton:hover:not(:disabled) {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.chip.active .removeButton:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.chip.active .removeButton:active:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ===== ICON COLOR STATES ===== */
+
+/* Default state icons */
+.chip .iconContainer {
+  color: var(--chip-default-icon);
+}
+
+/* Hover state icons */
+.chip:hover:not(.disabled) .iconContainer {
+  color: var(--chip-hover-icon);
+}
+
+/* Active state icons */
+.chip:active:not(.disabled) .iconContainer,
+.chip.active .iconContainer {
+  color: var(--chip-active-icon);
+}
+
+/* Disabled state icons */
+.chip.disabled .iconContainer {
+  color: var(--chip-disabled-icon);
+}
+
+/* ===== ACCESSIBILITY ENHANCEMENTS ===== */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .chip,
+  .removeButton {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .chip {
+    border-width: 2px;
+  }
+  
+  .chip:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+  
+  .removeButton:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+}
+
+/* ===== MOBILE TOUCH TARGETS ===== */
+@media (max-width: 768px) {
+  .chip {
+    /* Ensure minimum touch target size for accessibility */
+    min-height: 44px;
+  }
+  
+  .removeButton {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}

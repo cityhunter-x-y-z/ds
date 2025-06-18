@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Toggle Components</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Red Hat Display', sans-serif;
+            padding: 40px;
+            background: #f8f9fa;
+        }
+        
+        .debug-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .issue-section {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .fix-section {
+            background: #d1fadf;
+            border: 1px solid #a3e635;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e4e7ec;
+            border-radius: 4px;
+            padding: 12px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 12px;
+            margin: 10px 0;
+            white-space: pre-wrap;
+        }
+        
+        .demo-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #e4e7ec;
+            border-radius: 4px;
+            background: #fafbfc;
+        }
+        
+        /* Simple toggle styles for testing */
+        .simple-checkbox {
+            width: 16px;
+            height: 16px;
+            border: 1px solid #1d2939;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .simple-checkbox.checked {
+            background-color: #1d2939;
+            color: white;
+        }
+        
+        .simple-switch {
+            width: 40px;
+            height: 24px;
+            border: 1px solid #d0d5dd;
+            background-color: #d0d5dd;
+            border-radius: 12px;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s;
+        }
+        
+        .simple-switch.checked {
+            background-color: #1d2939;
+            border-color: #1d2939;
+        }
+        
+        .simple-switch-thumb {
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.2s;
+        }
+        
+        .simple-switch.checked .simple-switch-thumb {
+            transform: translateX(16px);
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-container">
+        <h1>🐛 Debug: Toggle State Issues</h1>
+        
+        <div class="issue-section">
+            <h2>❌ Issue Identified</h2>
+            <p><strong>Problem:</strong> On mouse click, only focus ring appears but toggle state doesn't change to 'on'</p>
+            
+            <h3>Root Cause Analysis:</h3>
+            <div class="code-block">// WRONG: Controlled/Uncontrolled detection
+const currentToggle = onChange ? toggle : internalToggle;
+
+// This means if onChange exists, it uses the prop value
+// But the prop might be undefined, so it stays undefined!</div>
+        </div>
+        
+        <div class="fix-section">
+            <h2>✅ Fix Applied</h2>
+            <p><strong>Solution:</strong> Proper controlled/uncontrolled detection based on prop presence</p>
+            
+            <h3>Fixed Logic:</h3>
+            <div class="code-block">// CORRECT: Check if toggle prop is explicitly provided
+const isControlled = toggle !== undefined;
+const currentToggle = isControlled ? toggle : internalToggle;
+
+// This properly handles:
+// 1. Uncontrolled: No toggle prop → uses internal state
+// 2. Controlled: toggle prop provided → uses prop value</div>
+        </div>
+        
+        <div style="margin: 30px 0;">
+            <h2>🧪 Test Cases</h2>
+            
+            <h3>1. Uncontrolled Mode (Should work now):</h3>
+            <div class="code-block">&lt;Checkbox /&gt;  // No toggle prop = uncontrolled
+&lt;Switch /&gt;    // Should toggle on click</div>
+            
+            <h3>2. Controlled Mode:</h3>
+            <div class="code-block">&lt;Checkbox toggle="off" onChange={...} /&gt;  // Controlled
+&lt;Switch toggle="on" onChange={...} /&gt;      // Controlled</div>
+            
+            <h3>3. Visual Test with Simple Toggles:</h3>
+            
+            <div class="demo-toggle">
+                <div class="simple-checkbox" onclick="this.classList.toggle('checked')">
+                    <span style="display: none;">✓</span>
+                </div>
+                <span>Click me - Simple Checkbox</span>
+            </div>
+            
+            <div class="demo-toggle">
+                <div class="simple-switch" onclick="this.classList.toggle('checked')">
+                    <div class="simple-switch-thumb"></div>
+                </div>
+                <span>Click me - Simple Switch</span>
+            </div>
+        </div>
+        
+        <div style="background: #e1f5fe; padding: 20px; border-radius: 6px; margin-top: 30px;">
+            <h2>🎯 Expected Behavior After Fix</h2>
+            <ul>
+                <li>✅ <strong>Uncontrolled toggles</strong> should change state immediately on click</li>
+                <li>✅ <strong>Visual feedback</strong> should appear (checkmarks, switch sliding, etc.)</li>
+                <li>✅ <strong>Focus rings</strong> should still work for accessibility</li>
+                <li>✅ <strong>Controlled toggles</strong> should only change when parent updates the prop</li>
+            </ul>
+        </div>
+        
+        <div style="background: #fff3cd; padding: 20px; border-radius: 6px; margin-top: 20px;">
+            <h3>🔍 If Still Not Working, Check:</h3>
+            <ol>
+                <li><strong>Storybook Controls:</strong> Make sure Storybook controls aren't overriding the toggle prop</li>
+                <li><strong>Component Stories:</strong> Use stories without toggle prop for uncontrolled mode</li>
+                <li><strong>Browser Console:</strong> Check for any JavaScript errors</li>
+                <li><strong>React DevTools:</strong> Inspect component state changes</li>
+            </ol>
+        </div>
+    </div>
+    
+    <script>
+        // Make the checkmarks appear/disappear
+        document.querySelectorAll('.simple-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('click', function() {
+                const checkmark = this.querySelector('span');
+                if (this.classList.contains('checked')) {
+                    checkmark.style.display = 'inline';
+                    checkmark.textContent = '✓';
+                } else {
+                    checkmark.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

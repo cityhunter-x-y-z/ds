@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Fixed Toggle Components</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;600&display=swap');
+        
+        body {
+            font-family: 'Red Hat Display', sans-serif;
+            padding: 40px;
+            background: #f8f9fa;
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .success-banner {
+            background: #d1fadf;
+            border: 1px solid #a3e635;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 30px;
+            color: #0f5132;
+        }
+        
+        .issue-section {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .fix-section {
+            background: #e1f5fe;
+            border: 1px solid #4fc3f7;
+            border-radius: 6px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e4e7ec;
+            border-radius: 4px;
+            padding: 12px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 12px;
+            margin: 10px 0;
+            white-space: pre-wrap;
+        }
+        
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .before, .after {
+            padding: 15px;
+            border-radius: 6px;
+        }
+        
+        .before {
+            background: #ffebee;
+            border: 1px solid #f8bbd9;
+        }
+        
+        .after {
+            background: #e8f5e8;
+            border: 1px solid #a5d6a7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Toggle Components - Issue Fixed!</h1>
+        
+        <div class="success-banner">
+            <h2 style="margin-top: 0;">✅ Root Cause Found and Fixed</h2>
+            <p><strong>The toggle components should now work correctly when clicked!</strong></p>
+        </div>
+        
+        <div class="issue-section">
+            <h2>🐛 The Real Problem</h2>
+            <p><strong>Issue:</strong> Default values in destructuring were preventing uncontrolled mode</p>
+            
+            <div class="before-after">
+                <div class="before">
+                    <h3>❌ Before (Broken)</h3>
+                    <div class="code-block">const {
+  toggle = 'off',  // Always 'off'!
+  // ...
+} = props;
+
+// This meant:
+// toggle is NEVER undefined
+// isControlled = true (always)
+// Uses prop value (always 'off')</div>
+                </div>
+                
+                <div class="after">
+                    <h3>✅ After (Fixed)</h3>
+                    <div class="code-block">const {
+  toggle,  // Can be undefined!
+  // ...
+} = props;
+
+// Now:
+// toggle can be undefined
+// isControlled = toggle !== undefined
+// Uses internal state when uncontrolled</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="fix-section">
+            <h2>🔧 What Changed</h2>
+            
+            <h3>Fixed in All Components:</h3>
+            <ul>
+                <li>✅ <strong>Checkbox.tsx</strong> - Removed <code>toggle = 'off'</code> default</li>
+                <li>✅ <strong>Switch.tsx</strong> - Removed <code>toggle = 'off'</code> default</li>
+                <li>✅ <strong>Radio.tsx</strong> - Removed <code>toggle = 'off'</code> default</li>
+                <li>✅ <strong>CubeToggle.tsx</strong> - Removed <code>toggle = 'off'</code> default</li>
+            </ul>
+            
+            <h3>Now Works Correctly:</h3>
+            <div class="code-block">// Uncontrolled (default) - should work!
+&lt;Checkbox /&gt;
+&lt;Switch /&gt;
+&lt;Radio /&gt;
+
+// Controlled - also works!
+&lt;Checkbox toggle="on" onChange={handler} /&gt;
+&lt;Switch toggle="off" onChange={handler} /&gt;</div>
+        </div>
+        
+        <div style="margin: 30px 0;">
+            <h2>🎯 Expected Behavior Now</h2>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div style="padding: 15px; background: #f8f9fa; border-radius: 6px;">
+                    <h3>✅ Uncontrolled Mode</h3>
+                    <ul>
+                        <li>Click checkbox → checkmark appears</li>
+                        <li>Click switch → thumb slides over</li>
+                        <li>Click radio → dot appears</li>
+                        <li>Click cube toggle → ON/OFF changes</li>
+                    </ul>
+                </div>
+                
+                <div style="padding: 15px; background: #f8f9fa; border-radius: 6px;">
+                    <h3>✅ Controlled Mode</h3>
+                    <ul>
+                        <li>State controlled by parent component</li>
+                        <li>onChange callback receives new state</li>
+                        <li>Visual updates when prop changes</li>
+                        <li>No internal state management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div style="background: #e3f2fd; padding: 20px; border-radius: 6px; margin-top: 30px;">
+            <h2>🚀 Test Instructions</h2>
+            <ol>
+                <li><strong>Open Storybook</strong> and navigate to Toggle components</li>
+                <li><strong>Try the "Default" stories</strong> - these should now be uncontrolled and clickable</li>
+                <li><strong>Click the toggles</strong> - you should see immediate visual feedback</li>
+                <li><strong>Check the "Interactive" stories</strong> - these demonstrate controlled mode</li>
+            </ol>
+            
+            <p style="margin-top: 16px; padding: 12px; background: #fff; border-radius: 4px; border: 1px solid #2196f3;">
+                <strong>🔍 Quick Test:</strong> In Storybook, go to <code>Components/Toggle/Checkbox</code> → <code>Default</code> story and click the checkbox. You should see the checkmark appear immediately!
+            </p>
+        </div>
+    </div>
+</body>
+</html>

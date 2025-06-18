@@ -1,0 +1,83 @@
+/* ===========================================
+   LABEL STYLES - CSS Module - FIGMA DESIGN SYSTEM
+   File: packages/ui/src/components/Label/Label.module.css
+   Simplified to match exact Figma specifications
+   =========================================== */
+
+/* Import design tokens */
+@import '@gazebo/tokens/src/theme.css';
+
+/* ===== BASE LABEL STYLES ===== */
+.label {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--family-default);
+  margin: 0;
+  padding: 0;
+  gap: var(--spacing-space-1); /* 4px */
+}
+
+/* ===== TEXT ELEMENTS ===== */
+.mainText {
+  font-family: var(--family-default);
+  font-weight: var(--weight-semibold);
+  color: var(--text-neutral-highcontrast); /* #1d2939 */
+  margin: 0;
+  line-height: 1.0;
+}
+
+.subtitle {
+  font-family: var(--family-default);
+  font-weight: var(--weight-regular);
+  color: var(--text-neutral-standard); /* #667085 */
+  margin: 0;
+  line-height: 1.21;
+}
+
+
+/* ===== SIZE VARIANTS ===== */
+.sizeMd .mainText {
+  font-size: var(--font-size-body-md); /* 14px */
+  letter-spacing: -0.15px;
+}
+
+.sizeMd .subtitle {
+  font-size: var(--font-size-body-md); /* 14px */
+  letter-spacing: -0.15px;
+}
+
+.sizeLg .mainText {
+  font-size: var(--font-size-body-lg); /* 16px */
+  letter-spacing: -0.31px;
+}
+
+.sizeLg .subtitle {
+  font-size: var(--font-size-body-md); /* 14px */
+  letter-spacing: -0.15px;
+}
+
+
+/* ===== REQUIRED INDICATOR ===== */
+.required::after {
+  content: ' *';
+  color: var(--text-semantic-error);
+  font-weight: var(--weight-semibold);
+}
+
+/* ===== ACCESSIBILITY ===== */
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== HOVER STATES ===== */
+.label:hover .mainText {
+  color: var(--text-neutral-extreme);
+}

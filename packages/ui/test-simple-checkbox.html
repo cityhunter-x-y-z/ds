@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Checkbox Test</title>
+    <style>
+        body {
+            font-family: 'Red Hat Display', sans-serif;
+            padding: 40px;
+            background: #f8f9fa;
+        }
+        
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e4e7ec;
+            border-radius: 6px;
+        }
+        
+        /* CSS matching our Toggle components */
+        .checkbox {
+            display: inline-flex;
+            align-items: flex-start;
+            gap: 12px;
+            cursor: pointer;
+            font-family: 'Red Hat Display', sans-serif;
+            position: relative;
+            min-height: 16px;
+        }
+
+        .input {
+            position: absolute;
+            opacity: 0;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            border: 0;
+            padding: 0;
+            white-space: nowrap;
+            clip-path: inset(100%);
+            clip: rect(0 0 0 0);
+            overflow: hidden;
+        }
+
+        .checkboxInput {
+            position: relative;
+            width: 16px;
+            height: 16px;
+            background-color: #ffffff;
+            border: 1px solid #1d2939;
+            border-radius: 4px;
+            transition: all 0.2s;
+            cursor: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .checkboxInput.checked {
+            background-color: #1d2939;
+            border-color: #1d2939;
+        }
+
+        .checkmark {
+            width: 12px;
+            height: 12px;
+            color: #ffffff;
+            opacity: 0;
+            transition: opacity 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .checkboxInput.checked .checkmark {
+            opacity: 1;
+        }
+
+        .textContainer {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            min-width: 0;
+        }
+
+        .labelText {
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: -0.15px;
+            line-height: 18.52px;
+            color: #1d2939;
+            margin: 0;
+        }
+
+        .subtitle {
+            font-family: 'Red Hat Display', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            letter-spacing: -0.15px;
+            line-height: 18.52px;
+            color: #667085;
+            margin: 0;
+        }
+        
+        .debug-info {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🧪 Checkbox Component Debug Test</h1>
+        
+        <div class="test-section">
+            <h2>1. Native HTML Checkbox (Control)</h2>
+            <label>
+                <input type="checkbox" id="native-checkbox"> Native checkbox - should work
+            </label>
+            <div class="debug-info" id="native-debug">State: unchecked</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>2. Styled Checkbox (Mimicking our component)</h2>
+            <label class="checkbox" for="styled-checkbox">
+                <input type="checkbox" id="styled-checkbox" class="input">
+                <div class="checkboxInput" id="styled-visual">
+                    <svg class="checkmark" viewBox="0 0 12 12" fill="none">
+                        <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="textContainer">
+                    <span class="labelText">Styled Checkbox</span>
+                    <span class="subtitle">Supporting text</span>
+                </div>
+            </label>
+            <div class="debug-info" id="styled-debug">State: unchecked</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>3. Manual State Management Test</h2>
+            <label class="checkbox" id="manual-checkbox">
+                <input type="checkbox" class="input" id="manual-input">
+                <div class="checkboxInput" id="manual-visual">
+                    <svg class="checkmark" viewBox="0 0 12 12" fill="none">
+                        <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="textContainer">
+                    <span class="labelText">Manual State Checkbox</span>
+                    <span class="subtitle">Click me to test manual state</span>
+                </div>
+            </label>
+            <div class="debug-info" id="manual-debug">State: unchecked, Visual class: none</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>🔍 Debug Information</h2>
+            <div id="debug-log" style="background: #f8f9fa; padding: 10px; border-radius: 4px; font-family: monospace; font-size: 12px; white-space: pre-wrap; max-height: 200px; overflow-y: auto;"></div>
+        </div>
+    </div>
+
+    <script>
+        let debugLog = document.getElementById('debug-log');
+        
+        function log(message) {
+            const timestamp = new Date().toLocaleTimeString();
+            debugLog.textContent += `[${timestamp}] ${message}\n`;
+            debugLog.scrollTop = debugLog.scrollHeight;
+        }
+        
+        // Native checkbox test
+        document.getElementById('native-checkbox').addEventListener('change', function(e) {
+            document.getElementById('native-debug').textContent = `State: ${e.target.checked ? 'checked' : 'unchecked'}`;
+            log(`Native checkbox: ${e.target.checked}`);
+        });
+        
+        // Styled checkbox test
+        document.getElementById('styled-checkbox').addEventListener('change', function(e) {
+            const visual = document.getElementById('styled-visual');
+            if (e.target.checked) {
+                visual.classList.add('checked');
+            } else {
+                visual.classList.remove('checked');
+            }
+            document.getElementById('styled-debug').textContent = `State: ${e.target.checked ? 'checked' : 'unchecked'}`;
+            log(`Styled checkbox: ${e.target.checked}, Visual has 'checked' class: ${visual.classList.contains('checked')}`);
+        });
+        
+        // Manual state management test (mimicking React state)
+        let manualState = false;
+        const manualInput = document.getElementById('manual-input');
+        const manualVisual = document.getElementById('manual-visual');
+        const manualLabel = document.getElementById('manual-checkbox');
+        
+        function updateManualState(newState) {
+            manualState = newState;
+            manualInput.checked = newState;
+            
+            if (newState) {
+                manualVisual.classList.add('checked');
+            } else {
+                manualVisual.classList.remove('checked');
+            }
+            
+            document.getElementById('manual-debug').textContent = 
+                `State: ${newState ? 'checked' : 'unchecked'}, Visual class: ${manualVisual.classList.contains('checked') ? 'checked' : 'none'}`;
+            
+            log(`Manual state updated: ${newState}, Input checked: ${manualInput.checked}, Visual class: ${manualVisual.classList.contains('checked')}`);
+        }
+        
+        manualLabel.addEventListener('click', function(e) {
+            // Prevent the default label behavior
+            e.preventDefault();
+            // Toggle our manual state
+            updateManualState(!manualState);
+        });
+        
+        log('Debug test loaded. Try clicking the checkboxes above.');
+    </script>
+</body>
+</html>

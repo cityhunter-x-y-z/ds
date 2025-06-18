@@ -1,0 +1,67 @@
+{
+  "name": "_Divider / label-center / 1px",
+  "type": "COMPONENT",
+  "id": "8969:23739",
+  "variants": [],
+  "properties": {},
+  "layout": {
+    "width": 360,
+    "height": 29
+  },
+  "styles": {
+    "fills": [
+      {
+        "type": "SOLID",
+        "color": "#ffffff",
+        "opacity": 1
+      }
+    ]
+  },
+  "children": [
+    {
+      "name": "_Divider / line / 1px",
+      "type": "INSTANCE",
+      "characters": null,
+      "styles": {
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#ffffff",
+            "opacity": 1
+          }
+        ]
+      },
+      "layout": {
+        "width": 360,
+        "height": 13
+      }
+    },
+    {
+      "name": "360px (4 columns)",
+      "type": "TEXT",
+      "characters": "360px (4 columns)",
+      "styles": {
+        "fills": [
+          {
+            "type": "SOLID",
+            "color": "#9f3dfb",
+            "opacity": 1
+          }
+        ],
+        "typography": {
+          "fontFamily": "Menlo",
+          "fontSize": 12,
+          "fontWeight": 700,
+          "lineHeight": 1.1454138946533203,
+          "letterSpacing": 0,
+          "textAlignHorizontal": "CENTER",
+          "textAlignVertical": "TOP"
+        }
+      },
+      "layout": {
+        "width": 123,
+        "height": 16
+      }
+    }
+  ]
+}

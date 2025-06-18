@@ -1,0 +1,203 @@
+/* ===========================================
+   CHECKBOX STYLES - CSS Module - FIGMA DESIGN SYSTEM
+   File: packages/ui/src/components/Toggle/Checkbox.module.css
+   Based on Figma Checkbox specifications (Node: 396-13807)
+   Dimensions: 16px × 16px (checkbox), 369px × 42px (with label)
+   =========================================== */
+
+/* Import design tokens */
+@import '@gazebo/tokens/src/theme.css';
+
+/* ===== BASE CHECKBOX STYLES ===== */
+.checkbox {
+  display: inline-flex;
+  align-items: flex-start; /* Align to top for multi-line text */
+  gap: 12px; /* Figma spec */
+  cursor: pointer;
+  font-family: 'Red Hat Display', var(--family-default); /* Figma typography */
+  position: relative;
+  min-height: 16px; /* Ensure minimum height matches checkbox */
+}
+
+.checkbox:hover:not(.disabled) .checkboxInput {
+  border-color: #667085; /* Figma hover state */
+  background-color: #eaecf0; /* Light gray background on hover */
+}
+
+.disabled {
+  cursor: not-allowed;
+}
+
+/* ===== HIDDEN INPUT ===== */
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;  
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* ===== CHECKBOX BOX STYLES ===== */
+.checkboxInput {
+  position: relative;
+  width: 16px; /* Figma spec */
+  height: 16px; /* Figma spec */
+  background-color: #ffffff; /* Figma spec */
+  border: 1px solid #1d2939; /* Figma spec */
+  border-radius: 4px; /* Figma spec */
+  transition: all var(--transition-fast);
+  cursor: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ===== CHECKED STATE ===== */
+.checkboxInput.checked {
+  background-color: #1d2939; /* Figma spec - dark background when checked */
+  border-color: #1d2939;
+}
+
+.checkboxInput.indeterminate {
+  background-color: #1d2939; /* Figma spec */
+  border-color: #1d2939;
+}
+
+/* ===== DISABLED STATE ===== */
+.checkboxInput.disabled {
+  background-color: #eaecf0; /* Figma spec - light gray */
+  border-color: #d5d7da; /* Figma spec - disabled border */
+}
+
+.checkboxInput.disabled.checked,
+.checkboxInput.disabled.indeterminate {
+  background-color: #d5d7da; /* Figma spec */
+  border-color: #d5d7da;
+}
+
+/* ===== FOCUS STATE ===== */
+.checkbox:focus-within .checkboxInput {
+  /* Complex focus ring system from Figma */
+  box-shadow: 
+    0 0 0 2px #ffffff, /* White border for contrast */
+    0 0 0 4px rgba(46, 144, 250, 1), /* Blue focus ring */
+    0 1px 2px 0 rgba(233, 235, 237, 1); /* Drop shadow */
+  outline: none;
+}
+
+/* ===== CHECKMARK ICON ===== */
+.checkmark {
+  width: 12px;
+  height: 12px;
+  color: #ffffff; /* White checkmark */
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkboxInput.checked .checkmark {
+  opacity: 1;
+}
+
+/* ===== INDETERMINATE ICON ===== */
+.indeterminateIcon {
+  width: 8px;
+  height: 2px;
+  background-color: #ffffff; /* White line */
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.checkboxInput.indeterminate .indeterminateIcon {
+  opacity: 1;
+}
+
+/* ===== TEXT CONTAINER ===== */
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px; /* Figma spec - spacing between label and subtitle */
+  min-width: 0; /* Allow text to wrap */
+}
+
+/* ===== LABEL TEXT ===== */
+.labelText {
+  font-family: 'Red Hat Display', var(--family-default); /* Figma typography */
+  font-weight: 600; /* SemiBold - Figma spec */
+  font-size: 14px; /* Figma spec */
+  letter-spacing: -0.15px; /* Figma spec */
+  line-height: 18.52px; /* Figma spec - 1.323 ratio */
+  color: #1d2939; /* Figma spec */
+  margin: 0;
+}
+
+.disabled .labelText {
+  color: #667085; /* Figma spec - muted text when disabled */
+}
+
+/* ===== SUBTITLE TEXT ===== */
+.subtitle {
+  font-family: 'Red Hat Display', var(--family-default); /* Figma typography */
+  font-weight: 400; /* Regular - Figma spec */
+  font-size: 14px; /* Figma spec */
+  letter-spacing: -0.15px; /* Figma spec */
+  line-height: 18.52px; /* Figma spec */
+  color: #667085; /* Figma spec - muted color for subtitles */
+  margin: 0;
+}
+
+.disabled .subtitle {
+  color: #667085; /* Same color in disabled state */
+}
+
+/* ===== SIZE VARIANTS ===== */
+.checkboxOnly {
+  width: 16px;
+  height: 16px;
+}
+
+.withLabel {
+  min-width: 369px; /* Figma spec */
+  min-height: 42px; /* Figma spec */
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  .checkboxInput,
+  .checkmark,
+  .indeterminateIcon {
+    transition: none;
+  }
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
+  .checkboxInput {
+    border-width: 2px;
+  }
+  
+  .checkboxInput.checked,
+  .checkboxInput.indeterminate {
+    border-color: #000000;
+  }
+}
+
+/* ===== HOVER STATES ===== */
+.checkbox:hover:not(.disabled) .checkboxInput.checked {
+  background-color: #667085; /* Figma hover state */
+  border-color: #667085;
+}
+
+.checkbox:hover:not(.disabled) .checkboxInput.indeterminate {
+  background-color: #667085; /* Figma hover state */
+  border-color: #667085;
+}

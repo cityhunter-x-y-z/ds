@@ -1,0 +1,131 @@
+/* ===========================================
+   CUBE TOGGLE STYLES - CSS Module - FIGMA DESIGN SYSTEM
+   File: packages/ui/src/components/Toggle/CubeToggle.module.css
+   Based on Figma Cube/Toggle specifications (Node: 1206-89512)
+   Fixed dimensions: 68px × 32px
+   =========================================== */
+
+/* Import design tokens */
+@import '@gazebo/tokens/src/theme.css';
+
+/* ===== BASE CUBE TOGGLE STYLES ===== */
+.cubeToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px; /* Figma spec - fixed width */
+  height: 32px; /* Figma spec - fixed height */
+  background-color: #ffffff; /* Figma OFF state - white background */
+  border: 1px solid #1d2939; /* Figma OFF state - dark border */
+  border-radius: 16px; /* Figma spec - fully rounded pill shape (1000px with smoothing) */
+  font-family: 'Red Hat Display', var(--family-default); /* Figma typography */
+  font-weight: 600; /* SemiBold - Figma spec */
+  font-size: 14px; /* Figma spec */
+  letter-spacing: -0.15px; /* Figma spec */
+  color: #1d2939; /* Figma OFF state - dark text */
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* ===== HIDDEN INPUT ===== */
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* ===== CHECKED STATE (ON) ===== */
+.cubeToggle.checked {
+  background-color: #1d2939; /* Figma ON state - dark background */
+  border-color: #1d2939; /* Dark border */
+  color: #ffffff; /* White text */
+}
+
+/* ===== HOVER STATES ===== */
+.cubeToggle:hover:not(.disabled) {
+  background-color: #eaecf0; /* Figma hover OFF - light gray */
+  border-color: #667085; /* Medium gray border */
+}
+
+.cubeToggle:hover:not(.disabled).checked {
+  background-color: #667085; /* Figma hover ON - medium gray */
+  border-color: #667085; /* Medium gray border */
+}
+
+/* ===== DISABLED STATE ===== */
+.cubeToggle.disabled {
+  background-color: #eaecf0; /* Light gray background */
+  border-color: #d5d7da; /* Light gray border */
+  color: #667085; /* Muted text */
+  cursor: not-allowed;
+}
+
+/* ===== FOCUS STATE ===== */
+.cubeToggle:focus-within {
+  /* Focus ring system */
+  box-shadow: 
+    0 0 0 2px #ffffff, /* White border for contrast */
+    0 0 0 4px #2e90fa; /* Blue focus ring */
+  outline: none;
+}
+
+/* ===== ACTIVE STATE ===== */
+.cubeToggle:active:not(.disabled) {
+  transform: scale(0.98);
+}
+
+/* ===== CONTENT STYLES ===== */
+.cubeToggleContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-weight: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  .cubeToggle {
+    transition: none;
+  }
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
+  .cubeToggle {
+    border-width: 2px;
+  }
+  
+  .cubeToggle.checked {
+    border-color: #000000;
+  }
+  
+  .cubeToggle:focus-within {
+    box-shadow: 
+      0 0 0 2px #ffffff,
+      0 0 0 6px #000000;
+  }
+}
+
+/* ===== SIZE CONSTRAINTS ===== */
+.cubeToggle {
+  min-width: 68px;
+  max-width: 68px;
+  min-height: 32px;
+  max-height: 32px;
+  box-sizing: border-box;
+}
